@@ -199,3 +199,12 @@ function genesis_sample_comments_gravatar( $args ) {
 	return $args;
 
 }
+
+
+// Custom stuff
+add_theme_support( 'genesis-structural-wraps', array(
+	'header',
+	'menu-secondary',
+	'footer-widgets',
+	'footer',
+));
