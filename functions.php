@@ -208,3 +208,32 @@ add_theme_support( 'genesis-structural-wraps', array(
 	'footer-widgets',
 	'footer',
 ));
+
+// async
+function add_async_attributes( $tag, $handle ) {
+	// add script handles to array below
+	$scripts_to_async = array('', '');
+
+	foreach( $scripts_to_async as $async_script ) {
+		if ( $async_script === $handle ) {
+			return str_replace( ' str', ' async="async" src', $tag);
+		}
+	}
+	return $tag;
+}
+apply_filters( 'script_loader_tag', 'add_async_attributes', 10, 2 );
+
+// defer
+function add_defer_attributes( $tag, $hande ) {
+	// add script handles to array below
+
+	$scripts_to_defer = array( '', '' );
+
+	foreach( $scripts_to_defer as $defer_scripts ) {
+		if ( $defer_script === $handle ) {
+			return str_replace ( ' str', ' defer="defer" src', $tag);
+		}
+	}
+	return $tag
+}
+add_filter( 'script_loader_tag', 'add_defer_attribute', 10, 2 );
