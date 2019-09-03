@@ -61,35 +61,6 @@ if ( function_exists( 'genesis_register_responsive_menus' ) ) {
 	genesis_register_responsive_menus( genesis_get_config( 'responsive-menus' ) );
 }
 
-add_action( 'wp_enqueue_scripts', 'genesis_sample_enqueue_scripts_styles' );
-/**
- * Enqueues scripts and styles.
- *
- * @since 1.0.0
- */
-function genesis_sample_enqueue_scripts_styles() {
-
-	$appearance = genesis_get_config( 'appearance' );
-
-	wp_enqueue_style(
-		genesis_get_theme_handle() . '-fonts',
-		$appearance['fonts-url'],
-		[],
-		genesis_get_theme_version()
-	);
-
-	wp_enqueue_style( 'dashicons' );
-
-	if ( genesis_is_amp() ) {
-		wp_enqueue_style(
-			genesis_get_theme_handle() . '-amp',
-			get_stylesheet_directory_uri() . '/lib/amp/amp.css',
-			[ genesis_get_theme_handle() ],
-			genesis_get_theme_version()
-		);
-	}
-
-}
 
 add_action( 'after_setup_theme', 'genesis_sample_theme_support', 9 );
 /**
@@ -209,10 +180,13 @@ add_theme_support( 'genesis-structural-wraps', array(
 	'footer',
 ));
 
-// async
+// async scripts
 function add_async_attributes( $tag, $handle ) {
 	// add script handles to array below
-	$scripts_to_async = array('', '');
+	$scripts_to_async = array(
+		'genesis_enqueue_main_stylesheet', 
+		''
+);
 
 	foreach( $scripts_to_async as $async_script ) {
 		if ( $async_script === $handle ) {
@@ -223,17 +197,30 @@ function add_async_attributes( $tag, $handle ) {
 }
 apply_filters( 'script_loader_tag', 'add_async_attributes', 10, 2 );
 
+
 // defer
 function add_defer_attributes( $tag, $hande ) {
 	// add script handles to array below
-
-	$scripts_to_defer = array( '', '' );
+	$scripts_to_defer = array( 
+		'dashicons', 
+		'' 
+	);
 
 	foreach( $scripts_to_defer as $defer_scripts ) {
 		if ( $defer_script === $handle ) {
-			return str_replace ( ' str', ' defer="defer" src', $tag);
+			return str_replace( ' str', ' defer="defer" src', $tag );
 		}
 	}
-	return $tag
+	return $tag;
 }
-add_filter( 'script_loader_tag', 'add_defer_attribute', 10, 2 );
+// add_filter( 'script_loader_tag', 'add_defer_attributes', 10, 2 );
+
+// function detect_enqueued_scripts() {
+// 	global $wp_scripts;
+// 	echo "Handles: ";
+// 	foreach( $wp_scripts->queue as $handle ) :
+// 	  echo $handle . ', ';
+// 	endforeach;
+//   }
+  
+//   add_action( 'wp_print_scripts', 'detect_enqueued_scripts' );
