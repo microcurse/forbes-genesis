@@ -46,6 +46,9 @@ require_once get_stylesheet_directory() . '/lib/woocommerce/woocommerce-output.p
 // Adds the Genesis Connect WooCommerce notice.
 require_once get_stylesheet_directory() . '/lib/woocommerce/woocommerce-notice.php';
 
+// Adds custom header functions
+require_once get_stylesheet_directory() . '/lib/header-functions.php';
+
 add_action( 'after_setup_theme', 'genesis_child_gutenberg_support' );
 /**
  * Adds Gutenberg opt-in features and styling.
@@ -118,7 +121,7 @@ remove_action( 'genesis_after_header', 'genesis_do_nav' );
 add_action( 'genesis_header', 'genesis_do_nav', 12 );
 
 // Repositions the secondary navigation menu.
-remove_action( 'genesis_after_header', 'genesis_do_subnav' );
+add_action( 'genesis_after_header', 'genesis_do_subnav' );
 add_action( 'genesis_footer', 'genesis_do_subnav', 10 );
 
 add_filter( 'wp_nav_menu_args', 'genesis_sample_secondary_menu_args' );
@@ -173,12 +176,67 @@ function genesis_sample_comments_gravatar( $args ) {
 
 
 // Custom stuff
+
+// Enqueue custom admin styles
+add_action( 'init', 'add_editor_styles' );
+function add_editor_styles() {
+	add_editor_style( 'style-editor.css' );
+}
+
+function enqueue_child_scripts() {
+	wp_enqueue_style( 'child_style', get_stylesheet_directory_uri() . '/assets/css/custom.css', array(), 1.1);
+	wp_enqueue_script( 'child_script', get_stylesheet_directory_uri() . '/assets/js/custom.js', array ( 'jquery' ), 1.1, true);
+	wp_enqueue_style( 'print_style', get_stylesheet_directory_uri() . '/assets/css/print.css', array(), '1', 'print' );
+
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_child_scripts', 99 );
+
+// Add manifest to head
+function inc_manifest_link() {
+	echo '<link rel="manifest" href="/manifest.json">';
+}
+add_action( 'wp_head', 'inc_manifest_link' );
+
 add_theme_support( 'genesis-structural-wraps', array(
 	'header',
 	'menu-secondary',
 	'footer-widgets',
 	'footer',
+	'simple-social-icons',
 ));
+
+// Editor color pallette
+function mytheme_setup_theme_supported_features() {
+	add_theme_support( 'editor-color-pallette', array(
+		array(
+			'name' => __( 'forbes-blue', 'themeLangDomain' ),
+			'slug' => 'forbes-blue',
+			'color' =>  '#28317E',
+		),
+		array(
+			'name' => __( 'link-blue', 'themeLangDomain' ),
+			'slug' => 'link-blue',
+			'color' =>  '#2C3CC9',
+		),
+		array(
+            'name' => __( 'very light gray', 'themeLangDomain' ),
+            'slug' => 'very-light-gray',
+            'color' => '#eee',
+        ),
+        array(
+            'name' => __( 'very dark gray', 'themeLangDomain' ),
+            'slug' => 'very-dark-gray',
+            'color' => '#444',
+        ),
+	));
+}
+add_action( 'after_setup_theme', 'mytheme_setup_theme_supported_features' );
+
+// add top bar with social media links
+function fi_add_top_bar() {
+	$top_bar = dynamic_sidebar('top-bar');
+}
+add_action( 'genesis_before_header', 'fi_add_top_bar', 10 );
 
 // async scripts
 function add_async_attributes( $tag, $handle ) {
@@ -213,14 +271,36 @@ function add_defer_attributes( $tag, $hande ) {
 	}
 	return $tag;
 }
-// add_filter( 'script_loader_tag', 'add_defer_attributes', 10, 2 );
 
-// function detect_enqueued_scripts() {
-// 	global $wp_scripts;
-// 	echo "Handles: ";
-// 	foreach( $wp_scripts->queue as $handle ) :
-// 	  echo $handle . ', ';
-// 	endforeach;
-//   }
-  
-//   add_action( 'wp_print_scripts', 'detect_enqueued_scripts' );
+// ACF Register A Block
+function register_acf_block_types() {
+
+	// register a category card block.
+    // acf_register_block_type(array(
+    //     'name'              => 'card',
+    //     'title'             => __('Card'),
+    //     'description'       => __('Cards with link.'),
+    //     'render_template'   => 'template-parts/blocks/card/card.php',
+    //     'category'          => 'widgets',
+    //     'icon'              => 'screenoptions',
+	// 	'keywords'          => array( 'card', 'cards', 'browse' ),
+	// 	'enqueue_style' 	=> get_template_directory_uri() . '/template-parts/blocks/card/card.css',
+	// 	'align'				=> array( 'left', 'center', 'right', 'wide', 'full' ),
+	// ));
+	
+	acf_register_block_type(
+		array(
+			'name' 				=>	'hero-banner',
+			'title'				=>	__('Hero Banner'),
+			'description'		=>	__('A hero banner block with space for an image and caption'),
+			'render_template'	=>	'hero-banner',
+			'icon'				=>	'format-image',
+			'keywords'			=>	array('hero', 'banner'),
+		)
+	);
+}
+
+// Check if function exists and hook into setup.
+if( function_exists('acf_register_block_type') ) {
+    add_action('acf/init', 'register_acf_block_types');
+}
