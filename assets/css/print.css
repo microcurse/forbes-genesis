@@ -1,0 +1,25 @@
+/*
+**  Author: Marc RM
+**  Version: 0.1
+**  Description: Print Styles
+*/
+
+@media print{
+
+    body {
+        font-size:10pt;
+    }
+
+    a[href]:after {
+        content: '';
+    }
+
+    .product-title a{
+        font-size:14pt;
+    }
+
+    .sidebar-position-without .row-count-4 .product {
+        width:25%;
+    }
+
+}
