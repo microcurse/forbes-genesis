@@ -81,7 +81,7 @@ function fi_genesis_do_header() {
         ]
     );
 
-    if ( ! function_exists('get_product_search_form') ) {
+    if ( function_exists( 'get_product_search_form' ) ) {
         get_product_search_form();
     } else {
         get_search_form();
