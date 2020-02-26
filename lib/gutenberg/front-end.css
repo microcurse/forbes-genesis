@@ -391,7 +391,7 @@ hr.wp-block-separator {
 @media only screen and (min-width: 960px) {
 
 	.full-width-content .site-container .alignwide {
-		max-width: 100vw; /* 360 equals sum of left and right margin */
+		max-width: 100vw;
 		width: auto;
 		margin: 32px calc(25% - 25vw);
 	}
