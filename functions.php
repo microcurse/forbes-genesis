@@ -191,12 +191,6 @@ function enqueue_child_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_child_scripts', 99 );
 
-// Add manifest to head
-function inc_manifest_link() {
-	echo '<link rel="manifest" href="/manifest.json">';
-}
-add_action( 'wp_head', 'inc_manifest_link' );
-
 add_theme_support( 'genesis-structural-wraps', array(
 	'header',
 	'menu-secondary',
