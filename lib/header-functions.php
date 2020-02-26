@@ -23,12 +23,9 @@ function fi_header_markup_open() {
         ]
     );
 
-    genesis_structural_wrap( 'header' );
 }
 
 function fi_header_markup_close() {
-
-    genesis_structural_wrap( 'header', 'close' );
 
     genesis_markup(
         [
@@ -46,7 +43,7 @@ function fi_do_upper_header() {
     genesis_markup(
         [
             'open'      => '<div %s>',
-            'context'   => 'container',
+            'context'   => 'flex-container',
         ]
     );
 
