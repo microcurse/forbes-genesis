@@ -9,12 +9,12 @@ remove_action( 'genesis_header', 'genesis_header_markup_close', 15 );
 remove_action( 'genesis_header', 'genesis_do_header' );
 
 // add in new header markup - prefix function name fi_
-add_action( 'genesis_header', 'fi_genesis_header_markup_open', 5 );
-add_action( 'genesis_header', 'fi_genesis_header_markup_close', 20 );
-add_action( 'genesis_header', 'fi_genesis_do_header');
+add_action( 'genesis_header', 'fi_header_markup_open', 5 );
+add_action( 'genesis_header', 'fi_header_markup_close', 20 );
+add_action( 'genesis_header', 'fi_do_upper_header');
 
 // new header functions
-function fi_genesis_header_markup_open() {
+function fi_header_markup_open() {
 
     genesis_markup( 
         [
@@ -26,7 +26,7 @@ function fi_genesis_header_markup_open() {
     genesis_structural_wrap( 'header' );
 }
 
-function fi_genesis_header_markup_close() {
+function fi_header_markup_close() {
 
     genesis_structural_wrap( 'header', 'close' );
 
@@ -39,31 +39,18 @@ function fi_genesis_header_markup_close() {
 
 }
 
-function quote_list_container_open() {
-
-    genesis_markup( 
-        [
-            'open'      => '<div>',
-            'context'   => 'quote-list-container',
-        ]
-    );
-
-}
-
-function quote_list_container_close() {
-
+// Add logo with search next to it.
+function fi_do_upper_header() {
+    
+    // Open container div
     genesis_markup(
         [
-            'close'     => '</div>',
-            'context'   => 'quote-list-container',
+            'open'      => '<div %s>',
+            'context'   => 'container',
         ]
     );
-    
-}
 
-
-function fi_genesis_do_header() {
-
+    // Open title area container
     genesis_markup( 
         [
             'open'      => '<div %s>',
@@ -71,9 +58,13 @@ function fi_genesis_do_header() {
         ] 
     );
 
+    // Add site logo title
     do_action( 'genesis_site_title' );
+    
+    // Add site description
     do_action( 'genesis_site_description' );
 
+    // Close container div
     genesis_markup(
         [
             'close'     => '</div>',
@@ -81,13 +72,28 @@ function fi_genesis_do_header() {
         ]
     );
 
-    if ( function_exists( 'get_product_search_form' ) ) {
-        get_product_search_form();
-    } else {
-        get_search_form();
-    }
-    
+    fi_add_search();
 
-    echo '<div class="quote-list-container"><a href="#">My Account</a> <a href="#">My Quote List</a></div>';
+    genesis_markup(
+        [
+            'close'      => '</div>',
+            'context'   => 'container',
+        ]
+    );
+
+}
+
+// Add search box. This will add default search if woocommerce isn't installed
+function fi_add_search() {
+    
+    if ( function_exists( 'get_product_search_form' ) ) {
+
+        get_product_search_form();
+
+    } else {
+
+        get_search_form();
+        
+    }
 
 }
