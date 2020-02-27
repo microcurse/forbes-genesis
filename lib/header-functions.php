@@ -39,6 +39,9 @@ function fi_header_markup_close() {
 // Add logo with search next to it.
 function fi_do_upper_header() {
     
+    // Open wrap
+    genesis_structural_wrap('header');
+
     // Open container div
     genesis_markup(
         [
@@ -77,6 +80,9 @@ function fi_do_upper_header() {
             'context'   => 'container',
         ]
     );
+
+    // close wrap
+    genesis_structural_wrap('header', 'close');
 
 }
 

@@ -621,6 +621,15 @@ th:first-child {
 }
 
 
+/* Flex
+--------------------------------------------- */
+
+.flex-container {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+
 /* Common Classes
 ---------------------------------------------------------------------------------------------------- */
 
@@ -678,10 +687,6 @@ th:first-child {
 
 /* Search Form
 --------------------------------------------- */
-
-/* .search-form {
-	overflow: hidden;
-} */
 
 .entry-content .search-form {
 	margin-bottom: 40px;
@@ -742,6 +747,70 @@ th:first-child {
 
 .search-form-submit:hover .search-icon path {
 	fill: white;
+}
+
+/** 
+ *  From WooPress Child Theme (Custom)
+*/
+
+.search-wrapper {
+  flex: 1 50%;
+  padding: 1rem 0 0;
+}
+
+.search-box {
+  display: -ms-flexbox;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: flex;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  width: 100%;
+  border: 1px solid #bcbec4;
+  align-items: center;
+  max-height: 40px;
+  max-width: 560px;
+}
+
+.search-box:focus-within {
+  box-shadow: 0 0 2px 2px #8bd9ff57;
+}
+
+.search-box input[type="search"] {
+  border-radius: 2px;
+  border: 0px;
+  height: 40px;
+  overflow: hidden;
+  padding: 0px;
+  width: 100%;
+}
+
+.search-box .woocommerce-product-search button {
+  padding: 8px 16px;
+  text-transform: none;
+  font-size: 16px;
+  transition: background 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.woocommerce-product-search {
+  width: 100%;
+  display: -ms-flexbox;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-box .fa-search {
+  align-self: center;
+  padding: 11px;
+}
+ 
+.header-search {
+  margin: 0;
 }
 
 /* Titles
@@ -1023,22 +1092,35 @@ img.alignright,
 
 .site-header {
 	background-color: #fff;
-	box-shadow: 0 0 20px rgba(0,0,0,0.05);
+	/* box-shadow: 0 0 20px rgba(0,0,0,0.05); */
 	padding: 0 30px;
+	border-bottom: 1px solid #eee;
 }
+
+.site-header .wrap {
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+.site-header .flex-container {
+	align-items: center;
+	width: 100%;
+	flex-flow: row-wrap;
+	justify-content: space-between;
+}
+
 
 /* Title Area
 --------------------------------------------- */
 
 .title-area {
-	padding-bottom: 25px;
-	padding-top: 25px;
+	flex: 1 50%;
 }
 
 .wp-custom-logo .title-area {
 	max-width: 350px;
-	padding-bottom: 5px;
-	padding-top: 5px;
+	padding-bottom: 12px;
+	padding-top: 12px;
 }
 
 .site-title {
@@ -1234,21 +1316,17 @@ img.alignright,
 	-ms-transform:     rotate( 180deg );
 	transform:         rotate( 180deg );
 }
-/* 
-#genesis-mobile-nav-primary {
-    display: none !important;
-}
 
-#genesis-nav-primary {
-    display: block !important;
-} */
 
 /* Header Menu
 --------------------------------------------- */
 
 .nav-primary {
 	clear: left;
+	margin: 0 auto;
 	width: 100%;
+	max-width: 1440px;
+	padding: 8px 40px;
 }
 
 /* Footer Menu
@@ -1522,6 +1600,11 @@ p.entry-meta {
 				justify-content:space-between;
 	}
 
+	.site-header .flex-container {
+		padding: 0 40px;
+		flex-flow: nowrap;
+	}
+
 	.header-widget-area .widget-wrap .woocommerce-product-search {
 		display:inline-flex;
 		margin-bottom:
@@ -1591,7 +1674,6 @@ p.entry-meta {
 
 	.genesis-responsive-menu {
 		display: block;
-		padding-top: 15px;
 	}
 
 	.menu-toggle,
@@ -1605,12 +1687,11 @@ p.entry-meta {
 
 	.nav-primary {
 		float: none;
-		margin-left:auto;
 	}
 
 	.nav-primary .genesis-nav-menu a {
-		padding-left: 15px;
-		padding-right: 15px;
+		padding-left: 0;
+		padding-right: 30px;
 	}
 
 	/* Site-Inner
