@@ -25,7 +25,7 @@ function fi_header_markup_open() {
     );
 
     // Open wrap
-    genesis_structural_wrap('header');
+    // genesis_structural_wrap('header');
 
     // Open container div
     genesis_markup(
@@ -51,7 +51,7 @@ function fi_header_markup_close() {
     );
 
     // Close wrap
-    genesis_structural_wrap('header', 'close');
+    // genesis_structural_wrap('header', 'close');
 
 
     // Close site-header
