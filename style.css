@@ -719,15 +719,6 @@ th:first-child {
 	max-width: 300px;
 }
 
-@media only screen and (min-width: 960px) {
-
-	.menu-item .search-form {
-		margin-left: 20px;
-		margin-top: 0;
-	}
-
-}
-
 .search-form-input {
 	padding: 7px;
 	font-size: 14px;
@@ -773,6 +764,7 @@ th:first-child {
   max-height: 40px;
   max-width: 560px;
   order: 2;
+  margin-bottom: 8px;
 }
 
 .search-box:focus-within {
@@ -1094,7 +1086,7 @@ img.alignright,
 .site-header {
 	background-color: #fff;
 	/* box-shadow: 0 0 20px rgba(0,0,0,0.05); */
-	padding: 0 30px;
+	padding: 0 24px;
 	border-bottom: 1px solid #eee;
 }
 
@@ -1106,11 +1098,8 @@ img.alignright,
 .site-header .flex-container {
 	align-items: center;
 	width: 100%;
-	flex-flow: row-wrap;
 	justify-content: space-between;
-	padding-bottom: 8px;
 }
-
 
 /* Title Area
 --------------------------------------------- */
@@ -1254,7 +1243,6 @@ img.alignright,
 	border-width: 0;
 	color: #333;
 	display: block;
-	margin: 0 auto;
 	overflow: hidden;
 	text-align: center;
 	visibility: visible;
@@ -1603,14 +1591,10 @@ p.entry-meta {
 	}
 
 	.site-header .flex-container {
-		padding: 0 40px;
+		max-width: 1440px;
+		padding: 0 40px 8px;
 	}
-
-	.header-widget-area .widget-wrap .woocommerce-product-search {
-		display:inline-flex;
-		margin-bottom:
-	}
-
+	
 	.widget_product_search {
 		margin-bottom:0;
 	}
@@ -1670,6 +1654,14 @@ p.entry-meta {
 		margin: -46px 0 0 179px;
 	}
 
+	.nav-primary {
+		clear: left;
+		margin: 0 auto;
+		width: 100%;
+		max-width: 1440px;
+		padding: 0;
+	}
+
 	/* Responsive Menu
 	--------------------------------------------- */
 
@@ -1682,6 +1674,10 @@ p.entry-meta {
 		display: none;
 		visibility: hidden;
 		order: 2;
+	}
+
+	.genesis-responsive-menu {
+		padding-bottom: 0;
 	}
 
 	/* Header Menu
