@@ -49,7 +49,7 @@ require_once get_stylesheet_directory() . '/lib/woocommerce/woocommerce-notice.p
 // Adds custom header functions
 require_once get_stylesheet_directory() . '/lib/header-functions.php';
 
-// Adds custom header functions
+// Adds custom footer functions
 require_once get_stylesheet_directory() . '/lib/footer-functions.php';
 
 add_action( 'after_setup_theme', 'genesis_child_gutenberg_support' );
