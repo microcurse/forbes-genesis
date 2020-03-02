@@ -301,3 +301,12 @@ function register_acf_block_types() {
 if( function_exists('acf_register_block_type') ) {
     add_action('acf/init', 'register_acf_block_types');
 }
+
+// Load Inline SVGs
+function fi_load_inline_svg( $filename ) {
+	$svg_path = '/images/';
+	if ( file_exists( get_stylesheet_directory() . $svg_path . $filename ) ) {
+		return file_get_contents( get_stylesheet_directory() . $svg_path . $filename );
+	}
+	return 'Nope';
+}
