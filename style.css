@@ -1319,6 +1319,11 @@ img.alignright,
 	padding: 8px 0;
 }
 
+.sub-menu .menu-item a {
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
 /* Footer Menu
 --------------------------------------------- */
 
@@ -1612,6 +1617,11 @@ p.entry-meta {
 		position: relative;
 	}
 
+	.genesis-nav-menu a {
+		padding-left: 0;
+		padding-right: 30px;
+	}
+
 	.genesis-nav-menu > .menu-bold > a {
 		font-weight: 700;
 	}
@@ -1661,7 +1671,11 @@ p.entry-meta {
 		width: 100%;
 		max-width: 1440px;
 		padding: 0;
+		float: none;
+		order: 3;
 	}
+
+	
 
 	/* Responsive Menu
 	--------------------------------------------- */
@@ -1679,19 +1693,6 @@ p.entry-meta {
 
 	.genesis-responsive-menu {
 		padding-bottom: 0;
-	}
-
-	/* Header Menu
-	--------------------------------------------- */
-
-	.nav-primary {
-		float: none;
-		order: 3;
-	}
-
-	.nav-primary .genesis-nav-menu a {
-		padding-left: 0;
-		padding-right: 30px;
 	}
 
 	/* Site-Inner
