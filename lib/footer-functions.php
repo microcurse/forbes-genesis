@@ -37,11 +37,3 @@ function fi_footer_markup_close() {
 	genesis_structural_wrap( 'footer', 'close' );
 	
 }
-
-
-// Widgetized sections for footer
-function fi_footer_section() {
-	genesis_register_sidebar( array(
-
-	));
-}
