@@ -21,7 +21,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 <div class="search-box">
-	<i class=""></i>
+
+	<i class="fi-icon"><?php echo fi_load_inline_svg( 'search-icon.svg' ); ?></i>
 	<form role="search" method="get" class="woocommerce-product-search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 		<label class="screen-reader-text" for="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>"><?php esc_html_e( 'Search for:', 'woocommerce' ); ?></label>
 		<input type="search" id="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>" class="search-field" placeholder="<?php echo esc_attr__( 'What can we help you find?', 'woocommerce' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
