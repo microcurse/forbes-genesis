@@ -1831,13 +1831,15 @@ p.entry-meta {
 
 	.footer-widgets .wrap {
 		max-width: 1440px;
+		display: flex;
+		flex-flow: row wrap;
 	}
 
 	.footer-widget-area {
 		float: left;
 		margin-bottom: 0;
-		width: 33.33%; /* fallback for older browsers */
-		width: calc(100% / 3);
+		width: 25%; /* fallback for older browsers */
+		width: calc(100% / 4);
 	}
 
 }
