@@ -59,3 +59,21 @@ var genesisSample = ( function( $ ) {
 })( jQuery );
 
 jQuery( window ).on( 'load', genesisSample.init );
+
+/** Accordion functions for Mixology Benefits section */
+function accordion() {
+    const accPanels = document.querySelectorAll('.acc-panel');
+
+    function openPanel(e) {
+    const accBody = e.currentTarget.querySelector('.acc-body');
+        accBody.classList.toggle('show');
+    }
+
+    function attachListener(panels) {
+        panels.addEventListener('click', openPanel);
+    }
+
+    accPanels.forEach(attachListener);
+}
+
+accordion();
