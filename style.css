@@ -1094,7 +1094,7 @@ img.alignright,
 }
 
 .site-header .wrap {
-	max-width: 1440px;
+	max-width: 1280px;
 	margin: 0 auto;
 }
 
@@ -1319,7 +1319,7 @@ img.alignright,
 	clear: left;
 	margin: 0 auto;
 	width: 100%;
-	max-width: 1440px;
+	max-width: 1280px;
 	padding: 8px 0;
 }
 
@@ -1533,11 +1533,14 @@ p.entry-meta {
 
 .footer-widgets {
 	border-top: 1px solid #eee;
-	background-color: #fff;
+	background-color: #333540;
 	clear: both;
-	font-size: 18px;
-	font-size: 1.8rem;
+	font-size: 1.4rem;
 	padding: 60px 0;
+}
+
+.footer-widgets a {
+	color: #fff;
 }
 
 .footer-widgets .wrap {
@@ -1547,8 +1550,8 @@ p.entry-meta {
 
 .footer-widget-area {
 	margin-bottom: 40px;
-	padding-left: 30px;
-	padding-right: 30px;
+	/* padding-left: 30px;
+	padding-right: 30px; */
 }
 
 .footer-widget-area:last-child ,
@@ -1556,13 +1559,18 @@ p.entry-meta {
 	margin-bottom: 0;
 }
 
+.footer-widgets .widget-title {
+	color: #707070;
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
 
 /* Site Footer
 ---------------------------------------------------------------------------------------------------- */
 
 .site-footer {
-	background-color: #fff;
-	border-top: 1px solid #eee;
+	background-color: #333540;
 	font-size: 15px;
 	font-size: 1.5rem;
 	line-height: 1.5;
@@ -1600,7 +1608,7 @@ p.entry-meta {
 	}
 
 	.site-header .flex-container {
-		max-width: 1440px;
+		max-width: 1280px;
 		padding: 0 40px 8px;
 		margin: 0 auto;
 	}
@@ -1647,7 +1655,7 @@ p.entry-meta {
 
 	.genesis-responsive-menu .genesis-nav-menu .sub-menu,
 	.genesis-responsive-menu .genesis-nav-menu .sub-menu a {
-		width: 180px;
+		width: 220px;
 	}
 
 	.genesis-nav-menu .sub-menu {
@@ -1673,7 +1681,7 @@ p.entry-meta {
 		clear: left;
 		margin: 0 auto;
 		width: 100%;
-		max-width: 1440px;
+		max-width: 1280px;
 		padding: 0;
 		float: none;
 		order: 3;
@@ -1704,7 +1712,7 @@ p.entry-meta {
 
 	.site-inner {
 		margin-top: 70px;
-		max-width: 1440px;
+		max-width: 1280px;
 	}
 
 	/* Content
@@ -1830,7 +1838,7 @@ p.entry-meta {
 	--------------------------------------------- */
 
 	.footer-widgets .wrap {
-		max-width: 1440px;
+		max-width: 1280px;
 		display: flex;
 		flex-flow: row wrap;
 	}
