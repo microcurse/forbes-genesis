@@ -309,3 +309,19 @@ function fi_load_inline_svg( $filename ) {
 	}
 	return 'Nope';
 }
+
+
+// Custom Sidebars
+add_action( 'widgets_init', 'my_register_sidebars' );
+function my_register_sidebars() {
+	// Register footer copy sidebar
+	register_sidebar(array(
+		'id'			=>	'footer-copy',
+		'name'			=>	__( 'Footer copy' ),
+		'description'	=>	__('Add logo, address, and social media links here', 'genesis-sample' ),
+		'before_widget'	=>	'<div class="%1$s">',
+		'after_widget'	=>	'</div>',
+		'before_title'	=>	'',
+		'after_title'	=>	'',
+	));
+}
