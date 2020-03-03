@@ -1532,7 +1532,6 @@ p.entry-meta {
 ---------------------------------------------------------------------------------------------------- */
 
 .footer-widgets {
-	border-top: 1px solid #eee;
 	background-color: #333540;
 	clear: both;
 	font-size: 1.4rem;
@@ -1561,8 +1560,13 @@ p.entry-meta {
 
 .footer-widgets .widget-title {
 	color: #707070;
-	font-size: 14px;
+	font-size: 1.6rem;
 	text-transform: uppercase;
+	margin-bottom: 16px;
+}
+
+.footer-widgets .widget ul > li {
+	margin-bottom: 8px;
 }
 
 
@@ -1580,6 +1584,12 @@ p.entry-meta {
 
 .site-footer p {
 	margin-bottom: 0;
+	color: #fff;
+}
+
+.site-footer a {
+	color: #fff;
+	font-weight: 600;
 }
 
 
