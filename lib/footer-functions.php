@@ -22,8 +22,6 @@ function fi_footer_widgets_markup_open() {
 			'context' => 'footer-widgets',
 		]
 	);
-
-	fi_logo_copy();
 	
 }
 
@@ -40,22 +38,29 @@ function fi_footer_widgets_markup_close() {
 }
 
 // Logo copy
+add_action( 'genesis_before_footer' , 'fi_logo_copy' );
 function fi_logo_copy() {
 
+	// Output buffer
 	ob_start();
-	dynamic_sidebar( 'footer-copy' );
+	dynamic_sidebar( 'footer-left' );
+	
+	// set sidebar
+	$widget = ob_get_clean();
 
-	$inside = ob_get_clean();
-
-	genesis_markup(
+	$output = genesis_markup(
 		[
 			'open'		=>	'<div %s>',
 			'close'		=>	'</div>',
-			'context'	=>	'footer-widgets',
-			'content'	=>	''
+			'context'	=>	'footer-left',
+			'content'	=>	$widget,
+			'echo'		=> false,
 		]
 	);
-
+	
+	$footer_left = apply_filters( 'fi_footer_widget_areas', $output, $footer_left );
+	
+	echo $footer_left;
 }
 
 
