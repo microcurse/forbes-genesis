@@ -1549,8 +1549,8 @@ p.entry-meta {
 
 .footer-widget-area {
 	margin-bottom: 40px;
-	/* padding-left: 30px;
-	padding-right: 30px; */
+	padding-left: 24px;
+	padding-right: 24px;
 }
 
 .footer-widget-area:last-child ,
@@ -1567,6 +1567,20 @@ p.entry-meta {
 
 .footer-widgets .widget ul > li {
 	margin-bottom: 8px;
+}
+
+.footer-left address {
+	color: #fff;
+	font-style: normal;
+}
+
+#genesis-footer-widgets {
+	display: flex;
+	justify-content: space-between;
+}
+
+.flex-widgets {
+	display: flex;
 }
 
 
@@ -1854,10 +1868,7 @@ p.entry-meta {
 	}
 
 	.footer-widget-area {
-		float: left;
-		margin-bottom: 0;
-		width: 25%; /* fallback for older browsers */
-		width: calc(100% / 4);
+		
 	}
 
 }
