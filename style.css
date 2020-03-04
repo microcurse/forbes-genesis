@@ -48,6 +48,7 @@
 	- Genesis eNews Extended
 	- Genesis Simple FAQ
 	- Jetpack
+	- Simple Social Icons
 - Skip Links
 - Site Header
 	- Title Area
@@ -1058,6 +1059,21 @@ img.alignright,
 }
 
 
+/* simple Social Icons
+--------------------------------------------- */
+
+.simple-social-icons-2 li svg {
+	max-width: 24px;
+	max-height: 24px;
+}
+
+.simple-social-icons-2 ul {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+
 /* Skip Links
 ---------------------------------------------------------------------------------------------------- */
 
@@ -1569,6 +1585,10 @@ p.entry-meta {
 	margin-bottom: 8px;
 }
 
+.footer-left {
+	margin-bottom: 40px;
+}
+
 .footer-left address {
 	color: #fff;
 	font-style: normal;
@@ -1576,11 +1596,12 @@ p.entry-meta {
 
 #genesis-footer-widgets {
 	display: flex;
-	justify-content: space-between;
+	flex-flow: row wrap;
 }
 
 .flex-widgets {
 	display: flex;
+	flex-flow: row wrap;
 }
 
 
@@ -1710,8 +1731,6 @@ p.entry-meta {
 		float: none;
 		order: 3;
 	}
-
-	
 
 	/* Responsive Menu
 	--------------------------------------------- */
@@ -1867,8 +1886,8 @@ p.entry-meta {
 		flex-flow: row wrap;
 	}
 
-	.footer-widget-area {
-		
+	#genesis-footer-widgets {
+		justify-content: space-between;
 	}
 
 }
