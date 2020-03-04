@@ -37,48 +37,8 @@ function fi_footer_widgets_markup_close() {
 	
 }
 
-// Logo copy
-add_action( 'genesis_before_footer' , 'fi_logo_copy' );
-function fi_logo_copy() {
-
-	// Output buffer
-	ob_start();
-	dynamic_sidebar( 'footer-left' );
-	
-	// set sidebar
-	$widget = ob_get_clean();
-
-	$output = genesis_markup(
-		[
-			'open'		=>	'<div %s>',
-			'close'		=>	'</div>',
-			'context'	=>	'footer-left',
-			'content'	=>	$widget,
-			'echo'		=> false,
-		]
-	);
-	
-	$footer_left = apply_filters( 'fi_footer_widget_areas', $output, $footer_left );
-	
-	echo $footer_left;
-}
-
 
 add_action( 'genesis_before_footer', 'fi_footer_widget_areas' );
-/**
- * Echo the markup necessary to facilitate the footer widget areas.
- *
- * Check for a numerical parameter given when adding theme support - if none is found, then the function returns early.
- *
- * The child theme must style the widget areas.
- *
- * Applies the `genesis_footer_widget_areas` filter.
- *
- * @since 1.6.0
- *
- * @return void Return early if number of widget areas could not be determined,
- *              or nothing is added to the first widget area.
- */
 function fi_footer_widget_areas() {
 
 	$footer_widgets = get_theme_support( 'genesis-footer-widgets' );
@@ -148,21 +108,34 @@ function fi_footer_widget_areas() {
 
 	}
 
-	/**
-	 * Allow the footer widget areas output to be filtered.
-	 *
-	 * @since 1.6.0
-	 *
-	 * @param string The combined output.
-	 * @param string The actual widgets.
-	 */
+	// Output buffer for footer left
+	ob_start();
+	dynamic_sidebar( 'footer-left' );
+	
+	// set footer left
+	$left_widget = ob_get_clean();
+
+	$left_output = genesis_markup(
+		[
+			'open'		=>	'<div %s>',
+			'close'		=>	'</div>',
+			'context'	=>	'footer-left',
+			'content'	=>	$left_widget,
+			'echo'		=> false,
+		]
+	);
+	
+	$footer_left = apply_filters( 'fi_footer_widget_areas', $left_output, $footer_left );
+
 	$footer_widgets = apply_filters( 'fi_footer_widget_areas', $output, $footer_widgets );
 
 	// open flexible widgets div
 	fi_footer_widgets_markup_open();
-	
+
+	echo $footer_left;
 	echo $footer_widgets; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- attempting to escape here will strip tags or attributes output by widgets.
 
 	// close flexible widgets div
 	fi_footer_widgets_markup_close();
+
 }
