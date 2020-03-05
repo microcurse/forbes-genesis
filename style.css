@@ -1556,6 +1556,11 @@ p.entry-meta {
 
 .footer-widgets a {
 	color: #fff;
+	fill: #fff;
+}
+
+.footer-widgets a:hover {
+	fill: var(--main-link-color);
 }
 
 .footer-widgets .wrap {
@@ -1585,13 +1590,26 @@ p.entry-meta {
 	margin-bottom: 8px;
 }
 
+/*
+**	Footer Left
+*/
+
 .footer-left {
 	margin-bottom: 40px;
+	padding-left: 24px;
 }
 
 .footer-left address {
 	color: #fff;
 	font-style: normal;
+}
+
+.footer-left .text-3 {
+	margin-bottom: 40px;
+}
+
+.footer-left .media_image-3 {
+	margin-bottom: 40px;
 }
 
 #genesis-footer-widgets {
@@ -1730,6 +1748,13 @@ p.entry-meta {
 		padding: 0;
 		float: none;
 		order: 3;
+	}
+
+	.genesis-nav-menu .menu-item-has-children > a:after {
+		content: '\f347';
+		font-family: "dashicons";
+		font-size: 1.6rem;
+		padding-left: 8px;
 	}
 
 	/* Responsive Menu
