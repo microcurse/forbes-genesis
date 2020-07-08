@@ -310,4 +310,15 @@ function my_register_sidebars() {
 		'before_title'	=>	'',
 		'after_title'	=>	'',
 	));
+
+	// Register shop filter sidebar
+	register_sidebar(array(
+		'id'			=>	'shop-sidebar',
+		'name'			=>	__( 'Shop Sidebar' ),
+		'description'	=>	__( 'Add shop filters here.', 'genesis-sample' ),
+		'before_widget'	=>	'<div class="%1$s">',
+		'after_widget'	=>	'</div>',
+		'before_title'	=>	'',
+		'after_title'	=>	'',
+	));
 }
