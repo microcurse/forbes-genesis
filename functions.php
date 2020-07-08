@@ -270,20 +270,6 @@ function add_defer_attributes( $tag, $hande ) {
 
 // ACF Register A Block
 function register_acf_block_types() {
-
-	// register a category card block.
-    // acf_register_block_type(array(
-    //     'name'              => 'card',
-    //     'title'             => __('Card'),
-    //     'description'       => __('Cards with link.'),
-    //     'render_template'   => 'template-parts/blocks/card/card.php',
-    //     'category'          => 'widgets',
-    //     'icon'              => 'screenoptions',
-	// 	'keywords'          => array( 'card', 'cards', 'browse' ),
-	// 	'enqueue_style' 	=> get_template_directory_uri() . '/template-parts/blocks/card/card.css',
-	// 	'align'				=> array( 'left', 'center', 'right', 'wide', 'full' ),
-	// ));
-	
 	acf_register_block_type(
 		array(
 			'name' 				=>	'hero-banner',
