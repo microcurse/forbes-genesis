@@ -33,6 +33,11 @@
 	- Forms
 	- Tables
 	- Screen Reader Text
+- Utility Styles
+	- Flex
+	- Grid
+	- Positioning
+	- Spacers
 - Structure and Layout
 	- Site Container
 	- Site Inner
@@ -589,6 +594,142 @@ th:first-child {
 	position: relative;
 }
 
+/* Utility Styles
+---------------------------------------------------------------------------------------------------- */
+
+/* Flex
+--------------------------------------------- */
+
+.container-flex,
+.flex-container {
+  display: -ms-flexbox;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: flex;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-y-center {
+  align-items: center;
+}
+
+.flex-x-center {
+  justify-content: center;
+}
+
+.flex-flow-rw {
+  flex-flow: row wrap;
+}
+
+.flex-half {
+  flex: 50%;
+}
+
+.flex-third {
+  flex: 33%;
+}
+
+/* Grid
+--------------------------------------------- */
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-gap: 3rem 2rem;
+}
+
+.grid + .grid {
+  margin-top: 2rem;
+}
+
+.grid-xy-center {
+  justify-items: center;
+  align-items: center;
+}
+
+.grid-col-1 {
+  grid-area: 'col1';
+}
+
+.grid-col-2 {
+  grid-area: 'col2';
+}
+
+
+.container-grid {
+  display: -ms-grid;
+  display: -moz-grid;
+  display: -webkit-grid;
+  display: grid;
+}
+
+.z-index-1 {
+  z-index: 1;
+} 
+
+/* Positioning
+--------------------------------------------- */
+
+.pos-rel {
+  position: relative;
+}
+
+.pos-abs {
+  position: absolute;
+}
+
+.mg-center {
+  margin: 0 auto;
+}
+
+/* Image
+--------------------------------------------- */
+
+.img-cap-center {
+  top: 16%;
+  left: 30%;
+  text-shadow: 1px 1px #00000091;
+}
+
+/* Spacers
+--------------------------------------------- */
+
+.spacer-sm {
+  padding: 12px 0;
+}
+
+.spacer-md {
+  padding: 24px 0;
+}
+
+.spacer-lg {
+  padding: 40px 0;
+}
+
+.max-w-sm {
+  max-width: 600px;
+}
+
+.max-w-md {
+  max-width: 900px;
+}
+
+.max-w-lg {
+  max-width: 1200px;
+}
+
+.left-border {
+  border-left: 5px solid #5E618E;
+  border-end-end-radius: 10px;
+}
+
+
 
 /* Structure and Layout
 ---------------------------------------------------------------------------------------------------- */
@@ -620,16 +761,6 @@ th:first-child {
 	margin: 0 auto;
 	padding: 60px 30px 0;
 }
-
-
-/* Flex
---------------------------------------------- */
-
-.flex-container {
-	display: flex;
-	flex-flow: row wrap;
-}
-
 
 /* Common Classes
 ---------------------------------------------------------------------------------------------------- */
