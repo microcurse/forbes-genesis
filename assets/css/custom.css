@@ -612,8 +612,9 @@ i {
 
 /** 
  * Header Woocommerce Search Bar
+ * This has been moved to style.css 7/17/2020
 */
-
+/* 
 .search-wrapper {
   flex: 1 50%;
   padding: 1rem 0 0;
@@ -679,7 +680,7 @@ i {
 
 .et-search-trigger {
   display: none;
-}
+} */
 
 /* Drop Down Menu */
 .menu .nav-sublist-dropdown {

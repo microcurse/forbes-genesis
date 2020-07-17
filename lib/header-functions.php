@@ -28,7 +28,7 @@ function fi_header_markup_open() {
     genesis_markup(
         [
             'open'      => '<div %s>',
-            'context'   => 'flex-container',
+            'context'   => 'grid-header',
         ]
     );
 
