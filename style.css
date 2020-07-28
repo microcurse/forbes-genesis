@@ -721,7 +721,7 @@ th:first-child {
 }
 
 .max-w-lg {
-  max-width: 1280px;
+  max-width: 1200px;
 }
 
 .left-border {
@@ -1245,7 +1245,7 @@ img.alignright,
 }
 
 .site-header .wrap {
-	max-width: 1280px;
+	max-width: 1200px;
 	margin: 0 auto;
 }
 
@@ -1260,7 +1260,7 @@ img.alignright,
 	grid-template-rows: auto;
 	grid-template-areas: "logo search" "nav nav";
 	align-items: center;
-	max-width: 1280px;
+	max-width: 1200px;
 	margin: 0 auto;
 }
 
@@ -1484,7 +1484,7 @@ img.alignright,
 	clear: left;
 	margin: 0 auto;
 	width: 100%;
-	max-width: 1280px;
+	max-width: 1200px;
 	padding: 8px 0;
 }
 
@@ -1820,7 +1820,7 @@ p.entry-meta {
 	}
 
 	.site-header .flex-container {
-		max-width: 1280px;
+		max-width: 1200px;
 		padding: 0 8px;
 		margin: 0 auto;
 	}
@@ -1893,7 +1893,7 @@ p.entry-meta {
 		clear: left;
 		margin: 0 auto;
 		width: 100%;
-		max-width: 1280px;
+		max-width: 1200px;
 		padding: 0;
 		float: none;
 		order: 3;
@@ -1929,7 +1929,7 @@ p.entry-meta {
 
 	.site-inner {
 		/* margin-top: 70px; */
-		max-width: 1280px;
+		max-width: 1200px;
 	}
 
 	/* Content
@@ -2062,7 +2062,7 @@ p.entry-meta {
 	--------------------------------------------- */
 
 	.footer-widgets .wrap {
-		max-width: 1280px;
+		max-width: 1200px;
 		display: flex;
 		flex-flow: row wrap;
 	}

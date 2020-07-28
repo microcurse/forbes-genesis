@@ -1211,13 +1211,13 @@ a.ui-tabs-anchor:hover {
 }
 
 /* Slick Carousel */
-.slick-next,
+/* .slick-next,
 .slick-prev {
   color: #333 !important;
   height: 20px !important;
   width: 20px !important;
   top: 40% !important;
-}
+} */
 
 .slick-next {
   right: -10px;
