@@ -28,5 +28,8 @@ function genesis_full_width_class( $classes ) {
 
 }
 
+// Remove sidebar
+remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
+
 // Runs the Genesis loop.
 genesis();

@@ -759,7 +759,11 @@ th:first-child {
 .site-inner {
 	clear: both;
 	margin: 0 auto;
-	/* padding: 60px 30px 0; */
+	padding: 60px 0px 0;
+}
+
+.full-width-content .site-inner .content-sidebar-wrap .content {
+	width: 100%;
 }
 
 /* Common Classes
@@ -952,7 +956,7 @@ th:first-child {
 .archive-title,
 .author-box-title {
 	font-size: 20px;
-	font-size: 2rem;
+	font-size: 2.2em;
 	font-weight: 600;
 	margin-bottom: 10px;
 }
@@ -1928,7 +1932,6 @@ p.entry-meta {
 	--------------------------------------------- */
 
 	.site-inner {
-		/* margin-top: 70px; */
 		max-width: 1200px;
 	}
 
@@ -1936,38 +1939,30 @@ p.entry-meta {
 	--------------------------------------------- */
 
 	.content {
-		display: grid;
-		grid-template-columns: 1fr;
+		float: left;
+		width: 65%;
 	}
 
 	.sidebar-content .content {
-		display: grid;
-		grid-template-columns: 1fr;
+		float: right;
 	}
 
-	.full-width-content .content,
-	.landing-page .content {
-		display: grid;
+	.full-width-content .content {
+		float: none;
 		margin-left: auto;
 		margin-right: auto;
-		width: 100%;
-	}
-
-	.content-sidebar-wrap {
-		display: grid;
-		/* grid-template-columns: 3fr 1fr;
-		grid-gap: 1rem; */
 	}
 
 	/* Sidebar
 	--------------------------------------------- */
 
 	.sidebar {
-		
+		float: right;
+		width: 30%;
 	}
 
 	.sidebar-content .sidebar {
-	
+		float: left;
 	}
 
 	/* Author Box

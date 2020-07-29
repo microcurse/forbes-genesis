@@ -191,7 +191,7 @@ function enqueue_child_scripts() {
 	wp_enqueue_style( 'print_style', get_stylesheet_directory_uri() . '/assets/css/print.css', array(), '1', 'print' );
 
 }
-add_action( 'wp_enqueue_scripts', 'enqueue_child_scripts', 99 );
+// add_action( 'wp_enqueue_scripts', 'enqueue_child_scripts', 99 );
 
 add_theme_support( 'genesis-structural-wraps', array(
 	'header',
@@ -322,3 +322,24 @@ function my_register_sidebars() {
 		'after_title'	=>	'',
 	));
 }
+
+add_action( 'genesis_before', 'fi_add_woo_sidebar', 20 );
+function fi_add_woo_sidebar() {
+
+    if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+        if( is_woocommerce() ) {
+            remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
+            remove_action( 'genesis_sidebar_alt', 'genesis_do_sidebar_alt' );
+            add_action( 'genesis_sidebar', 'fi_woo_sidebar' );
+        }
+    }
+    
+}
+function fi_woo_sidebar() {
+    if ( ! dynamic_sidebar( 'shop-sidebar' ) && current_user_can( 'edit_theme_options' )  ) {
+        genesis_default_widget_area_content( __( 'WooCommerce Primary Sidebar', 'genesis' ) );
+    }
+}
+// Move breadcrumbs to after page title
+remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
+add_action( 'genesis_archive_title_descriptions', 'genesis_do_breadcrumbs', 15 );
