@@ -343,3 +343,23 @@ function fi_woo_sidebar() {
 // Move breadcrumbs to after page title
 remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
 add_action( 'genesis_archive_title_descriptions', 'genesis_do_breadcrumbs', 15 );
+
+// ACF
+add_action( 'acf/init', 'my_acf_init_block_type');
+function my_acf_init_block_type() {
+
+	// Check function exists.
+	if( function_exists('acf_register_block_type')) {
+
+		// register a category block
+		acf_register_block_type(array(
+			'name'				=> 'image-link',
+			'title'				=>	__('Image with link'),
+			'description'		=>	__('Display an image with a link'),
+			'render_template'	=>	'template-parts/blocks/image-link/image-link.php',
+			'category'			=>	'formatting',
+			'icon'				=>	'dashicons-format-image',
+			'keywords'			=>	array('image','link'),
+		));
+	}
+}
