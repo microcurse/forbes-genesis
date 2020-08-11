@@ -363,3 +363,7 @@ function my_acf_init_block_type() {
 		));
 	}
 }
+
+// Move Category Title Description
+remove_action( 'genesis_before_loop', 'genesis_do_taxonomy_title_description', 15 );
+add_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_taxonomy_title_description', 15 );
