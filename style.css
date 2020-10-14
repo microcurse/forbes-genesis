@@ -38,6 +38,8 @@
 	- Grid
 	- Positioning
 	- Spacers
+	- Card
+	- Borders
 - Structure and Layout
 	- Site Container
 	- Site Inner
@@ -68,6 +70,7 @@
 	- Pagination
 	- Entry Comments
 - Sidebar
+- Carousel
 - Footer Widgets
 - Site Footer
 - Media Queries
@@ -201,10 +204,8 @@ textarea:focus,
 }
 
 a {
-	color: var(--main-link-color);
-	color: #4188f2;
-	text-decoration: underline;
 	transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+	font-weight: bold;
 }
 
 a:focus,
@@ -341,6 +342,12 @@ img {
 
 figure {
 	margin: 0;
+}
+
+figcaption a {
+	color: #333;
+	text-decoration: none;
+	font-style: normal;
 }
 
 /* Gallery
@@ -694,40 +701,67 @@ th:first-child {
 .img-cap-center {
   top: 16%;
   left: 30%;
-  text-shadow: 1px 1px #00000091;
+  text-shadow: 1px 1px hsla(0, 0%, 0%, 0.569);
 }
 
 /* Spacers
 --------------------------------------------- */
 
 .spacer-sm {
-  padding: 12px 0;
+	padding: 12px 0;
 }
 
 .spacer-md {
-  padding: 24px 0;
+	padding: 24px 0;
 }
 
 .spacer-lg {
-  padding: 40px 0;
+	padding: 40px 0;
 }
 
 .max-w-sm {
-  max-width: 600px;
+	max-width: 600px;
 }
 
 .max-w-md {
-  max-width: 900px;
+	max-width: 900px;
 }
 
 .max-w-lg {
-  max-width: 1200px;
+	max-width: 1200px;
 }
 
-.left-border {
-  border-left: 5px solid #5E618E;
-  border-end-end-radius: 10px;
+/* Card
+--------------------------------------------- */
+
+.card {
+	border-radius: 5px;
+	padding: 16px;
 }
+
+.card p {
+	margin: 0px;
+}
+
+/* Borders
+--------------------------------------------- */
+
+.thin-border-l {
+	border-left: 1px solid #777;
+}
+
+.thin-border-r {
+	border-right: 1px solid #777;
+}
+
+.thin-border-t {
+	border-top: 1px solid #777;
+}
+
+.thin-border-b {
+	border-bottom: 1px solid #777;
+}
+
 
 
 
@@ -760,6 +794,11 @@ th:first-child {
 	clear: both;
 	margin: 0 auto;
 	padding: 60px 0px 0;
+}
+
+body.page-id-160352 .site-inner {
+	max-width: 100%;
+	padding: 0px;
 }
 
 .full-width-content .site-inner .content-sidebar-wrap .content {
@@ -1696,6 +1735,45 @@ p.entry-meta {
 	margin-bottom: 20px;
 }
 
+/* Slick Carouse
+---------------------------------------------------------------------------------------------------- */
+
+.slick-next,
+.slick-prev {
+  color: #333 !important;
+  height: 20px !important;
+  width: 20px !important;
+  top: 40% !important;
+}
+
+.slick-next {
+  right: -10px;
+}
+
+.slick-prev{
+  left: -8px;
+  z-index: 10;  
+}
+
+.button:focus .slick-arrow {
+  border:none !important;
+  background-color:none !important;
+}
+
+.slick-next:before {
+  content: '→';
+}
+
+.slick-prev:before {
+  content: '←';
+}
+
+button.slick-arrow:hover,
+button.slick-arrow:active {
+  background:none !important;
+  border:none !important;
+}
+
 
 /* Footer Widgets
 ---------------------------------------------------------------------------------------------------- */
@@ -1940,7 +2018,7 @@ p.entry-meta {
 
 	.content {
 		float: left;
-		width: 65%;
+		width: 75%;
 	}
 
 	.sidebar-content .content {
@@ -1958,7 +2036,7 @@ p.entry-meta {
 
 	.sidebar {
 		float: right;
-		width: 30%;
+		width: 25%;
 	}
 
 	.sidebar-content .sidebar {
@@ -2086,6 +2164,7 @@ p.entry-meta {
 	a,
 	a:visited {
 		text-decoration: underline;
+		color: inherit;
 	}
 
 	a[href]::after {
