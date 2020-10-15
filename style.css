@@ -1735,45 +1735,12 @@ p.entry-meta {
 	margin-bottom: 20px;
 }
 
-/* Slick Carouse
+/* Slick Carousel
 ---------------------------------------------------------------------------------------------------- */
 
-.slick-next,
-.slick-prev {
-  color: #333 !important;
-  height: 20px !important;
-  width: 20px !important;
-  top: 40% !important;
+.slick-prev:before, .slick-next:before {
+	color: #333 !important;
 }
-
-.slick-next {
-  right: -10px;
-}
-
-.slick-prev{
-  left: -8px;
-  z-index: 10;  
-}
-
-.button:focus .slick-arrow {
-  border:none !important;
-  background-color:none !important;
-}
-
-.slick-next:before {
-  content: '→';
-}
-
-.slick-prev:before {
-  content: '←';
-}
-
-button.slick-arrow:hover,
-button.slick-arrow:active {
-  background:none !important;
-  border:none !important;
-}
-
 
 /* Footer Widgets
 ---------------------------------------------------------------------------------------------------- */
