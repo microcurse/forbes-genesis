@@ -1,6 +1,6 @@
 jQuery(function($) {
     $('.grid-carousel').slick({
-        slidesToShow: 4,
+        slidesToShow: 5,
         slidesToScroll: 1,
         arrows: true,
         easing: true,

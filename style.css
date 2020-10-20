@@ -1759,6 +1759,13 @@ p.entry-meta {
 	color: #333 !important;
 }
 
+.box a{
+	color: #333;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: center;
+}
+
 /* Footer Widgets
 ---------------------------------------------------------------------------------------------------- */
 
