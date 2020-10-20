@@ -747,19 +747,35 @@ th:first-child {
 --------------------------------------------- */
 
 .thin-border-l {
-	border-left: 1px solid #777;
+	border-left: 1px solid rgb(224, 224, 224);
 }
 
 .thin-border-r {
-	border-right: 1px solid #777;
+	border-right: 1px solid rgb(224, 224, 224);
 }
 
 .thin-border-t {
-	border-top: 1px solid #777;
+	border-top: 1px solid rgb(224, 224, 224);
 }
 
 .thin-border-b {
-	border-bottom: 1px solid #777;
+	border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.border-radius-5 {
+	border-radius: 5px;
+}
+
+
+/* Floats
+--------------------------------------------- */
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
 }
 
 
