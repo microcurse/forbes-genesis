@@ -4,7 +4,7 @@
  *
  * This file adds the landing page template to the Genesis Sample Theme.
  *
- * Template Name: Full-Width
+ * Template Name: Full-Width w/ Slick Carousel
  *
  * @package Genesis Sample
  * @author  StudioPress
