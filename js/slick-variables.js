@@ -6,6 +6,12 @@ jQuery(function($) {
         easing: true,
         responsive: [
             {
+                breakpoint: 1400,
+                settings: {
+                    slidesToShow: 4,
+                }
+            },
+            {
                 breakpoint: 1200,
                 settings: {
                     slidesToShow: 3,

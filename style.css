@@ -38,8 +38,11 @@
 	- Grid
 	- Positioning
 	- Spacers
+	- Containers
 	- Card
 	- Borders
+	- Backgroudns
+	- Reverse Mobile Columns
 - Structure and Layout
 	- Site Container
 	- Site Inner
@@ -719,6 +722,13 @@ th:first-child {
 	padding: 40px 0;
 }
 
+
+/* Spacers
+--------------------------------------------- */
+.max-w-xs {
+	max-width: 450px;
+}
+
 .max-w-sm {
 	max-width: 600px;
 }
@@ -779,7 +789,28 @@ th:first-child {
 }
 
 
+/* Backgrounds
+--------------------------------------------- */
 
+.skewed-bg::before {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 50%;
+	height: 540px;
+	background-color: rgb(220 231 234);
+	transform: translate(25%, 80%);
+}
+
+/* Reverse Mobile Columns
+--------------------------------------------- */
+
+@media screen and (max-width:767.98px) {
+	.reverse{
+		display: flex !important;
+		flex-direction: column;
+	}
+}
 
 /* Structure and Layout
 ---------------------------------------------------------------------------------------------------- */
@@ -1297,7 +1328,7 @@ img.alignright,
 
 .site-header {
 	background-color: #fff;
-	box-shadow: 0 0 20px rgba(0,0,0,0.12);
+	/* box-shadow: 0 0 20px rgba(0,0,0,0.12); */
 	padding: 0 24px;
 	border-bottom: 1px solid #eee;
 }
@@ -1759,11 +1790,23 @@ p.entry-meta {
 	color: #333 !important;
 }
 
+.box {
+	margin-right: 12px;
+	background-color: #fff;
+	padding: 8px 16px;
+	border-radius: 4px;
+	min-height: 300px;
+}
+
 .box a{
 	color: #333;
 	text-decoration: none;
 	font-weight: normal;
-	text-align: center;
+}
+
+.box-title {
+	font-weight: bold;
+	padding-bottom: 8px;
 }
 
 /* Footer Widgets
