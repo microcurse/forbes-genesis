@@ -38,6 +38,11 @@
 	- Grid
 	- Positioning
 	- Spacers
+	- Containers
+	- Card
+	- Borders
+	- Backgroudns
+	- Reverse Mobile Columns
 - Structure and Layout
 	- Site Container
 	- Site Inner
@@ -68,6 +73,7 @@
 	- Pagination
 	- Entry Comments
 - Sidebar
+- Carousel
 - Footer Widgets
 - Site Footer
 - Media Queries
@@ -201,10 +207,8 @@ textarea:focus,
 }
 
 a {
-	color: var(--main-link-color);
-	color: #4188f2;
-	text-decoration: underline;
 	transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+	font-weight: bold;
 }
 
 a:focus,
@@ -341,6 +345,12 @@ img {
 
 figure {
 	margin: 0;
+}
+
+figcaption a {
+	color: #333;
+	text-decoration: none;
+	font-style: normal;
 }
 
 /* Gallery
@@ -694,42 +704,113 @@ th:first-child {
 .img-cap-center {
   top: 16%;
   left: 30%;
-  text-shadow: 1px 1px #00000091;
+  text-shadow: 1px 1px hsla(0, 0%, 0%, 0.569);
 }
 
 /* Spacers
 --------------------------------------------- */
 
 .spacer-sm {
-  padding: 12px 0;
+	padding: 12px 0;
 }
 
 .spacer-md {
-  padding: 24px 0;
+	padding: 24px 0;
 }
 
 .spacer-lg {
-  padding: 40px 0;
+	padding: 40px 0;
+}
+
+
+/* Spacers
+--------------------------------------------- */
+.max-w-xs {
+	max-width: 450px;
 }
 
 .max-w-sm {
-  max-width: 600px;
+	max-width: 600px;
 }
 
 .max-w-md {
-  max-width: 900px;
+	max-width: 900px;
 }
 
 .max-w-lg {
-  max-width: 1200px;
+	max-width: 1200px;
 }
 
-.left-border {
-  border-left: 5px solid #5E618E;
-  border-end-end-radius: 10px;
+/* Card
+--------------------------------------------- */
+
+.card {
+	border-radius: 5px;
+	padding: 16px;
+}
+
+.card p {
+	margin: 0px;
+}
+
+/* Borders
+--------------------------------------------- */
+
+.thin-border-l {
+	border-left: 1px solid rgb(224, 224, 224);
+}
+
+.thin-border-r {
+	border-right: 1px solid rgb(224, 224, 224);
+}
+
+.thin-border-t {
+	border-top: 1px solid rgb(224, 224, 224);
+}
+
+.thin-border-b {
+	border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.border-radius-5 {
+	border-radius: 5px;
 }
 
 
+/* Floats
+--------------------------------------------- */
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+
+/* Backgrounds
+--------------------------------------------- */
+
+.skewed-bg::before {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 50%;
+	height: 540px;
+	background-color: rgb(220 231 234);
+	transform: translate(25%, 80%);
+}
+
+/* Reverse Mobile Columns
+--------------------------------------------- */
+
+@media screen and (max-width:767.98px) {
+	.reverse{
+		display: flex !important;
+		flex-direction: column;
+	}
+}
 
 /* Structure and Layout
 ---------------------------------------------------------------------------------------------------- */
@@ -760,6 +841,10 @@ th:first-child {
 	clear: both;
 	margin: 0 auto;
 	padding: 60px 0px 0;
+}
+
+body.page-id-160352 .site-inner {
+	max-width: 100%;
 }
 
 .full-width-content .site-inner .content-sidebar-wrap .content {
@@ -1243,14 +1328,9 @@ img.alignright,
 
 .site-header {
 	background-color: #fff;
-	/* box-shadow: 0 0 20px rgba(0,0,0,0.05); */
+	/* box-shadow: 0 0 20px rgba(0,0,0,0.12); */
 	padding: 0 24px;
 	border-bottom: 1px solid #eee;
-}
-
-.site-header .wrap {
-	max-width: 1200px;
-	margin: 0 auto;
 }
 
 .site-header .flex-container {
@@ -1264,8 +1344,8 @@ img.alignright,
 	grid-template-rows: auto;
 	grid-template-areas: "logo search" "nav nav";
 	align-items: center;
-	max-width: 1200px;
 	margin: 0 auto;
+	max-width: 1440px;
 }
 
 /* Title Area
@@ -1318,6 +1398,9 @@ img.alignright,
 }
 
 .genesis-nav-menu {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
 	clear: both;
 	line-height: 1;
 	width: 100%;
@@ -1382,6 +1465,10 @@ img.alignright,
 .genesis-nav-menu .menu-item:hover > .sub-menu {
 	left: auto;
 	opacity: 1;
+}
+
+.genesis-nav-menu li:last-child {
+	margin-left: auto;
 }
 
 /* Toolbar
@@ -1488,7 +1575,7 @@ img.alignright,
 	clear: left;
 	margin: 0 auto;
 	width: 100%;
-	max-width: 1200px;
+	max-width: 1440px;
 	padding: 8px 0;
 }
 
@@ -1696,6 +1783,31 @@ p.entry-meta {
 	margin-bottom: 20px;
 }
 
+/* Slick Carousel
+---------------------------------------------------------------------------------------------------- */
+
+.slick-prev:before, .slick-next:before {
+	color: #333 !important;
+}
+
+.box {
+	margin-right: 12px;
+	background-color: #fff;
+	padding: 8px 16px;
+	border-radius: 4px;
+	min-height: 300px;
+}
+
+.box a{
+	color: #333;
+	text-decoration: none;
+	font-weight: normal;
+}
+
+.box-title {
+	font-weight: bold;
+	padding-bottom: 8px;
+}
 
 /* Footer Widgets
 ---------------------------------------------------------------------------------------------------- */
@@ -1824,7 +1936,7 @@ p.entry-meta {
 	}
 
 	.site-header .flex-container {
-		max-width: 1200px;
+		/* max-width: 1200px; */
 		padding: 0 8px;
 		margin: 0 auto;
 	}
@@ -1897,7 +2009,7 @@ p.entry-meta {
 		clear: left;
 		margin: 0 auto;
 		width: 100%;
-		max-width: 1200px;
+		/* max-width: 1200px; */
 		padding: 0;
 		float: none;
 		order: 3;
@@ -1940,7 +2052,7 @@ p.entry-meta {
 
 	.content {
 		float: left;
-		width: 65%;
+		width: 75%;
 	}
 
 	.sidebar-content .content {
@@ -1958,7 +2070,7 @@ p.entry-meta {
 
 	.sidebar {
 		float: right;
-		width: 30%;
+		width: 25%;
 	}
 
 	.sidebar-content .sidebar {
@@ -2086,6 +2198,7 @@ p.entry-meta {
 	a,
 	a:visited {
 		text-decoration: underline;
+		color: inherit;
 	}
 
 	a[href]::after {

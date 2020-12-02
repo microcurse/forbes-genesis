@@ -367,3 +367,11 @@ function my_acf_init_block_type() {
 // Move Category Title Description
 remove_action( 'genesis_before_loop', 'genesis_do_taxonomy_title_description', 15 );
 add_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_taxonomy_title_description', 15 );
+
+// Slick Carousel
+function fi_slick_carousel() {
+	wp_enqueue_style( 'slick', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css');
+	wp_enqueue_style( 'slick-theme', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css');
+	wp_enqueue_script( 'slick-carousel', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js' );
+	wp_enqueue_script( 'slick-variables' , get_stylesheet_directory_uri() . '/js/slick-variables.js' );
+}
