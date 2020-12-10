@@ -723,8 +723,9 @@ th:first-child {
 }
 
 
-/* Spacers
+/* Container Widths
 --------------------------------------------- */
+
 .max-w-xs {
 	max-width: 450px;
 }
@@ -791,7 +792,7 @@ th:first-child {
 	border-right: 1px solid rgb(224, 224, 224);
 	height: 65%;
 	top: 20%;
-    left: 68%;
+	left: 68%;
 }
 
 /* Floats
