@@ -1,9 +1,7 @@
 /*
 	Theme Name: Forbes Industries
-	Theme URI: https://demo.studiopress.com/
 	Description: This is the Forbes Industries theme based on the Genesis Framework.
 	Author: Marc Maninang
-	Author URI: https://www.studiopress.com/
 
 	Version: 1
 
@@ -100,12 +98,15 @@
 /* Variables (Colors)
 --------------------------------------------- */
 :root {
-	--main-link-color: #4188f2;
-	--primary-color: #29317d;
-	--accent-color: #a42a2a;
-	--action-stations-color: #ec1f27;
-	--mobile-partitions-color: #A28E2F;
-  }
+  --primary-color: #29317d;
+  --main-link-color: #4250C9;
+  --primary-btn-color: #2C3CC9;
+  --primary-btn-color_hover: #4855c9;
+  --accent-color: #a42a2a;
+  --action-stations-color: #ec1f27;
+  --mobile-partitions-color: #A28E2F;
+  --nesting-tables-color: #f68e2e;
+}
 
 /* Baseline Normalize
 --------------------------------------------- */
@@ -191,7 +192,7 @@ body {
 	font-size: 16px;
 	font-size: 1.6rem;
 	font-weight: 400;
-	line-height: calc(180%);
+	line-height: calc(150%);
 	margin: 0;
 }
 
@@ -1833,17 +1834,20 @@ p.entry-meta {
 .footer-widgets {
 	background-color: #333540;
 	clear: both;
-	font-size: 1.4rem;
+	font-size: 1.6rem;
 	padding: 60px 0;
 }
 
 .footer-widgets a {
 	color: #fff;
 	fill: #fff;
+	font-weight: normal;
+	text-decoration: none;
 }
 
 .footer-widgets a:hover {
 	fill: var(--main-link-color);
+	color: var(--main-link-color);
 }
 
 .footer-widgets .wrap {
@@ -1871,6 +1875,39 @@ p.entry-meta {
 
 .footer-widgets .widget ul > li {
 	margin-bottom: 8px;
+}
+
+.footer-widgets .hs-error-msg {
+	color: #bd3131;
+}
+
+.footer-widgets .social-footer {
+	font-size: 24px;
+	display: flex;
+	justify-content: space-between;
+}
+
+/*
+	HubSpot Form
+*/
+.hbspt-form  label {
+	color: #fff;
+}
+
+.hbspt-form p {
+	color: #fff;
+}
+
+.hbspt-form .grecaptcha-badge {
+	display: none;
+}
+
+.hbspt-form .hs_submit .actions .hs-button {
+	background-color: var(--primary-btn-color);
+}
+
+.hbspt-form .hs_submit .actions .hs-button:hover {
+	background-color: var(--primary-btn-color_hover);
 }
 
 /*
@@ -1911,7 +1948,7 @@ p.entry-meta {
 
 .site-footer {
 	background-color: #333540;
-	font-size: 15px;
+	font-size: 16px;
 	font-size: 1.5rem;
 	line-height: 1.5;
 	padding: 30px;
