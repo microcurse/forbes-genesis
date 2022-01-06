@@ -119,14 +119,25 @@ genesis_unregister_layout( 'content-sidebar-sidebar' );
 genesis_unregister_layout( 'sidebar-content-sidebar' );
 genesis_unregister_layout( 'sidebar-sidebar-content' );
 
-// Repositions primary navigation menu.
+// Repositions primary navigation menu from outside the header tags to inside the header tags.
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
-add_action( 'genesis_header', 'genesis_do_nav', 12 );
+add_action( 'genesis_header', 'genesis_do_nav', 8 );
 
 // Disables "sub-nav" for footer
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 
-add_filter( 'wp_nav_menu_args', 'genesis_sample_secondary_menu_args' );
+// Load scripts from old site
+// add_action( 'wp_enqueue_scripts', 'enqueue_child_scripts', 99 );
+
+// Enqueue custom admin styles
+add_action( 'init', 'add_editor_styles' );
+
+
+// Editor color pallette
+add_action( 'after_setup_theme', 'mytheme_setup_theme_supported_features' );
+
+// add_filter( 'wp_nav_menu_args', 'genesis_sample_secondary_menu_args' );
+
 /**
  * Reduces secondary navigation menu to one level depth.
  *
@@ -176,11 +187,8 @@ function genesis_sample_comments_gravatar( $args ) {
 
 }
 
+// Functions from old site
 
-// Custom stuff
-
-// Enqueue custom admin styles
-add_action( 'init', 'add_editor_styles' );
 function add_editor_styles() {
 	add_editor_style( 'style-editor.css' );
 }
@@ -191,8 +199,6 @@ function enqueue_child_scripts() {
 	wp_enqueue_style( 'print_style', get_stylesheet_directory_uri() . '/assets/css/print.css', array(), '1', 'print' );
 }
 
-// add_action( 'wp_enqueue_scripts', 'enqueue_child_scripts', 99 );
-
 add_theme_support( 'genesis-structural-wraps', array(
 	'header',
 	'menu-secondary',
@@ -201,7 +207,6 @@ add_theme_support( 'genesis-structural-wraps', array(
 	'simple-social-icons',
 ));
 
-// Editor color pallette
 function mytheme_setup_theme_supported_features() {
 	add_theme_support( 'editor-color-pallette', array(
 		array(
@@ -226,7 +231,6 @@ function mytheme_setup_theme_supported_features() {
         ),
 	));
 }
-add_action( 'after_setup_theme', 'mytheme_setup_theme_supported_features' );
 
 // add top bar with social media links
 function fi_add_top_bar() {
@@ -253,7 +257,7 @@ apply_filters( 'script_loader_tag', 'add_async_attributes', 10, 2 );
 
 
 // defer
-function add_defer_attributes( $tag, $hande ) {
+function add_defer_attributes( $tag, $handle ) {
 	// add script handles to array below
 	$scripts_to_defer = array( 
 		'dashicons', 
@@ -296,8 +300,11 @@ function fi_load_inline_svg( $filename ) {
 	return 'Nope';
 }
 
-
-// Custom Sidebars
+/**
+ * 
+ * Custom Sidebars
+ * 
+*/
 add_action( 'widgets_init', 'my_register_sidebars' );
 function my_register_sidebars() {
 	// Register footer copy sidebar
@@ -426,4 +433,23 @@ fa_custom_setup_cdn_webfont(
   'sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm'
 );
 
-// add_action( fa_custom_setup_cdn_webfont );
+// add_action( 'fa_custom_setup_cdn_webfont' );
+
+/**
+ *  Strip HTML from DVIN Quote Request Products Table
+ */
+add_shortcode( 'productinterest', 'product_interest_func' );
+
+function product_interest_func(){
+	$string = do_shortcode('[quotelisttable]');
+
+	function wp_strip_all_tags( $string, $remove_breaks = true ) {
+		$string = preg_replace( '@<(script|style)[^>]*?>.*?</\\1>@si', '', $string );
+		$string = strip_tags( $string );
+
+		if ( $remove_breaks ) {
+			$string = preg_replace( '/[\r\n\t ]+/', ' ', $string );
+		}
+
+	return trim( $string );}
+}

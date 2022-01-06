@@ -1,11 +1,11 @@
 <?php
 /**
  * Genesis Framework.
- * Custom Header
+ * Custom Header. See lib/header-functions.php for inner markups and layout
  *
  *
  * @package Genesis\Templates
- * @author  Marc RM
+ * @author  Marc M
  * @license GPL-2.0-or-later
  * @link    https://my.studiopress.com/themes/genesis/
  */
