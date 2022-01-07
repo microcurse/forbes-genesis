@@ -453,3 +453,9 @@ function product_interest_func(){
 
 	return trim( $string );}
 }
+
+// Remove Edit Post Link
+function wpse_remove_edit_post_link( $link ) {
+	return '';
+}
+add_filter('edit_post_link', 'wpse_remove_edit_post_link');

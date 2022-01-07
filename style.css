@@ -57,6 +57,7 @@
 	- Genesis Simple FAQ
 	- Jetpack
 	- Simple Social Icons
+- Header Upper
 - Skip Links
 - Site Header
 	- Title Area
@@ -1318,6 +1319,45 @@ img.alignright,
 	width: 100%;
 }
 
+/* Header Upper
+---------------------------------------------------------------------------------------------------- */
+
+.header-upper {
+	background-color: rgb(41, 43, 61);
+	width: 100%;
+	padding: 2px 18px;
+}
+
+.header-wrapper .wrap {
+	margin: 0 auto;
+}
+
+.header-upper a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: normal;
+	padding-right: 16px;
+}
+
+.header-upper a:hover {
+	color: var(--main-link-color);
+}
+
+.header-upper .contact-info {
+	width: 50%;
+}
+
+.header-upper .my-links {
+	width: 50%;
+	text-align: right;
+	vertical-align: middle;
+}
+
+.header-upper a:last-child{
+	padding-right: 0px;
+}
+
+
 
 /* Skip Links
 ---------------------------------------------------------------------------------------------------- */
@@ -1608,28 +1648,6 @@ img.alignright,
 .sub-menu .menu-item a {
 	padding-left: 8px;
 	padding-right: 8px;
-}
-
-/* Right Block
---------------------------------------------- */
-
-.right-block {
-	display: inline-flex;
-	width: 100%;
-	flex-wrap: nowrap;
-	align-items: center;
-	max-width: 560px;
-}
-
-.my-links a {
-	font-weight: 400;
-	color: #333;
-	text-decoration: none;
-	padding-right: 16px;
-}
-
-.my-links a:hover {
-	color: var(--main-link-color);
 }
 
 
@@ -1998,6 +2016,13 @@ p.entry-meta {
 	font-weight: 600;
 }
 
+/** 
+	* Remove WP Visual Bakery
+*/
+#vc_load-inline-editor {
+	display: none;
+}
+
 
 /* Media Queries
 ---------------------------------------------------------------------------------------------------- */
@@ -2012,7 +2037,8 @@ p.entry-meta {
 		padding-bottom: 0;
 	}
 
-	.site-header .wrap {
+	.site-header .wrap, 
+	.header-upper .wrap {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -2034,14 +2060,7 @@ p.entry-meta {
 		margin-bottom:0;
 	}
 
-	/* Right Block
-	--------------------------------------------- */
 	
-	.right-block {
-
-	}
-	
-
 	/* Genesis Menu
 	--------------------------------------------- */
 	.search-box {
