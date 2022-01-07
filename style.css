@@ -1862,15 +1862,15 @@ p.entry-meta {
 ---------------------------------------------------------------------------------------------------- */
 
 .footer-widgets {
-	background-color: #333540;
+	background-color: #f6f6f9;
 	clear: both;
 	font-size: 1.6rem;
 	padding: 60px 0;
 }
 
 .footer-widgets a {
-	color: #fff;
-	fill: #fff;
+	color: #333;
+	fill: #333;
 	font-weight: normal;
 	text-decoration: none;
 }
@@ -1897,7 +1897,7 @@ p.entry-meta {
 }
 
 .footer-widgets .widget-title {
-	color: #707070;
+	color: #333540;
 	font-size: 1.6rem;
 	text-transform: uppercase;
 	margin-bottom: 16px;
@@ -1919,7 +1919,7 @@ p.entry-meta {
 	HubSpot Form
 */
 .hbspt-form  label {
-	color: #fff;
+	color: #333;
 }
 
 .hbspt-form p {
@@ -1949,7 +1949,7 @@ p.entry-meta {
 }
 
 .footer-left address {
-	color: #fff;
+	color: #333;
 	font-style: normal;
 }
 
@@ -1969,6 +1969,10 @@ p.entry-meta {
 .flex-widgets {
 	display: flex;
 	flex-flow: row wrap;
+}
+
+.footer-left img {
+	padding-bottom: 16px;
 }
 
 
