@@ -84,11 +84,11 @@ function fi_footer_widget_areas() {
 	// this wraps the footer-widgets
 	if ( $inside ) {
 
-		// $_inside = genesis_get_structural_wrap( 'footer-widgets', 'open' );
+		$_inside = genesis_get_structural_wrap( 'footer-widgets', 'open' );
 
 		$_inside .= $inside;
 
-		// $_inside .= genesis_get_structural_wrap( 'footer-widgets', 'close' );
+		$_inside .= genesis_get_structural_wrap( 'footer-widgets', 'close' );
 
 		$output .= genesis_markup(
 			[
@@ -119,14 +119,14 @@ function fi_footer_widget_areas() {
 		]
 	);
 	
-	$footer_left = apply_filters( 'fi_footer_widget_areas', $left_output, $footer_left );
+	$left_widget  = apply_filters( 'fi_footer_widget_areas', $left_output, $left_widget );
 
 	$footer_widgets = apply_filters( 'fi_footer_widget_areas', $output, $footer_widgets );
 
 	// open flexible widgets div
 	fi_footer_widgets_markup_open();
 
-	echo $footer_left;
+	echo $left_widget;
 	echo $footer_widgets; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- attempting to escape here will strip tags or attributes output by widgets.
 
 	// close flexible widgets div
