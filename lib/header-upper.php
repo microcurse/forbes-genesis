@@ -10,22 +10,22 @@ function header_upper() {
   <div class="contact-info">
     <a href="mailto:solutions@forbesindustries.com">
       <i class="fas fa-envelope"></i>  
-      solutions@forbesindustries.com
+      <span>solutions@forbesindustries.com</span>
     </a>
     <a href="tel:+18008325427">
       <i class="fas fa-phone-alt"></i>  
-      (800) 832-5427
+      <span>(800) 832-5427</span>
     </a>
   </div>
 
   <div class="my-links">
     <a href="<?php echo wc_get_page_permalink( 'myaccount' ); ?>">
       <i class="fas fa-user"></i>
-      My Account
+      <span>My Account</span>
     </a>
     <a href="<?php echo $cart_url; ?>">
       <i class="fas fa-luggage-cart"></i>
-      My Quote List
+      <span>My Quote List</span>
     </a>
   </div>
 

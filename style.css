@@ -475,7 +475,7 @@ input[type="submit"],
 	cursor: pointer;
 	font-size: 16px;
 	font-size: 1.4rem;
-	font-weight: 300;
+	font-weight: 400;
 	padding: 11px 24px;
 	text-decoration: none;
 	white-space: normal;
@@ -1323,13 +1323,29 @@ img.alignright,
 ---------------------------------------------------------------------------------------------------- */
 
 .header-upper {
-	background-color: rgb(41, 43, 61);
+	background-color: rgb(33 34 56);
 	width: 100%;
-	padding: 2px 18px;
+	padding: 8px 18px;
+	font-size: 14px;
+	position: sticky;
+	top: 0;
+	z-index: 1001;
 }
 
-.header-wrapper .wrap {
-	margin: 0 auto;
+.header-upper .wrap {
+	display: flex;
+}
+
+.header-upper .contact-info {
+	width: 50%;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.header-upper .my-links {
+	width: 50%;
+	display: flex;
+	justify-content: space-evenly;
 }
 
 .header-upper a {
@@ -1343,18 +1359,17 @@ img.alignright,
 	color: var(--main-link-color);
 }
 
-.header-upper .contact-info {
-	width: 50%;
-}
-
-.header-upper .my-links {
-	width: 50%;
-	text-align: right;
-	vertical-align: middle;
-}
-
 .header-upper a:last-child{
 	padding-right: 0px;
+}
+
+.header-upper a span{
+	display:none;
+}
+
+.header-upper a .fas {
+	font-size: 24px;
+	padding: 12px;
 }
 
 
@@ -1408,7 +1423,6 @@ img.alignright,
 .title-area {
 	flex: 1 50%;
 	padding-right: 8px;
-	grid-area: logo;
 }
 
 .wp-custom-logo .title-area {
@@ -1465,8 +1479,8 @@ img.alignright,
 .genesis-nav-menu a {
 	color: #333;
 	display: block;
-	font-size: 15px;
-	font-size: 1.5rem;
+	font-size: 16px;
+	font-size: 1.6rem;
 	font-weight: 400;
 	outline-offset: -1px;
 	padding-bottom: 12px;
@@ -2051,13 +2065,36 @@ p.entry-meta {
 	}
 
 	.site-header .flex-container {
-		/* max-width: 1200px; */
 		padding: 0 8px;
 		margin: 0 auto;
 	}
 	
 	.widget_product_search {
 		margin-bottom:0;
+	}
+
+	.header-upper {
+		position: relative;
+	}
+
+	.header-upper .contact-info {
+		width: 50%;
+		display: inline-block;
+	}
+
+	.header-upper .my-links {
+		width: 50%;
+		text-align: right;
+		display: inline-block;
+	}
+
+	.header-upper a span {
+		display: inline-block;
+	}
+
+	.header-upper a .fas {
+		font-size: 16px;
+		padding: 0px;
 	}
 
 	
@@ -2145,10 +2182,6 @@ p.entry-meta {
     font-weight: 900;
 	}
 
-	.genesis-nav-menu #menu-item-163838 {
-		/* float: right; */
-	}
-
 	/* Responsive Menu
 	--------------------------------------------- */
 
@@ -2166,6 +2199,7 @@ p.entry-meta {
 	.genesis-responsive-menu {
 		padding-bottom: 0;
 	}
+
 
 	/* Site-Inner
 	--------------------------------------------- */
