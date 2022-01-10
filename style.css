@@ -50,6 +50,7 @@
 	- Search Form
 	- Titles
 	- WordPress
+	- WooCommerce
 - Widgets
 	- Featured Content
 - Plugins
@@ -860,6 +861,11 @@ th:first-child {
 .site-inner {
 	clear: both;
 	margin: 0 auto;
+	/* padding: 60px 0px 0; */
+}
+
+/* Add top padding to product pages so it looks decent */
+body.single-product .site-inner {
 	padding: 60px 0px 0;
 }
 
@@ -1164,6 +1170,15 @@ img.alignright,
 .entry-content .wp-playlist,
 .entry-content .wp-video {
 	margin: 0 0 30px;
+}
+
+/* WooCommerce
+--------------------------------------------- */
+
+/* Hide Categories and Tags links from product pages */
+.product .summary .product_meta .posted_in,
+.product .summary .product_meta .tagged_as {
+	display: none;
 }
 
 
