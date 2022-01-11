@@ -1182,6 +1182,23 @@ img.alignright,
 	display: none;
 }
 
+.archive-description {
+	width: 100vw;
+	max-width: 100vw;
+	margin-left: calc(50% - 50vw);
+	background: #ececef;
+}
+
+.archive-description .wrap {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 60px 0;
+}
+
+body.tax-product_cat .site-inner {
+	padding: 0px;
+}
+
 
 /* Widgets
 ---------------------------------------------------------------------------------------------------- */
