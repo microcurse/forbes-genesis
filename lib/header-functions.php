@@ -68,14 +68,6 @@ function fi_header_markup_open() {
         ]
     );
 
-    // Open container div
-    genesis_markup(
-        [
-            'open'      => '<div %s>',
-            'context'   => 'header-inner',
-        ]
-    );
-
     // wrap open
     genesis_markup(
         [
