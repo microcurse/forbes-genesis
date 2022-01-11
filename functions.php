@@ -136,25 +136,6 @@ add_action( 'init', 'add_editor_styles' );
 // Editor color pallette
 add_action( 'after_setup_theme', 'mytheme_setup_theme_supported_features' );
 
-// add_filter( 'wp_nav_menu_args', 'genesis_sample_secondary_menu_args' );
-
-/**
- * Reduces secondary navigation menu to one level depth.
- *
- * @since 2.2.3
- *
- * @param array $args Original menu options.
- * @return array Menu options with depth set to 1.
- */
-function genesis_sample_secondary_menu_args( $args ) {
-
-	if ( 'secondary' === $args['theme_location'] ) {
-		$args['depth'] = 1;
-	}
-
-	return $args;
-
-}
 
 add_filter( 'genesis_author_box_gravatar_size', 'genesis_sample_author_box_gravatar' );
 /**
@@ -235,12 +216,6 @@ function mytheme_setup_theme_supported_features() {
 	));
 }
 
-// add top bar with social media links
-function fi_add_top_bar() {
-	$top_bar = dynamic_sidebar('top-bar');
-}
-add_action( 'genesis_before_header', 'fi_add_top_bar', 10 );
-
 // async scripts
 function add_async_attributes( $tag, $handle ) {
 	// add script handles to array below
@@ -307,6 +282,7 @@ function fi_load_inline_svg( $filename ) {
  * Custom Sidebars
  * 
 */
+
 add_action( 'widgets_init', 'my_register_sidebars' );
 function my_register_sidebars() {
 	// Register footer copy sidebar
@@ -353,26 +329,6 @@ function fi_woo_sidebar() {
 remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
 add_action( 'genesis_archive_title_descriptions', 'genesis_do_breadcrumbs', 10 );
 
-// ACF
-add_action( 'acf/init', 'my_acf_init_block_type');
-function my_acf_init_block_type() {
-
-	// Check function exists.
-	if( function_exists('acf_register_block_type')) {
-
-		// register a category block
-		acf_register_block_type(array(
-			'name'				=> 'image-link',
-			'title'				=>	__('Image with link'),
-			'description'		=>	__('Display an image with a link'),
-			'render_template'	=>	'template-parts/blocks/image-link/image-link.php',
-			'category'			=>	'formatting',
-			'icon'				=>	'dashicons-format-image',
-			'keywords'			=>	array('image','link'),
-		));
-	}
-}
-
 // Move Category Title Description
 remove_action( 'genesis_before_loop', 'genesis_do_taxonomy_title_description', 15 );
 add_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_taxonomy_title_description', 15 );
@@ -384,7 +340,6 @@ function fi_slick_carousel() {
 	wp_enqueue_script( 'slick-carousel', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js' );
 	wp_enqueue_script( 'slick-variables' , get_stylesheet_directory_uri() . '/js/slick-variables.js' );
 }
-
 
 // Remove Edit Post Link
 function wpse_remove_edit_post_link( $link ) {
