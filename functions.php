@@ -325,9 +325,6 @@ function fi_woo_sidebar() {
         genesis_default_widget_area_content( __( 'WooCommerce Primary Sidebar', 'genesis' ) );
     }
 }
-// Move breadcrumbs to after page title
-remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
-add_action( 'genesis_archive_title_descriptions', 'genesis_do_breadcrumbs', 10 );
 
 // Move Category Title Description
 remove_action( 'genesis_before_loop', 'genesis_do_taxonomy_title_description', 15 );
