@@ -187,7 +187,10 @@ function genesis_sample_comments_gravatar( $args ) {
 
 }
 
-// Functions from old site
+/**
+ * Functions from old site
+ * 
+ */
 
 function add_editor_styles() {
 	add_editor_style( 'style-editor.css' );
@@ -301,7 +304,6 @@ function fi_load_inline_svg( $filename ) {
 }
 
 /**
- * 
  * Custom Sidebars
  * 
 */
@@ -384,76 +386,6 @@ function fi_slick_carousel() {
 }
 
 
-/**
- * Font Awesome CDN Setup Webfont
- * 
- * This will load Font Awesome from the Font Awesome Free or Pro CDN.
- */
-if (! function_exists('fa_custom_setup_cdn_webfont') ) {
-  function fa_custom_setup_cdn_webfont($cdn_url = '', $integrity = null) {
-    $matches = [];
-    $match_result = preg_match('|/([^/]+?)\.css$|', $cdn_url, $matches);
-    $resource_handle_uniqueness = ($match_result === 1) ? $matches[1] : md5($cdn_url);
-    $resource_handle = "font-awesome-cdn-webfont-$resource_handle_uniqueness";
-
-    foreach ( [ 'wp_enqueue_scripts', 'admin_enqueue_scripts', 'login_enqueue_scripts' ] as $action ) {
-      add_action(
-        $action,
-        function () use ( $cdn_url, $resource_handle ) {
-          wp_enqueue_style( $resource_handle, $cdn_url, [], null );
-        }
-      );
-    }
-
-    if($integrity) {
-      add_filter(
-        'style_loader_tag',
-        function( $html, $handle ) use ( $resource_handle, $integrity ) {
-          if ( in_array( $handle, [ $resource_handle ], true ) ) {
-            return preg_replace(
-              '/\/>$/',
-              'integrity="' . $integrity .
-              '" crossorigin="anonymous" />',
-              $html,
-              1
-            );
-          } else {
-            return $html;
-          }
-        },
-        10,
-        2
-      );
-    }
-  }
-}
-
-fa_custom_setup_cdn_webfont(
-  'https://use.fontawesome.com/releases/v5.15.4/css/all.css',
-  'sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm'
-);
-
-// add_action( 'fa_custom_setup_cdn_webfont' );
-
-/**
- *  Strip HTML from DVIN Quote Request Products Table
- */
-add_shortcode( 'productinterest', 'product_interest_func' );
-
-function product_interest_func(){
-	$string = do_shortcode('[quotelisttable]');
-
-	function wp_strip_all_tags( $string, $remove_breaks = true ) {
-		$string = preg_replace( '@<(script|style)[^>]*?>.*?</\\1>@si', '', $string );
-		$string = strip_tags( $string );
-
-		if ( $remove_breaks ) {
-			$string = preg_replace( '/[\r\n\t ]+/', ' ', $string );
-		}
-
-	return trim( $string );}
-}
-
 // Remove Edit Post Link
 function wpse_remove_edit_post_link( $link ) {
 	return '';
@@ -463,7 +395,7 @@ add_filter('edit_post_link', 'wpse_remove_edit_post_link');
 
 /**
  * Change number of products that are displayed per page (shop page)
- */
+*/
 add_filter( 'loop_shop_per_page', 'new_loop_shop_per_page', 20 );
 
 function new_loop_shop_per_page( $cols ) {
