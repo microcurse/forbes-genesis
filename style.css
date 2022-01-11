@@ -864,8 +864,9 @@ th:first-child {
 	/* padding: 60px 0px 0; */
 }
 
-/* Add top padding to product pages so it looks decent */
-body.single-product .site-inner {
+/* Add top padding to product and category pages so it looks decent */
+body.single-product .site-inner,
+body.archive .site-inner {
 	padding: 60px 0px 0;
 }
 

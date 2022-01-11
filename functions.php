@@ -349,7 +349,7 @@ function fi_woo_sidebar() {
 }
 // Move breadcrumbs to after page title
 remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs' );
-add_action( 'genesis_archive_title_descriptions', 'genesis_do_breadcrumbs', 15 );
+add_action( 'genesis_archive_title_descriptions', 'genesis_do_breadcrumbs', 10 );
 
 // ACF
 add_action( 'acf/init', 'my_acf_init_block_type');
