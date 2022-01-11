@@ -1547,11 +1547,6 @@ img.alignright,
 	opacity: 1;
 }
 
-.genesis-nav-menu #menu-item-163838{
-	/* display: inline; */
-	/* float: left; */
-}
-
 .genesis-nav-menu #menu-item-163838 a::before {
 	content: "\f59d";
 	font-family: "Font Awesome 5 Free";
@@ -1988,11 +1983,10 @@ p.entry-meta {
 }
 
 /*
-**	Footer Left
+ *	Footer Left
 */
 
 .footer-left {
-	margin-bottom: 40px;
 	padding-left: 24px;
 }
 
