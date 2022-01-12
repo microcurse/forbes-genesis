@@ -86,7 +86,7 @@ function genesiswooc_product_taxonomy_loop() {
 
 // remove archive.php default genesis archive heading open
 remove_action( 'genesis_archive_title_descriptions', 'genesis_do_archive_headings_open', 5);
-add_action( 'genesis_archive_title_descriptions', 'fi_genesis_do_archive_headings_open', 7, 3 );
+add_action( 'genesis_archive_title_descriptions', 'fi_genesis_do_archive_headings_open', 6, 3 );
 /**
  * Add open markup for archive headings to archive pages.
  *
@@ -119,8 +119,8 @@ function fi_genesis_do_archive_headings_open( $heading = '', $intro_text = '', $
     }
     
 // remove archive.php default genesis archive heading close
-remove_action( 'genesis_archive_title_descriptions', 'genesis_do_archive_headings_close', 16);
-add_action( 'genesis_archive_title_descriptions', 'fi_genesis_do_archive_headings_close', 17, 3 );
+remove_action( 'genesis_archive_title_descriptions', 'genesis_do_archive_headings_close', 15);
+add_action( 'genesis_archive_title_descriptions', 'fi_genesis_do_archive_headings_close', 16, 3 );
 /**
  * Add close markup for archive headings to archive pages.
  *
