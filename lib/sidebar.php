@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom Sidebars
+ * Register custom sidebars. Controlled through the widgets admin.
  * 
 */
 

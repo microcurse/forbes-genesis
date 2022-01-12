@@ -50,10 +50,14 @@ require_once get_stylesheet_directory() . '/lib/woocommerce/woocommerce-notice.p
 require_once get_stylesheet_directory() . '/lib/header-functions.php';
 
 // Adds sidebars
-require_once get_stylesheet_directory() . '/lib/sidebars.php';
+require_once get_stylesheet_directory() . '/lib/sidebar.php';
 
 // Adds custom footer functions
 require_once get_stylesheet_directory() . '/lib/footer-functions.php';
+
+//* Enable the block-based widget editor
+add_filter( 'use_widgets_block_editor', '__return_true' );
+
 
 add_action( 'after_setup_theme', 'genesis_child_gutenberg_support' );
 /**
@@ -118,9 +122,9 @@ unregister_sidebar( 'header-right' );
 unregister_sidebar( 'sidebar-alt' );
 
 // Removes site layouts.
-// genesis_unregister_layout( 'content-sidebar-sidebar' );
-// genesis_unregister_layout( 'sidebar-content-sidebar' );
-// genesis_unregister_layout( 'sidebar-sidebar-content' );
+genesis_unregister_layout( 'content-sidebar-sidebar' );
+genesis_unregister_layout( 'sidebar-content-sidebar' );
+genesis_unregister_layout( 'sidebar-sidebar-content' );
 
 // Repositions primary navigation menu from outside the header tags to inside the header tags.
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
