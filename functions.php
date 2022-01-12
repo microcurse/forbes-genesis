@@ -407,3 +407,20 @@ function new_loop_shop_per_page( $cols ) {
   $cols = 24;
   return $cols;
 }
+
+/**
+ *  Force full-width on pages
+ */
+
+function force_full_width_layout($classes) {
+
+	if( is_page() ) {
+		remove_action('genesis_sidebar', 'genesis_do_sidebar');
+		$classes[] = 'full-width-content';
+	}
+
+	return $classes;
+
+}
+
+add_filter('body_class', 'force_full_width_layout');
