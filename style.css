@@ -742,7 +742,7 @@ th:first-child {
 }
 
 .max-w-lg {
-	max-width: 1200px;
+	max-width: 1440px;
 }
 
 /* Card
@@ -1190,9 +1190,9 @@ img.alignright,
 }
 
 .archive-description .wrap {
-	max-width: 1400px;
+	max-width: 1440px;
 	margin: 0 auto;
-	padding: 60px 0;
+	padding: 60px 20px;
 }
 
 body.tax-product_cat .site-inner {
@@ -1715,6 +1715,19 @@ body.tax-product_cat .site-inner {
 }
 
 
+/* Max Mega Menu Override
+--------------------------------------------- */
+#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item-has-children > a.mega-menu-link > span.mega-indicator:after {
+	margin: 0px !important;
+}
+
+@media only screen and (max-width: 768px) {
+  #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu {
+    padding: 8px !important;
+  }
+}
+
+
 /* Content Area
 ---------------------------------------------------------------------------------------------------- */
 
@@ -2232,7 +2245,7 @@ p.entry-meta {
 	--------------------------------------------- */
 
 	.site-inner {
-		max-width: 1200px;
+		max-width: 1440px;
 	}
 
 	/* Content
@@ -2357,7 +2370,7 @@ p.entry-meta {
 	--------------------------------------------- */
 
 	.footer-widgets .wrap {
-		max-width: 1200px;
+		max-width: 1440px;
 		display: flex;
 		flex-flow: row wrap;
 	}
