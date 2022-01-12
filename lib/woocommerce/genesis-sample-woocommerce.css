@@ -100,7 +100,13 @@ Loaded on WooCommerce pages */
 .woocommerce ul.products {
 	display: flex;
 	flex-wrap: wrap;
-	/* justify-content: space-between; */
+	justify-content: flex-start;
+	text-align: center;
+}
+
+/* Hide number next to category titles*/
+mark {
+	display: none;
 }
 
 .woocommerce ul.products li.product .button,

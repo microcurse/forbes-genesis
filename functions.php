@@ -49,6 +49,9 @@ require_once get_stylesheet_directory() . '/lib/woocommerce/woocommerce-notice.p
 // Adds custom header functions
 require_once get_stylesheet_directory() . '/lib/header-functions.php';
 
+// Adds sidebars
+require_once get_stylesheet_directory() . '/lib/sidebars.php';
+
 // Adds custom footer functions
 require_once get_stylesheet_directory() . '/lib/footer-functions.php';
 
@@ -115,9 +118,9 @@ unregister_sidebar( 'header-right' );
 unregister_sidebar( 'sidebar-alt' );
 
 // Removes site layouts.
-genesis_unregister_layout( 'content-sidebar-sidebar' );
-genesis_unregister_layout( 'sidebar-content-sidebar' );
-genesis_unregister_layout( 'sidebar-sidebar-content' );
+// genesis_unregister_layout( 'content-sidebar-sidebar' );
+// genesis_unregister_layout( 'sidebar-content-sidebar' );
+// genesis_unregister_layout( 'sidebar-sidebar-content' );
 
 // Repositions primary navigation menu from outside the header tags to inside the header tags.
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
@@ -276,54 +279,6 @@ function fi_load_inline_svg( $filename ) {
 		return file_get_contents( get_stylesheet_directory() . $svg_path . $filename );
 	}
 	return 'Nope';
-}
-
-/**
- * Custom Sidebars
- * 
-*/
-
-add_action( 'widgets_init', 'my_register_sidebars' );
-function my_register_sidebars() {
-	// Register footer copy sidebar
-	register_sidebar(array(
-		'id'			=>	'footer-left',
-		'name'			=>	__( 'Footer left' ),
-		'description'	=>	__('Add logo, address, and social media links here', 'genesis-sample' ),
-		'before_widget'	=>	'<div class="%1$s">',
-		'after_widget'	=>	'</div>',
-		'before_title'	=>	'',
-		'after_title'	=>	'',
-	));
-
-	// Register shop filter sidebar
-	register_sidebar(array(
-		'id'			=>	'shop-sidebar',
-		'name'			=>	__( 'Shop Sidebar' ),
-		'description'	=>	__( 'Add shop filters here.', 'genesis-sample' ),
-		'before_widget'	=>	'<div class="%1$s">',
-		'after_widget'	=>	'</div>',
-		'before_title'	=>	'',
-		'after_title'	=>	'',
-	));
-}
-
-add_action( 'genesis_before', 'fi_add_woo_sidebar', 20 );
-function fi_add_woo_sidebar() {
-
-    if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-        if( is_woocommerce() ) {
-            remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
-            remove_action( 'genesis_sidebar_alt', 'genesis_do_sidebar_alt' );
-            add_action( 'genesis_sidebar', 'fi_woo_sidebar' );
-        }
-    }
-    
-}
-function fi_woo_sidebar() {
-    if ( ! dynamic_sidebar( 'shop-sidebar' ) && current_user_can( 'edit_theme_options' )  ) {
-        genesis_default_widget_area_content( __( 'WooCommerce Primary Sidebar', 'genesis' ) );
-    }
 }
 
 // Move Category Title Description
