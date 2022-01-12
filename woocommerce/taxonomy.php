@@ -85,7 +85,7 @@ function genesiswooc_product_taxonomy_loop() {
  */
 
 // remove archive.php default genesis archive heading open
-remove_action( 'genesis_archive_title_descriptions', 'genesis_do_archive_headings_open', 6);
+remove_action( 'genesis_archive_title_descriptions', 'genesis_do_archive_headings_open', 5);
 add_action( 'genesis_archive_title_descriptions', 'fi_genesis_do_archive_headings_open', 7, 3 );
 /**
  * Add open markup for archive headings to archive pages.
