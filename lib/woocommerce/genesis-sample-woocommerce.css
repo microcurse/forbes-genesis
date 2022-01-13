@@ -167,6 +167,10 @@ mark {
 	color: #fff;
 }
 
+ul.columns-4 .woocommerce ul.products li.product {
+	padding: 0px;
+}
+
 
 /* WooCommerce Product
 ---------------------------------------------------------------------------- */
@@ -844,6 +848,7 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 	.woocommerce-page .woocommerce-ordering {
 		margin-right: auto;
 		width: auto;
+		display: none;
 	}
 
 	.woocommerce input.button,

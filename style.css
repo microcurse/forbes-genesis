@@ -85,6 +85,7 @@
 		- Responsive Menu
 		- Header Menu
 		- Site Inner
+		- WooCommerce Categories
 		- Content
 		- Sidebar
 		- Author Box
@@ -884,6 +885,11 @@ body.page-id-160352 .site-inner {
 	width: 100%;
 }
 
+main#genesis-content {
+	background: #fff;
+	padding: 20px;
+}
+
 /* Common Classes
 ---------------------------------------------------------------------------------------------------- */
 
@@ -1199,10 +1205,6 @@ img.alignright,
 	max-width: 1440px;
 	margin: 0 auto;
 	padding: 60px 20px;
-}
-
-body.tax-product_cat .site-inner {
-	padding: 0px;
 }
 
 
@@ -1918,6 +1920,7 @@ p.entry-meta {
 	font-size: 16px;
 	font-size: 1.6rem;
 	line-height: 1.5;
+	background: #fff;
 }
 
 .sidebar .widget {
@@ -1926,6 +1929,10 @@ p.entry-meta {
 
 .sidebar p {
 	margin-bottom: 20px;
+}
+
+.widget_shopping_cart_content {
+	padding: 12px 20px;
 }
 
 /* Slick Carousel
@@ -2264,7 +2271,7 @@ p.entry-meta {
 	}
 
 
-	/* Site-Inner
+	/* Site Inner
 	--------------------------------------------- */
 
 	.site-inner {
@@ -2275,6 +2282,13 @@ p.entry-meta {
 	body.single-product .site-inner, 
 	body.archive .site-inner {
 		padding: 60px 0;
+	}
+
+	/* WooCommerce Category
+	--------------------------------------------- */
+
+	body.tax-product_cat .site-inner {
+		padding: 0px;
 	}
 
 	/* Content
@@ -2301,7 +2315,7 @@ p.entry-meta {
 	.sidebar {
 		float: right;
 		width: 22%;
-		border: 1px solid rgb(200, 200, 200);
+		/* border: 1px solid rgb(200, 200, 200); */
 	}
 
 	.sidebar-content .sidebar {
@@ -2311,9 +2325,9 @@ p.entry-meta {
 	.sidebar-title {
 		padding: 10px 16px;
 		font-size: 16px;
-		color: #fff;
+		color: #333;
 		font-weight: 900;
-		background: #312e40;
+		background: #e5e5e9;
 	}
 
 	ul.product-categories li.cat-item {
