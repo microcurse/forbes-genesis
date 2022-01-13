@@ -176,6 +176,8 @@ mark {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	padding: 15px;
+	background-color: #fff;
 }
 
 .woocommerce div.product p.price,
@@ -196,6 +198,18 @@ mark {
 	margin-bottom: 20px;
 }
 
+.woocommerce div.product div.summary {
+	margin-bottom: 2em;
+	padding: 35px;
+	border: 1px solid #ebebeb;
+	background-color: #ffffff;
+	box-shadow: 0px 0px 20px rgb(0 0 0 / 2%);
+}
+
+section.related.products {
+	background: #fff;
+	padding: 20px;
+}
 
 /* WooCommerce Product Tabs
 ---------------------------------------------------------------------------- */
@@ -250,6 +264,20 @@ mark {
 	font-family: dashicons; /* stylelint-disable-line font-family-no-missing-generic-family-keyword */
 }
 
+.woocommerce div.product .woocommerce-tabs .panel {
+	padding: 20px;
+}
+
+.woocommerce #content div.product .woocommerce-tabs, 
+.woocommerce div.product .woocommerce-tabs, 
+.woocommerce-page #content div.product .woocommerce-tabs, 
+.woocommerce-page div.product .woocommerce-tabs {
+	background: #fff;
+}
+
+ul.tabs.wc-tabs {
+	background: #f3f3f5;
+}
 
 /* WooCommerce Checkout
 ---------------------------------------------------------------------------- */
