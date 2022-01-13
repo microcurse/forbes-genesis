@@ -44,6 +44,7 @@
 - Structure and Layout
 	- Site Container
 	- Site Inner
+		- WooCommerce Products and Categories
 - Common Classes
 	- Avatar
 	- Genesis
@@ -51,6 +52,7 @@
 	- Titles
 	- WordPress
 	- WooCommerce
+		- TM Extra Product Options
 - Widgets
 	- Featured Content
 - Plugins
@@ -861,13 +863,16 @@ th:first-child {
 .site-inner {
 	clear: both;
 	margin: 0 auto;
-	/* padding: 60px 0px 0; */
+	padding: 0 20px;
 }
 
-/* Add top padding to product and category pages so it looks decent */
+/* WooCommerce Products and Categories
+--------------------------------------------- */
+
+/* Add top padding to product and category pages */
 body.single-product .site-inner,
 body.archive .site-inner {
-	padding: 60px 0px 0;
+	padding: 60px 20px;
 }
 
 body.page-id-160352 .site-inner {
@@ -1197,6 +1202,23 @@ img.alignright,
 
 body.tax-product_cat .site-inner {
 	padding: 0px;
+}
+
+
+/* TM Extra Product Options
+--------------------------------------------- */
+
+/* Remove spacing below TM Extra Products images in product pages */
+.tc-cell.tc-width100.tm-description {
+	display: none;
+}
+
+.tm_divider.tc-cell.tc-width100 {
+	margin: 0 !important;
+}
+
+.tm-extra-product-options .tm_divider {
+	color: #bfc0c5;
 }
 
 
@@ -2246,6 +2268,12 @@ p.entry-meta {
 
 	.site-inner {
 		max-width: 1440px;
+		padding: 0;
+	}
+
+	body.single-product .site-inner, 
+	body.archive .site-inner {
+		padding: 60px 0;
 	}
 
 	/* Content
