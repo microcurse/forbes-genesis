@@ -121,11 +121,6 @@ unregister_sidebar( 'header-right' );
 // Removes secondary sidebar.
 unregister_sidebar( 'sidebar-alt' );
 
-// Removes site layouts.
-genesis_unregister_layout( 'content-sidebar-sidebar' );
-genesis_unregister_layout( 'sidebar-content-sidebar' );
-genesis_unregister_layout( 'sidebar-sidebar-content' );
-
 // Repositions primary navigation menu from outside the header tags to inside the header tags.
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
 add_action( 'genesis_header', 'genesis_do_nav', 8 );
@@ -367,19 +362,9 @@ function new_loop_shop_per_page( $cols ) {
   return $cols;
 }
 
-/**
- *  Force full-width on pages
- */
-
-function force_full_width_layout($classes) {
-
-	if( is_page() ) {
-		remove_action('genesis_sidebar', 'genesis_do_sidebar');
-		$classes[] = 'full-width-content';
-	}
-
-	return $classes;
-
+add_action( 'genesis_before_loop', 'remove_sidebar_hook_on_pages' );
+function remove_sidebar_hook_on_pages() {
+   if ( is_page() ) {
+       remove_action( 'genesis_after_content', 'genesis_get_sidebar' );
+   }
 }
-
-add_filter('body_class', 'force_full_width_layout');
