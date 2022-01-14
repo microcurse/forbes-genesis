@@ -874,7 +874,7 @@ th:first-child {
 /* Add top padding to product and category pages */
 body.single-product .site-inner,
 body.archive .site-inner {
-	padding: 60px 20px;
+	padding: 0px;
 }
 
 body.page-id-160352 .site-inner {
@@ -1921,6 +1921,20 @@ p.entry-meta {
 	font-size: 1.6rem;
 	line-height: 1.5;
 	background: #fff;
+	padding: 0 0 20px 0;
+	margin: 12px;
+}
+
+.sidebar-title {
+	font-size: 16px;
+	color: #fff;
+	font-weight: 900;
+	background: #3d4052;
+	padding: 10px 16px;
+}
+
+.sidebar ul.product-categories {
+	padding: 20px;
 }
 
 .sidebar .widget {
@@ -1934,6 +1948,27 @@ p.entry-meta {
 .widget_shopping_cart_content {
 	padding: 12px 20px;
 }
+
+ul.product-categories li.cat-item {
+	display: inline-block;
+	width: 100%;
+}
+
+ul.product-categories li.cat-item:hover {
+	background-color: rgb(240, 240, 240);
+}
+
+ul.product-categories li.cat-item a {
+	text-decoration: none;
+	color: #333;
+	padding: 8px 20px;
+	display: block;
+}
+
+ul.product-categories li.cat-item a:hover {
+	color: var(--main-link-color);
+}
+
 
 /* Slick Carousel
 ---------------------------------------------------------------------------------------------------- */
@@ -2315,39 +2350,18 @@ p.entry-meta {
 	.sidebar {
 		float: right;
 		width: 22%;
-		/* border: 1px solid rgb(200, 200, 200); */
 	}
 
 	.sidebar-content .sidebar {
 		float: left;
 	}
-
-	.sidebar-title {
-		padding: 10px 16px;
-		font-size: 16px;
-		color: #333;
-		font-weight: 900;
-		background: #e5e5e9;
+	
+	.sidebar {
+		padding: 0px;
 	}
-
-	ul.product-categories li.cat-item {
-		display: inline-block;
-		width: 100%;
-	}
-
-	ul.product-categories li.cat-item:hover {
-		background-color: rgb(240, 240, 240);
-	}
-
-	ul.product-categories li.cat-item a {
-		text-decoration: none;
-		color: #333;
-		padding: 8px 20px;
-		display: block;
-	}
-
-	ul.product-categories li.cat-item a:hover {
-		color: var(--main-link-color);
+	
+	.sidebar ul.product-categories {
+		padding: 0px;
 	}
 
 	/* Author Box

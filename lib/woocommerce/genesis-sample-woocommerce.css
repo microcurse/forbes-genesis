@@ -115,6 +115,7 @@ mark {
 .woocommerce-page .woocommerce-ordering {
 	margin-right: 0;
 	width: 100%;
+	display: none;
 }
 
 .woocommerce ul.products li.product h3,
@@ -848,7 +849,6 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 	.woocommerce-page .woocommerce-ordering {
 		margin-right: auto;
 		width: auto;
-		display: none;
 	}
 
 	.woocommerce input.button,
