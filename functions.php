@@ -134,10 +134,8 @@ remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 // Enqueue custom admin styles
 add_action( 'init', 'add_editor_styles' );
 
-
 // Editor color pallette
 add_action( 'after_setup_theme', 'mytheme_setup_theme_supported_features' );
-
 
 add_filter( 'genesis_author_box_gravatar_size', 'genesis_sample_author_box_gravatar' );
 /**
@@ -362,6 +360,7 @@ function new_loop_shop_per_page( $cols ) {
   return $cols;
 }
 
+// Remove sidebar hook on pages
 add_action( 'genesis_before_loop', 'remove_sidebar_hook_on_pages' );
 function remove_sidebar_hook_on_pages() {
    if ( is_page() ) {

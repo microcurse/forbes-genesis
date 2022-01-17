@@ -705,6 +705,10 @@ th:first-child {
   margin: 0 auto;
 }
 
+.mg-center_forced {
+	margin: 0 auto !important;
+}
+
 /* Image
 --------------------------------------------- */
 
@@ -877,17 +881,10 @@ body.archive .site-inner {
 	padding: 0px;
 }
 
-body.page-id-160352 .site-inner {
-	max-width: 100%;
-}
-
-.full-width-content .site-inner .content-sidebar-wrap .content {
-	width: 100%;
-}
-
-main#genesis-content {
+body.tax-product_cat main#genesis-content {
 	background: #fff;
 	padding: 20px;
+	margin-bottom: 40px;
 }
 
 /* Common Classes
@@ -1204,6 +1201,10 @@ img.alignright,
 .archive-description .wrap {
 	max-width: 1440px;
 	margin: 0 auto;
+	padding: 60px 20px;
+}
+
+body.single-product main{
 	padding: 60px 20px;
 }
 
@@ -2311,7 +2312,6 @@ ul.product-categories li.cat-item a:hover {
 
 	.site-inner {
 		max-width: 1440px;
-		padding: 0;
 	}
 
 	body.single-product .site-inner, 
@@ -2319,10 +2319,14 @@ ul.product-categories li.cat-item a:hover {
 		padding: 60px 0;
 	}
 
-	/* WooCommerce Category
+	/* WooCommerce
 	--------------------------------------------- */
 
 	body.tax-product_cat .site-inner {
+		padding: 0px 20px;
+	}
+	
+	body.single-product main {
 		padding: 0px;
 	}
 
@@ -2350,6 +2354,7 @@ ul.product-categories li.cat-item a:hover {
 	.sidebar {
 		float: right;
 		width: 22%;
+		margin: 0;
 	}
 
 	.sidebar-content .sidebar {

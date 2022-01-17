@@ -2,7 +2,7 @@
 /**
  * Default page template for site.
  *
- * Template Name: Default Template
+ * Template Name: Default Template (MM)
  *
  * @package Genesis Sample
  * @author  Marc Maninang
