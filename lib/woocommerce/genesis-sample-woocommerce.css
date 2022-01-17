@@ -130,7 +130,12 @@ mark {
 
 /* MS Edge Bug Fix */
 .woocommerce ul.products li.product a {
+	color: #333;
 	transition: color 0.1s ease-in-out, background 0.1s ease-in-out;
+}
+
+.woocommerce ul.products li.product a:hover {
+	color: var(--main-link-color);
 }
 
 .woocommerce nav.woocommerce-pagination {
@@ -762,11 +767,18 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 /* Woo Product Lists
 -------------------------------------------------- */
 
+.woocommerce ul.cart_list li a, 
+.woocommerce ul.product_list_widget li a {
+	display: inline-flex;
+	align-items: center;
+	width: 100%;
+}
+
 .woocommerce ul.cart_list li img,
 .woocommerce ul.product_list_widget li img {
 	width: 60px;
 	float: left;
-	margin: 0 6px;
+	margin: 0 12px
 }
 
 .sidebar ul.product_list_widget li {

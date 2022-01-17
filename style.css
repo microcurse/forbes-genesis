@@ -1044,6 +1044,7 @@ body.tax-product_cat main#genesis-content {
 }
 
 .search-box .woocommerce-product-search button {
+	background: var(--primary-btn-color);
   padding: 8px 16px;
   text-transform: none;
   font-size: 16px;
@@ -1052,6 +1053,10 @@ body.tax-product_cat main#genesis-content {
   -moz-transition: background 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   -ms-transition: background 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   -o-transition: background 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.search-box .woocommerce-product-search button:hover {
+	background: var(--primary-btn-color_hover);
 }
 
 .woocommerce-product-search {
