@@ -363,6 +363,11 @@ hr.wp-block-separator {
 	width: 100%;
 }
 
+/* This centers blocks with a full width container and a restricted width inner container */
+.mg-center .gb-block-container {
+	margin: 0 auto !important;
+}
+
 @media only screen and (min-width: 960px) {
 
 	.full-width-content .site-container .wp-block-table.alignwide {

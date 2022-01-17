@@ -200,6 +200,7 @@ body {
 	font-weight: 400;
 	line-height: calc(150%);
 	margin: 0;
+	overflow-x: hidden; /* This fixes horizontal scroll when using full width settings on blocks*/
 }
 
 button,
