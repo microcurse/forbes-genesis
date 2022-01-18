@@ -415,7 +415,7 @@ ul.tabs.wc-tabs {
 .woocommerce input.button[type="submit"],
 .woocommerce #respond input#submit,
 .woocommerce #respond input#submit.alt {
-	background-color: #333;
+	background-color: var(--primary-btn-color);
 	border: 0;
 	border-radius: 0;
 	color: #fff;
@@ -447,7 +447,7 @@ ul.tabs.wc-tabs {
 .woocommerce #respond input#submit:hover,
 .woocommerce #respond input#submit.alt:focus,
 .woocommerce #respond input#submit.alt:hover {
-	background-color: #0073e5;
+	background-color: var(--primary-btn-color_hover);
 	color: #fff;
 }
 
