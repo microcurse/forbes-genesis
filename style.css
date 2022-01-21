@@ -460,6 +460,7 @@ input[type="checkbox"],
 input[type="image"],
 input[type="radio"] {
 	width: auto;
+	margin-right: 8px; /* Added this to get spacing between radio button and label on Request a Quote form */
 }
 
 ::-moz-placeholder {
@@ -556,25 +557,46 @@ table.quote-fields tr {
 }
 
 table.quote-fields td {
-	border-top: 1px solid #bdbdbd;
-}
-
-table.quote-fields td:first-child {
-	border-top: none;
+	border-top: none;;
 }
 
 .woocommerce table.shop_table {
-	border: none;
+	border: none !important;
 	background: #fff;
 	box-shadow: 0px 0px 20px rgb(0 0 0 / 4%);
-	max-width: 63%;
+	max-width: 100%;
 }
 
 .af_quote_fields {
 	background: #fff;
 	padding: 16px;
 	box-shadow: 0px 0px 20px rgb(0 0 0 / 4%);
-	max-width: 35%;
+}
+
+tr.woocommerce-cart-form__quote-item.cart_item {
+	border-bottom: 1px solid #dbdbdb;
+	padding-bottom: 20px;
+}
+
+tr.addify-option-field {
+	word-break: break-word;
+}
+
+@media only screen and (max-width: 1200px) {
+	.woocommerce table.shop_table_responsive tr:nth-child(2n) td, 
+	.woocommerce-page table.shop_table_responsive tr:nth-child(2n) td {
+		background-color: #fff !important;
+	}
+
+	td.product-remove {
+		border-top: none !important;
+	}
+
+	.woocommerce table.shop_table_responsive tr td, 
+	.woocommerce-page table.shop_table_responsive tr td {
+		border-top: none;
+	}
+
 }
 
 @media only screen and (min-width: 960px) {
@@ -582,7 +604,11 @@ table.quote-fields td:first-child {
 		border: none;
 		background: #fff;
 		box-shadow: 0px 0px 20px rgb(0 0 0 / 4%);
-		max-width: 100%;
+		max-width: 64%;
+	}
+
+	.af_quote_fields {
+		max-width: 35%;
 	}
 }
 
