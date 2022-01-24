@@ -567,6 +567,16 @@ table.quote-fields td {
 	max-width: 100%;
 }
 
+.woocommerce table.shop_table a{
+	font-weight: normal;
+	color: #333;
+	text-decoration: none;
+}
+
+.woocommerce table.shop_table a:hover{
+	color: var(--main-link-color);
+}
+
 .af_quote_fields {
 	background: #fff;
 	padding: 16px;
@@ -604,12 +614,9 @@ tr.addify-option-field {
 		border: none;
 		background: #fff;
 		box-shadow: 0px 0px 20px rgb(0 0 0 / 4%);
-		max-width: 64%;
+		/* max-width: 64%; */
 	}
 
-	.af_quote_fields {
-		max-width: 35%;
-	}
 }
 
 
@@ -837,6 +844,10 @@ th:first-child {
 
 .card p {
 	margin: 0px;
+}
+
+.light-shadow {
+	box-shadow: 0 0 20px rgba(0,0,0,0.05);
 }
 
 /* Borders
@@ -1543,7 +1554,7 @@ body.single-product main{
 
 .site-header {
 	background-color: #fff;
-	/* box-shadow: 0 0 20px rgba(0,0,0,0.12); */
+	box-shadow: 0 0 20px rgba(0,0,0,0.04);
 	padding: 0px 18px;
 	border-bottom: 1px solid #e9e9e9;
 	padding-bottom: 20px;

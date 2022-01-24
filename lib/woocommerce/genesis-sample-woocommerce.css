@@ -330,7 +330,7 @@ ul.tabs.wc-tabs {
 }
 
 .woocommerce-cart table.cart td {
-	font-size: 18px;
+	font-size: 16px;
 	padding: 10px 12px;
 }
 
@@ -358,7 +358,7 @@ ul.tabs.wc-tabs {
 }
 
 .woocommerce-cart table.cart td.actions .coupon .input-text {
-	font-size: 18px;
+	font-size: 16px;
 }
 
 .woocommerce-cart td.product-name dl.variation dd {
@@ -420,7 +420,7 @@ ul.tabs.wc-tabs {
 	color: #fff;
 	cursor: pointer;
 	font-size: 16px;
-	font-weight: 600;
+	font-weight: normal;
 	padding: 15px 20px;
 	text-align: center;
 	text-decoration: none;
