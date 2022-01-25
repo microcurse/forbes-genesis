@@ -2,7 +2,7 @@
 /**
  * Default page template for site.
  *
- * Template Name: Default Template (MM)
+ * Template Name: Default - Full Width Page Title
  *
  * @package Genesis Sample
  * @author  Marc Maninang
