@@ -371,6 +371,24 @@ ul.tabs.wc-tabs {
 	vertical-align: middle;
 }
 
+/* Product Block
+--------------------------------------------- */
+ul.wc-block-grid__products {
+	margin-left: 0px;
+}
+
+ul.wc-block-grid__products li{
+	list-style-type: none;
+}
+
+.wc-block-grid__product a {
+	color: #333;
+}
+
+.wc-block-grid__product a:hover {
+	color: var(--main-link-color);
+}
+
 
 /* WooCommerce Payment
 ---------------------------------------------------------------------------- */
