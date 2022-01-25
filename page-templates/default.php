@@ -51,6 +51,8 @@ function fi_do_entry_header_bg() {
     <?php if( $image ): ?>
     .entry-header {
       background-image: url(<?php echo $image['url']; ?>);
+			background-size: cover;
+			background-repeat: no-repeat;
     }
     <?php endif; ?>
     
