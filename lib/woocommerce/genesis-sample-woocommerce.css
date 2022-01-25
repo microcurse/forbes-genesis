@@ -383,6 +383,11 @@ ul.wc-block-grid__products li{
 
 .wc-block-grid__product a {
 	color: #333;
+	text-decoration: none;
+}
+
+.wc-block-grid__product-title {
+	font-weight: normal;
 }
 
 .wc-block-grid__product a:hover {
