@@ -908,6 +908,11 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 		justify-content: flex-start;
 	}
 
+	.woocommerce.full-width-content .content,
+	.woocommerce-page.full-width-content .content {
+		padding: 40px 0;
+	}
+
 }
 
 @media only screen and (min-width: 960px) {
