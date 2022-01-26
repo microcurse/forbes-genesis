@@ -111,6 +111,11 @@ h6.light {
 
 }
 
+/* Override margin bottom */
+.wp-block-embed {
+	margin: 0px;
+}
+
 /* Columns
 ---------------------------------------------------------------------------- */
 
