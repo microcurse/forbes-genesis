@@ -838,7 +838,7 @@ th:first-child {
 }
 
 .max-w-lg {
-	max-width: 1440px;
+	max-width: 1280px;
 }
 
 /* Card
@@ -1189,7 +1189,7 @@ body.tax-product_cat main#genesis-content {
 
 .archive-description .wrap,
 .entry-header .wrap {
-	max-width: 1440px;
+	max-width: 1280px;
 	margin: 0 auto;
 	padding: 60px 20px;
 }
@@ -1210,6 +1210,10 @@ body.tax-product_cat main#genesis-content {
 	font-size: 1.8rem;
 	font-weight: 600;
 	margin-bottom: 20px;
+}
+
+.product_title {
+	text-shadow: none;
 }
 
 /* WordPress
@@ -2405,7 +2409,7 @@ ul.product-categories li.cat-item a:hover {
 	--------------------------------------------- */
 
 	.site-inner {
-		max-width: 1440px;
+		max-width: 1280px;
 	}
 
 	body.single-product .site-inner, 
@@ -2561,7 +2565,7 @@ ul.product-categories li.cat-item a:hover {
 	--------------------------------------------- */
 
 	.footer-widgets .wrap {
-		max-width: 1440px;
+		max-width: 1280px;
 		display: flex;
 		flex-flow: row wrap;
 	}
