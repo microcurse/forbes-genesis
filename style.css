@@ -790,9 +790,14 @@ th:first-child {
 	margin: 0 auto !important;
 }
 
+/* This is for position sticky of a child of a grid element. Add .sticky-fix_align-self to the parent container, then add .is-sticky to the element you want to stick */
 .is-sticky {
 	position: sticky;
 	top: 10px;
+}
+
+.sticky-fix_align-self .gb-block-layout-column:nth-child(1){
+	align-self: start;
 }
 
 /* Image
@@ -1172,18 +1177,13 @@ body.tax-product_cat main#genesis-content {
 
 .archive-description .entry-title,
 .archive-title,
-.author-box-title {
+.author-box-title,
+.entry-title {
 	font-size: 20px;
 	font-size: 2.2em;
 	font-weight: 600;
 	margin-bottom: 10px;
 	text-shadow: 0 0px 20px #000000c2;
-}
-
-.entry-title {
-	font-size: 30px;
-	font-size: 3rem;
-	margin-bottom: 10px;
 }
 
 .archive-description, 
