@@ -109,6 +109,8 @@
   --forbes-blue_darker: #252a6a;
 	--light-blue: #008DD5;
 	--light-blue_darker: #007AB8;
+	--main-link-color: #2C3CC9;
+	--main-link-color_darker: #2532a7;
 	--black: #333333;
 	--gray: #333540;
 	--green: #688e26;
@@ -235,7 +237,7 @@ a {
 
 a:focus,
 a:hover {
-	color: var(--light-blue_darker);
+	color: var(--main-link-color_darker);
 	text-decoration: none;
 }
 
@@ -513,7 +515,7 @@ input[type="submit"]:focus,
 input[type="submit"]:hover,
 .button:focus,
 .button:hover {
-	background-color: var(--light-blue_darker);
+	background-color: var(--main-link-color_darker);
 	color: #fff;
 }
 
@@ -587,7 +589,7 @@ table.quote-fields td {
 }
 
 .woocommerce table.shop_table a:hover{
-	color: var(--light-blue_darker);
+	color: var(--main-link-color_darker);
 }
 
 .af_quote_fields {
@@ -1147,7 +1149,7 @@ body.tax-product_cat main#genesis-content {
 }
 
 .search-box .woocommerce-product-search button {
-	background: var(--light-blue);
+	background: var(--main-link-color);
   padding: 8px 16px;
   text-transform: none;
   font-size: 16px;
@@ -1159,7 +1161,7 @@ body.tax-product_cat main#genesis-content {
 }
 
 .search-box .woocommerce-product-search button:hover {
-	background: var(--light-blue_darker);
+	background: var(--main-link-color_darker);
 }
 
 .woocommerce-product-search {
@@ -1215,7 +1217,7 @@ body.tax-product_cat main#genesis-content {
 
 .entry-title a:focus,
 .entry-title a:hover {
-	color: var(--light-blue_darker);
+	color: var(--main-link-color_darker);
 }
 
 .widget-title {
@@ -1455,7 +1457,7 @@ body.single-product main{
 .gs-faq__question:focus,
 .gs-faq__question:hover {
 	background: transparent;
-	color: var(--light-blue_darker);
+	color: var(--main-link-color_darker);
 }
 
 .gs-faq__question::after {
@@ -1528,7 +1530,7 @@ body.single-product main{
 }
 
 .header-upper a:hover {
-	color: var(--light-blue_darker);
+	color: var(--main-link-color_darker);
 }
 
 .header-upper a:last-child{
@@ -1615,7 +1617,7 @@ body.single-product main{
 .site-title a,
 .site-title a:focus,
 .site-title a:hover {
-	color: var(--light-blue_darker);
+	color: var(--main-link-color_darker);
 	text-decoration: none;
 }
 
@@ -1664,7 +1666,7 @@ body.single-product main{
 .genesis-nav-menu .current-menu-item > a,
 .genesis-nav-menu .sub-menu .current-menu-item > a:focus,
 .genesis-nav-menu .sub-menu .current-menu-item > a:hover {
-	color: var(--light-blue_darker);
+	color: var(--main-link-color_darker);
 	text-decoration: none;
 }
 
@@ -1752,7 +1754,7 @@ body.single-product main{
 .sub-menu-toggle:hover {
 	background-color: transparent;
 	border-width: 0;
-	color: var(--light-blue_darker);
+	color: var(--main-link-color_darker);
 }
 
 .menu-toggle {
@@ -1975,7 +1977,7 @@ p.entry-meta {
 .archive-pagination li a:focus,
 .archive-pagination li a:hover,
 .archive-pagination li.active a {
-	background-color: var(--light-blue_darker);
+	background-color: var(--main-link-color_darker);
 	color: #fff;
 }
 
@@ -2083,7 +2085,7 @@ ul.product-categories li.cat-item a {
 }
 
 ul.product-categories li.cat-item a:hover {
-	color: var(--light-blue_darker);
+	color: var(--main-link-color_darker);
 }
 
 
@@ -2131,8 +2133,8 @@ ul.product-categories li.cat-item a:hover {
 }
 
 .footer-widgets a:hover {
-	fill: var(--light-blue_darker);
-	color: var(--light-blue_darker);
+	fill: var(--main-link-color_darker);
+	color: var(--main-link-color_darker);
 }
 
 .footer-widgets .wrap {
@@ -2186,12 +2188,12 @@ ul.product-categories li.cat-item a:hover {
 }
 
 .hbspt-form .hs_submit .actions .hs-button {
-	background-color: var(--light-blue);
+	background-color: var(--main-link-color);
 	margin-top: 8px;
 }
 
 .hbspt-form .hs_submit .actions .hs-button:hover {
-	background-color: var(--light-blue_darker);
+	background-color: var(--main-link-color_darker);
 }
 
 /*
@@ -2358,7 +2360,7 @@ ul.product-categories li.cat-item a:hover {
 
 	.genesis-nav-menu > .menu-highlight > a:hover,
 	.genesis-nav-menu > .menu-highlight > a:focus {
-		background-color: var(--light-blue_darker);
+		background-color: var(--main-link-color_darker);
 	}
 
 	.genesis-responsive-menu .genesis-nav-menu .sub-menu,

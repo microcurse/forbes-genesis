@@ -135,7 +135,7 @@ mark {
 }
 
 .woocommerce ul.products li.product a:hover {
-	color: var(--main-link-color);
+	color: var(--main-link-color_darker);
 }
 
 .woocommerce nav.woocommerce-pagination {
@@ -391,7 +391,7 @@ ul.wc-block-grid__products li{
 }
 
 .wc-block-grid__product a:hover {
-	color: var(--main-link-color);
+	color: var(--main-link-color_darker);
 }
 
 
@@ -437,7 +437,7 @@ ul.wc-block-grid__products li{
 .woocommerce input.button[type="submit"],
 .woocommerce #respond input#submit,
 .woocommerce #respond input#submit.alt {
-	background-color: var(--primary-btn-color);
+	background-color: var(--main-link-color);
 	border: 0;
 	border-radius: 0;
 	color: #fff;
@@ -469,7 +469,7 @@ ul.wc-block-grid__products li{
 .woocommerce #respond input#submit:hover,
 .woocommerce #respond input#submit.alt:focus,
 .woocommerce #respond input#submit.alt:hover {
-	background-color: var(--primary-btn-color_hover);
+	background-color: var(--main-link-color_darker);
 	color: #fff;
 }
 
