@@ -82,6 +82,7 @@
 - Media Queries
 	- Min-width: 960px
 		- Site Header
+		- Titles
 		- Genesis Menu
 		- Responsive Menu
 		- Header Menu
@@ -853,7 +854,7 @@ th:first-child {
 }
 
 .max-w-lg {
-	max-width: 1280px;
+	max-width: 1440px;
 }
 
 /* Card
@@ -1204,8 +1205,6 @@ body.tax-product_cat main#genesis-content {
 
 .archive-description .wrap,
 .entry-header .wrap {
-	max-width: 1280px;
-	margin: 0 auto;
 	padding: 60px 20px;
 }
 
@@ -2280,6 +2279,8 @@ ul.product-categories li.cat-item a:hover {
 		display: flex;
 		align-items: center;
 		justify-content:space-between;
+		max-width: 1440px;
+		margin: 0 auto;
 	}
 
 	.site-header .flex-container {
@@ -2315,7 +2316,16 @@ ul.product-categories li.cat-item a:hover {
 		padding: 0px;
 	}
 
-	
+
+	/* Titles
+	--------------------------------------------- */
+	.archive-description .wrap,
+	.entry-header .wrap {
+		max-width: 1440px;
+		margin: 0 auto;
+		padding: 60px 0px;
+	}
+
 	/* Genesis Menu
 	--------------------------------------------- */
 	.search-box {
@@ -2423,7 +2433,7 @@ ul.product-categories li.cat-item a:hover {
 	--------------------------------------------- */
 
 	.site-inner {
-		max-width: 1280px;
+		max-width: 1440px;
 	}
 
 	body.single-product .site-inner, 
@@ -2435,7 +2445,7 @@ ul.product-categories li.cat-item a:hover {
 	--------------------------------------------- */
 
 	body.tax-product_cat .site-inner {
-		padding: 0px 20px;
+		padding: 0px 0px;
 	}
 	
 	body.single-product main {
@@ -2573,13 +2583,14 @@ ul.product-categories li.cat-item a:hover {
 	.entry-comments,
 	.entry-pings {
 		margin-bottom: 60px;
+		padding: 0 20px;
 	}
 
 	/* Footer Widgets
 	--------------------------------------------- */
 
 	.footer-widgets .wrap {
-		max-width: 1280px;
+		max-width: 1440px;
 		display: flex;
 		flex-flow: row wrap;
 	}
