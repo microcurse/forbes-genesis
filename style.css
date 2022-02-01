@@ -1026,6 +1026,7 @@ body.tax-product_cat main#genesis-content {
 .archive-description,
 .author-box {
 	margin-bottom: 40px;
+	padding: 0 20px;
 }
 
 .after-entry {
@@ -2434,6 +2435,8 @@ ul.product-categories li.cat-item a:hover {
 
 	.site-inner {
 		max-width: 1440px;
+		padding-left: 0px;
+		padding-right: 0px;
 	}
 
 	body.single-product .site-inner, 
@@ -2583,7 +2586,6 @@ ul.product-categories li.cat-item a:hover {
 	.entry-comments,
 	.entry-pings {
 		margin-bottom: 60px;
-		padding: 0 20px;
 	}
 
 	/* Footer Widgets

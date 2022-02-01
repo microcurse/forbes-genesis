@@ -367,3 +367,16 @@ function remove_sidebar_hook_on_pages() {
        remove_action( 'genesis_after_content', 'genesis_get_sidebar' );
    }
 }
+
+//cleaned product table shortcode with html tags - bp 01 2022
+add_shortcode( 'cleantags', 'cleantags_func' );
+function cleantags_func( ) {
+	$html = do_shortcode( '[quotelisttable]' );
+	$comma = str_replace("</tr>", ";", $html);
+	$nohtml = wp_strip_all_tags($comma, TRUE);
+	$cleaned = str_replace("SKU", "", $nohtml);
+	$cleaned2 = str_replace("Quantity", "", $cleaned);
+	$cleaned3 = str_replace("Product   ;" ,"", $cleaned2);
+	$cleaned4 = str_replace(";",";\r\n",$cleaned3);
+	return $cleaned4;	
+}

@@ -171,9 +171,7 @@ function fi_genesis_do_archive_background() {
 	
     <?php if( $image ): ?>
     .archive-description {
-      background-image: url(<?php echo $image['url']; ?>);  
-      background-size: cover;
-      background-repeat: no-repeat;
+      background-image: url(<?php echo $image['url']; ?>);
     }
     <?php endif; ?>
     
