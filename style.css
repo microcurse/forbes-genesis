@@ -1026,7 +1026,6 @@ body.tax-product_cat main#genesis-content {
 .archive-description,
 .author-box {
 	margin-bottom: 40px;
-	padding: 0 20px;
 }
 
 .after-entry {
@@ -1202,6 +1201,7 @@ body.tax-product_cat main#genesis-content {
 	margin-left: calc(50% - 50vw);
 	background: center;
 	color: #fff;
+	margin-bottom: 40px;
 }
 
 .archive-description .wrap,
@@ -2282,6 +2282,7 @@ ul.product-categories li.cat-item a:hover {
 		justify-content:space-between;
 		max-width: 1440px;
 		margin: 0 auto;
+		padding: 0 20px;
 	}
 
 	.site-header .flex-container {
@@ -2324,7 +2325,6 @@ ul.product-categories li.cat-item a:hover {
 	.entry-header .wrap {
 		max-width: 1440px;
 		margin: 0 auto;
-		padding: 60px 0px;
 	}
 
 	/* Genesis Menu
@@ -2435,8 +2435,6 @@ ul.product-categories li.cat-item a:hover {
 
 	.site-inner {
 		max-width: 1440px;
-		padding-left: 0px;
-		padding-right: 0px;
 	}
 
 	body.single-product .site-inner, 
@@ -2585,7 +2583,11 @@ ul.product-categories li.cat-item a:hover {
 	.entry,
 	.entry-comments,
 	.entry-pings {
-		margin-bottom: 60px;
+		margin-bottom: 0px;;
+	}
+
+	.entry-header {
+		padding: 20px;
 	}
 
 	/* Footer Widgets

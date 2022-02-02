@@ -221,6 +221,14 @@ section.related.products {
 	padding: 20px;
 }
 
+.woocommerce-variation-add-to-cart.variations_button.woocommerce-variation-add-to-cart-enabled {
+	display: inline-flex;
+}
+
+.addquotelistlink {
+	padding-top: 0px;
+}
+
 /* WooCommerce Product Tabs
 ---------------------------------------------------------------------------- */
 
