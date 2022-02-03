@@ -2325,6 +2325,7 @@ ul.product-categories li.cat-item a:hover {
 	.entry-header .wrap {
 		max-width: 1440px;
 		margin: 0 auto;
+		padding: 60px 20px;
 	}
 
 	/* Genesis Menu
@@ -2439,14 +2440,14 @@ ul.product-categories li.cat-item a:hover {
 
 	body.single-product .site-inner, 
 	body.archive .site-inner {
-		padding: 60px 0;
+		/* padding: 60px 0; */
 	}
 
 	/* WooCommerce
 	--------------------------------------------- */
 
 	body.tax-product_cat .site-inner {
-		padding: 0px 0px;
+		padding: 0px 20px;
 	}
 	
 	body.single-product main {
@@ -2583,7 +2584,7 @@ ul.product-categories li.cat-item a:hover {
 	.entry,
 	.entry-comments,
 	.entry-pings {
-		margin-bottom: 0px;;
+		margin-bottom: 40px;
 	}
 
 	.entry-header {
