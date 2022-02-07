@@ -1488,7 +1488,7 @@ body.single-product main{
 ---------------------------------------------------------------------------------------------------- */
 
 .header-upper {
-	background-color: rgb(33 34 56);
+	background-color: var(--gray);
 	width: 100%;
 	padding: 8px 18px;
 	font-size: 14px;
@@ -1522,7 +1522,7 @@ body.single-product main{
 }
 
 .header-upper a:hover {
-	color: var(--main-link-color_darker);
+	color: var(--light-blue);
 }
 
 .header-upper a:last-child{
@@ -2041,7 +2041,7 @@ p.entry-meta {
 	font-size: 16px;
 	color: #fff;
 	font-weight: 900;
-	background: #3d4052;
+	background: var(--gray);
 	padding: 10px 16px;
 }
 
@@ -2229,7 +2229,7 @@ ul.product-categories li.cat-item a:hover {
 ---------------------------------------------------------------------------------------------------- */
 
 .site-footer {
-	background-color: #333540;
+	background-color: var(--gray);
 	font-size: 16px;
 	font-size: 1.5rem;
 	line-height: 1.5;
