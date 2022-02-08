@@ -53,6 +53,7 @@ function fi_do_entry_header_bg() {
       background-image: url(<?php echo $image['url']; ?>);
 			background-size: cover;
 			background-repeat: no-repeat;
+			position: relative;
     }
     <?php endif; ?>
     

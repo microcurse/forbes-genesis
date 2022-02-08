@@ -174,6 +174,7 @@ function fi_genesis_do_archive_background() {
       background-image: url(<?php echo $image['url']; ?>);
       background-size: cover;
       background-repeat: no-repeat;
+      position: relative;
     }
     <?php endif; ?>
     
