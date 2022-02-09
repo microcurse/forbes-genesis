@@ -1191,6 +1191,7 @@ body.tax-product_cat main#genesis-content {
 
 .archive-description, 
 .entry-header {
+	position: relative;
 	width: 100vw;
 	max-width: 100vw;
 	margin-left: calc(50% - 50vw);
