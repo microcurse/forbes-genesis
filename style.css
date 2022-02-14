@@ -988,6 +988,41 @@ body.tax-product_cat main#genesis-content {
 	margin-bottom: 40px;
 }
 
+.subcategories {
+	background: #fff;
+	padding: 20px;
+	margin-bottom: 40px;
+}
+
+.subcat_grid {
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 0px;
+}
+
+h2.subcat_title {
+	font-weight: bold;
+}
+
+.subcat_item a {
+	color: var(--gray);
+	text-decoration: none;
+	text-align: center;
+}
+
+.subcat_item a:hover {
+	color: var(--main-link-color);
+}
+
+.subcat_item h3.category_title {
+	font-size: 16px;
+}
+
+.subcat_item {
+	max-width: 50%;
+}
+
 /* Common Classes
 ---------------------------------------------------------------------------------------------------- */
 
@@ -2549,6 +2584,14 @@ ul.product-categories li.cat-item a:hover {
 		padding: 0px;
 	}
 
+	.subcat_grid {
+		gap: 20px;
+	}
+
+	.subcat_item {
+		max-width: 100%;
+	}
+
 	/* Content
 	--------------------------------------------- */
 
@@ -2682,8 +2725,8 @@ ul.product-categories li.cat-item a:hover {
 		margin-bottom: 40px;
 	}
 
-	.entry-header {
-		padding: 20px;
+	.entry-header, .archive-description {
+		padding: 0 20px;
 	}
 
 	/* Footer Widgets

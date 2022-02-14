@@ -29,6 +29,9 @@ add_action( 'genesis_archive_title_descriptions', 'fi_genesis_do_archive_backgro
 add_action( 'genesis_archive_title_descriptions', 'fi_genesis_do_archive_headings_wrap_close', 16, 3 );
 add_action( 'genesis_archive_title_descriptions', 'fi_genesis_do_archive_headings_close', 17, 3 );
 
+// add sub categories
+add_action( 'genesis_before_content', 'add_subcategories' );
+
 add_filter( 'woocommerce_show_page_title', '__return_false' );
 add_filter( 'genesis_term_intro_text_output', 'genesiswooc_term_intro_text_output' );
 /**
@@ -179,6 +182,52 @@ function fi_genesis_do_archive_background() {
     
   </style>
   <?php
+}
+
+
+/**
+ * PEDAC
+ * 
+ * INPUT
+ * PHP call to get Product Category
+ * 
+ * OUTPUT
+ * Subcategories of that product category styled accordingly in HTML
+ * 
+ * ALGORITHM
+ * Get current product category
+ * Get sub/child categories for that product
+ *  - term_taxonomy_id
+ * return/echo to HTML for each sub category 
+ * 
+ */
+
+function add_subcategories() {
+  if ( is_product_category() ) {
+
+      $term_id  = get_queried_object_id();
+      $taxonomy = 'product_cat';
+
+      // Get subcategories of the current category
+      $terms    = get_terms([
+          'taxonomy'    => $taxonomy,
+          'hide_empty'  => true,
+          'parent'      => get_queried_object_id()
+      ]);
+
+      $output = '<div class="subcategories light-shadow"><h2 class="subcat_title">Browse by category</h2><div class="subcat_grid">';
+
+      // Loop through product subcategories WP_Term Objects
+      foreach ( $terms as $term ) {
+          $thumbnail_id = get_term_meta( $term->term_id, 'thumbnail_id', true );
+          $image = wp_get_attachment_url( $thumbnail_id ); 
+          $term_link = get_term_link( $term, $taxonomy );
+
+          $output .= '<div class="subcat_item"><a href="'. $term_link .'">' . '<img src="' .$image. '" width="240"/>' . '<h3 class="category_title">' . $term->name . '</h3></a></div>';
+      }
+
+      echo $output . '</div></div></div>';
+  }
 }
 
 genesis();
