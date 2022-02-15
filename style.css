@@ -46,6 +46,7 @@
 	- Site Container
 	- Site Inner
 		- WooCommerce Products and Categories
+	- Error 404 Page
 - Common Classes
 	- Avatar
 	- Genesis
@@ -1023,6 +1024,33 @@ h2.subcat_title {
 	max-width: 50%;
 }
 
+/* Error 404 Page
+--------------------------------------------- */
+
+body.error404 article.entry {
+	text-align: center;
+}
+
+body.error404 h1.entry-title {
+	text-shadow: 0 0 black;
+}
+
+body.error404 .entry-content {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+body.error404 .entry-content .search-box {
+	max-width: 400px;
+	margin: 0 auto;
+	float: none;
+}
+
+img.error-emoji {
+	padding: 20px;
+}
+
+
 /* Common Classes
 ---------------------------------------------------------------------------------------------------- */
 
@@ -1134,6 +1162,7 @@ h2.subcat_title {
 
 .fi-icon {
 	padding: 8px;
+	background: #fff;
 }
 
 .search-form-submit:hover .search-icon path {
