@@ -215,7 +215,7 @@ function add_subcategories() {
           'parent'      => get_queried_object_id()
       ]);
 
-      $output = '<div class="subcategories light-shadow"><h2 class="subcat_title">Browse by category</h2><div class="subcat_grid">';
+      $output = '<div class="subcategories"><h2 class="subcat_title">Browse by category</h2><div class="subcat_grid">';
 
       // Loop through product subcategories WP_Term Objects
       foreach ( $terms as $term ) {
@@ -223,10 +223,11 @@ function add_subcategories() {
           $image = wp_get_attachment_url( $thumbnail_id ); 
           $term_link = get_term_link( $term, $taxonomy );
 
-          $output .= '<div class="subcat_item"><a href="'. $term_link .'">' . '<img src="' .$image. '" width="240"/>' . '<h3 class="category_title">' . $term->name . '</h3></a></div>';
+          $output .= '<div class="subcat_item light-shadow"><a href="'. $term_link .'">' . '<img src="' .$image. '" width="160"/>' . '<h3 class="category_title">' . $term->name . '</h3></a></div>';
       }
-
-      echo $output . '</div></div></div>';
+      if ($term) {
+        echo $output . '</div></div></div>';
+      }
   }
 }
 
