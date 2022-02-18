@@ -45,7 +45,8 @@
 - Structure and Layout
 	- Site Container
 	- Site Inner
-		- WooCommerce Products and Categories
+	- Content Sidebar Wrap
+	- WooCommerce Products and Categories
 	- Error 404 Page
 - Common Classes
 	- Avatar
@@ -933,6 +934,14 @@ th:first-child {
 	transform: translate(25%, 80%);
 }
 
+.background-white {
+	background: #fff;
+}
+
+.dark-background {
+  background: radial-gradient(circle at top left, #3e4660, #13181c);
+}
+
 /* Reverse Mobile Columns
 --------------------------------------------- */
 
@@ -974,6 +983,16 @@ th:first-child {
 	padding: 0 20px;
 }
 
+
+/* Content Sidebar Wrap
+--------------------------------------------- */
+
+.content-sidebar-wrap {
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+
 /* WooCommerce Products and Categories
 --------------------------------------------- */
 
@@ -990,7 +1009,6 @@ body.tax-product_cat main#genesis-content {
 }
 
 .subcategories {
-	/* background: #fff; */
 	padding: 20px;
 	margin-bottom: 40px;
 }
@@ -2609,7 +2627,9 @@ ul.product-categories li.cat-item a:hover {
 	--------------------------------------------- */
 
 	.site-inner {
-		max-width: 1440px;
+		/* max-width: 1440px; */
+		margin: 0px;
+		padding: 0px;
 	}
 
 	body.single-product .site-inner, 
@@ -2626,6 +2646,11 @@ ul.product-categories li.cat-item a:hover {
 	
 	body.single-product main {
 		padding: 0px;
+	}
+
+	.subcategories {
+		padding: 0px;
+		margin-bottom: 20px;
 	}
 
 	/* Content
@@ -2650,6 +2675,10 @@ ul.product-categories li.cat-item a:hover {
 		float: none;
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	body.with-hero.full-width-content .content {
+		padding: 0px;
 	}
 
 	/* Sidebar

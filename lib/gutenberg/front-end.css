@@ -384,6 +384,13 @@ hr.wp-block-separator {
 		margin-right: calc(-98vw / 2 + 100% / 2);
 		width: 98vw;
 	}
+		
+	/* Fix some bugs with full width cover images (hero images) */
+	.full-width-content .site-container .wp-block-cover.alignfull {
+		margin-left: calc(-100vw / 2 + 100% / 2);
+		margin-right: calc(-100vw / 2 + 100% / 2);
+		max-width: 100vw;
+	}
 
 }
 
