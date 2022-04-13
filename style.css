@@ -990,7 +990,7 @@ th:first-child {
 .content-sidebar-wrap {
 	max-width: 1440px;
 	margin: 0 auto;
-}
+position: relative;}
 
 
 /* WooCommerce Products and Categories
@@ -1008,8 +1008,19 @@ body.tax-product_cat main#genesis-content {
 	margin-bottom: 40px;
 }
 
+.archive-bg-container {
+	position: absolute;
+	overflow: hidden;
+	max-height: 320px;
+}
+
+.archive-bg-image {
+	object-fit: cover;
+	width: 100%;
+	height: auto;
+}
+
 .subcategories {
-	padding: 20px;
 	margin-bottom: 40px;
 }
 
@@ -1044,8 +1055,7 @@ h2.subcat_title {
 	padding: 16px;
 	background: #fff;
 	border-radius: 4px;
-	margin: 0 8px 8px 0;
-	width: 200px;
+	width: 197px;
 	border: 1px solid #ebeaea;
 }
 
@@ -1278,15 +1288,19 @@ img.error-emoji {
 .author-box-title,
 .entry-title {
 	position: relative;
-	z-index: 1;
 	font-size: 20px;
 	font-size: 2.2em;
 	font-weight: 600;
 	margin-bottom: 10px;
 	text-shadow: 0 0px 20px #000000c2;
+	/* Transfer these to a container when it's created */
+	width: 100%;
+	align-self: center;
+	max-width: 1440px;
+	margin: 0 auto;
 }
 
-.archive-description, 
+/* .archive-description, 
 .entry-header {
 	position: relative;
 	width: 100vw;
@@ -1307,12 +1321,12 @@ img.error-emoji {
 	top: 0;
 	left: 0;
 	background: rgba(0,0,0,0.35);
-}
-
+} */
+/* 
 .archive-description .wrap,
 .entry-header .wrap {
 	padding: 60px 20px;
-}
+} */
 
 .entry-title a,
 .sidebar .widget-title a {
@@ -1684,7 +1698,6 @@ body.single-product main{
 .site-header {
 	background-color: #fff;
 	box-shadow: 0 0 20px rgba(0,0,0,0.04);
-	padding: 0px 18px;
 	border-bottom: 1px solid #e9e9e9;
 	padding-bottom: 20px;
 }
@@ -1695,6 +1708,11 @@ body.single-product main{
 	justify-content: space-between;
 }
 
+.site-header .wrap {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 /* Title Area
 --------------------------------------------- */
@@ -2147,7 +2165,6 @@ p.entry-meta {
 	line-height: 1.5;
 	background: #fff;
 	padding: 0 0 20px 0;
-	margin: 12px;
 }
 
 .sidebar-title {
@@ -2474,7 +2491,7 @@ ul.product-categories li.cat-item a:hover {
 		justify-content:space-between;
 		max-width: 1440px;
 		margin: 0 auto;
-		padding: 0 20px;
+		/* padding: 0 20px; */
 	}
 
 	.site-header .flex-container {
@@ -2515,9 +2532,8 @@ ul.product-categories li.cat-item a:hover {
 	--------------------------------------------- */
 	.archive-description .wrap,
 	.entry-header .wrap {
-		max-width: 1440px;
-		margin: 0 auto;
-		padding: 60px 20px;
+		display: flex;
+		min-height: 320px;
 	}
 
 	/* Genesis Menu
@@ -2639,10 +2655,6 @@ ul.product-categories li.cat-item a:hover {
 
 	/* WooCommerce
 	--------------------------------------------- */
-
-	body.tax-product_cat .site-inner {
-		padding: 0px 20px;
-	}
 	
 	body.single-product main {
 		padding: 0px;
@@ -2651,6 +2663,10 @@ ul.product-categories li.cat-item a:hover {
 	.subcategories {
 		padding: 0px;
 		margin-bottom: 20px;
+	}
+	
+	.subcat_grid {
+		gap: 10px;
 	}
 
 	/* Content
@@ -2791,7 +2807,6 @@ ul.product-categories li.cat-item a:hover {
 	}
 
 	.entry-header, .archive-description {
-		padding: 0 20px;
 	}
 
 	/* Footer Widgets
