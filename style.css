@@ -1000,6 +1000,10 @@ th:first-child {
 body.single-product .site-inner,
 body.archive .site-inner {
 	padding: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	max-width: 1440px;
 }
 
 body.tax-product_cat main#genesis-content {
@@ -1009,7 +1013,7 @@ body.tax-product_cat main#genesis-content {
 }
 
 .subcategories {
-	padding: 20px;
+	/* padding: 20px; */
 	margin-bottom: 40px;
 }
 
@@ -1044,8 +1048,7 @@ h2.subcat_title {
 	padding: 16px;
 	background: #fff;
 	border-radius: 4px;
-	margin: 0 8px 8px 0;
-	width: 200px;
+	width: 197px;
 	border: 1px solid #ebeaea;
 }
 
@@ -1684,9 +1687,12 @@ body.single-product main{
 .site-header {
 	background-color: #fff;
 	box-shadow: 0 0 20px rgba(0,0,0,0.04);
-	padding: 0px 18px;
+	/* padding: 0px 18px; */
 	border-bottom: 1px solid #e9e9e9;
 	padding-bottom: 20px;
+	/* width: 90%; */
+	/* margin-left: auto; */
+	/* margin-right: auto; */
 }
 
 .site-header .flex-container {
@@ -1695,6 +1701,11 @@ body.single-product main{
 	justify-content: space-between;
 }
 
+.site-header .wrap {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 /* Title Area
 --------------------------------------------- */
@@ -2147,7 +2158,7 @@ p.entry-meta {
 	line-height: 1.5;
 	background: #fff;
 	padding: 0 0 20px 0;
-	margin: 12px;
+	/* margin: 12px; */
 }
 
 .sidebar-title {
@@ -2474,7 +2485,7 @@ ul.product-categories li.cat-item a:hover {
 		justify-content:space-between;
 		max-width: 1440px;
 		margin: 0 auto;
-		padding: 0 20px;
+		/* padding: 0 20px; */
 	}
 
 	.site-header .flex-container {
@@ -2517,7 +2528,7 @@ ul.product-categories li.cat-item a:hover {
 	.entry-header .wrap {
 		max-width: 1440px;
 		margin: 0 auto;
-		padding: 60px 20px;
+		padding: 60px 0px;
 	}
 
 	/* Genesis Menu
@@ -2641,7 +2652,10 @@ ul.product-categories li.cat-item a:hover {
 	--------------------------------------------- */
 
 	body.tax-product_cat .site-inner {
-		padding: 0px 20px;
+		padding: 0px;
+		margin-right: auto;
+		max-width: 1440px;
+		margin-left: auto;
 	}
 	
 	body.single-product main {
@@ -2651,6 +2665,10 @@ ul.product-categories li.cat-item a:hover {
 	.subcategories {
 		padding: 0px;
 		margin-bottom: 20px;
+	}
+	
+	.subcat_grid {
+		gap: 10px;
 	}
 
 	/* Content
