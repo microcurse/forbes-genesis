@@ -980,7 +980,6 @@ th:first-child {
 .site-inner {
 	clear: both;
 	margin: 0 auto;
-	padding: 0 20px;
 }
 
 
@@ -997,16 +996,6 @@ th:first-child {
 
 /* WooCommerce Products and Categories
 --------------------------------------------- */
-
-/* Add top padding to product and category pages */
-body.single-product .site-inner,
-body.archive .site-inner {
-	padding: 0px;
-	margin-left: auto;
-	margin-right: auto;
-	width: 90%;
-	max-width: 1440px;
-}
 
 body.tax-product_cat main#genesis-content {
 	background: #fff;
@@ -2682,16 +2671,6 @@ ul.product-categories li.cat-item a:hover {
 
 	/* WooCommerce
 	--------------------------------------------- */
-<<<<<<< HEAD
-
-	body.tax-product_cat .site-inner {
-		padding: 0px;
-		margin-right: auto;
-		max-width: 1440px;
-		margin-left: auto;
-	}
-=======
->>>>>>> 31f436cf1bdb688783c07a791284aa097f318710
 	
 	body.single-product main {
 		padding: 0px;
