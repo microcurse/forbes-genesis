@@ -988,8 +988,10 @@ th:first-child {
 --------------------------------------------- */
 
 .content-sidebar-wrap {
+	width: 90%;
 	max-width: 1440px;
 	margin: 0 auto;
+	position: relative;
 }
 
 
@@ -1012,8 +1014,25 @@ body.tax-product_cat main#genesis-content {
 	margin-bottom: 40px;
 }
 
+.archive-bg-container {
+	position: absolute;
+	overflow: hidden;
+	max-height: 180px;
+	width: 100%;
+}
+
+img.archive-bg-image {
+	object-fit: cover;
+	height: auto;
+	width: 100%;
+	min-height: 180px;
+}
+
 .subcategories {
+<<<<<<< HEAD
 	/* padding: 20px; */
+=======
+>>>>>>> 31f436cf1bdb688783c07a791284aa097f318710
 	margin-bottom: 40px;
 }
 
@@ -1281,25 +1300,26 @@ img.error-emoji {
 .author-box-title,
 .entry-title {
 	position: relative;
-	z-index: 1;
 	font-size: 20px;
 	font-size: 2.2em;
 	font-weight: 600;
 	margin-bottom: 10px;
 	text-shadow: 0 0px 20px #000000c2;
+	color: white;
+	/* Transfer these to a container when it's created */
+	width: 90%;
+	align-self: center;
+	max-width: 1440px;
+	margin: 0 auto;
 }
 
-.archive-description, 
-.entry-header {
-	position: relative;
-	width: 100vw;
-	max-width: 100vw;
-	margin-left: calc(50% - 50vw);
-	background: center;
-	color: #fff;
-	margin-bottom: 40px;
+.archive-description .wrap,
+.entry-header .wrap {
+	display: flex;
+	min-height: 180px;
 }
 
+/* 
 .archive-description::after, 
 .entry-header::after {
 	content: '';
@@ -1310,12 +1330,12 @@ img.error-emoji {
 	top: 0;
 	left: 0;
 	background: rgba(0,0,0,0.35);
-}
-
+} */
+/* 
 .archive-description .wrap,
 .entry-header .wrap {
 	padding: 60px 20px;
-}
+} */
 
 .entry-title a,
 .sidebar .widget-title a {
@@ -1687,7 +1707,10 @@ body.single-product main{
 .site-header {
 	background-color: #fff;
 	box-shadow: 0 0 20px rgba(0,0,0,0.04);
+<<<<<<< HEAD
 	/* padding: 0px 18px; */
+=======
+>>>>>>> 31f436cf1bdb688783c07a791284aa097f318710
 	border-bottom: 1px solid #e9e9e9;
 	padding-bottom: 20px;
 	/* width: 90%; */
@@ -2158,7 +2181,10 @@ p.entry-meta {
 	line-height: 1.5;
 	background: #fff;
 	padding: 0 0 20px 0;
+<<<<<<< HEAD
 	/* margin: 12px; */
+=======
+>>>>>>> 31f436cf1bdb688783c07a791284aa097f318710
 }
 
 .sidebar-title {
@@ -2524,12 +2550,18 @@ ul.product-categories li.cat-item a:hover {
 
 	/* Titles
 	--------------------------------------------- */
-	.archive-description .wrap,
+	/* .archive-description .wrap,
 	.entry-header .wrap {
+<<<<<<< HEAD
 		max-width: 1440px;
 		margin: 0 auto;
 		padding: 60px 0px;
 	}
+=======
+		display: flex;
+		min-height: 180px;
+	} */
+>>>>>>> 31f436cf1bdb688783c07a791284aa097f318710
 
 	/* Genesis Menu
 	--------------------------------------------- */
@@ -2650,6 +2682,7 @@ ul.product-categories li.cat-item a:hover {
 
 	/* WooCommerce
 	--------------------------------------------- */
+<<<<<<< HEAD
 
 	body.tax-product_cat .site-inner {
 		padding: 0px;
@@ -2657,6 +2690,8 @@ ul.product-categories li.cat-item a:hover {
 		max-width: 1440px;
 		margin-left: auto;
 	}
+=======
+>>>>>>> 31f436cf1bdb688783c07a791284aa097f318710
 	
 	body.single-product main {
 		padding: 0px;
@@ -2808,8 +2843,8 @@ ul.product-categories li.cat-item a:hover {
 		margin-bottom: 40px;
 	}
 
-	.entry-header, .archive-description {
-		padding: 0 20px;
+	.archive-description .entry-title, .archive-title, .author-box-title, .entry-title {
+		padding-left: 0px;
 	}
 
 	/* Footer Widgets

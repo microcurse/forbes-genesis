@@ -168,20 +168,14 @@ function fi_genesis_do_archive_headings_close( $heading = '', $intro_text = '', 
 function fi_genesis_do_archive_background() {
   $term = get_queried_object();
   $image = get_field('category_header_background', $term);
+  
+    if( $image ) : ?>
+      <div class="archive-bg-container"><img class="archive-bg-image" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>"></img></div>
+    <?php endif;
+}
 
-  ?>
-  <style type="text/css">
-	
-    <?php if( $image ): ?>
-    .archive-description {
-      background-image: url(<?php echo $image['url']; ?>);
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-    <?php endif; ?>
-    
-  </style>
-  <?php
+function fi_genesis_do_archive_copy() {
+
 }
 
 
