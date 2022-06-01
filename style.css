@@ -980,14 +980,13 @@ th:first-child {
 .site-inner {
 	clear: both;
 	margin: 0 auto;
-	padding: 0 20px;
 }
 
 
 /* Content Sidebar Wrap
 --------------------------------------------- */
 
-.content-sidebar-wrap {
+.content-sidebar-wrap, .content-area {
 	width: 90%;
 	max-width: 1440px;
 	margin: 0 auto;
@@ -997,12 +996,6 @@ th:first-child {
 
 /* WooCommerce Products and Categories
 --------------------------------------------- */
-
-/* Add top padding to product and category pages */
-body.single-product .site-inner,
-body.archive .site-inner {
-	padding: 0px;
-}
 
 body.tax-product_cat main#genesis-content {
 	background: #fff;
@@ -1025,6 +1018,10 @@ img.archive-bg-image {
 }
 
 .subcategories {
+<<<<<<< HEAD
+	/* padding: 20px; */
+=======
+>>>>>>> 31f436cf1bdb688783c07a791284aa097f318710
 	margin-bottom: 40px;
 }
 
@@ -1080,6 +1077,8 @@ body.error404 article.entry {
 
 body.error404 h1.entry-title {
 	text-shadow: 0 0 black;
+	color: #333;
+	padding-bottom: 24px;
 }
 
 body.error404 .entry-content {
@@ -1351,6 +1350,11 @@ img.error-emoji {
 	text-shadow: none;
 }
 
+h1.product_title.entry-title {
+	color: #333;
+	margin: 0px;
+}
+
 /* WordPress
 --------------------------------------------- */
 
@@ -1435,7 +1439,7 @@ img.alignright,
 }
 
 body.single-product main{
-	padding: 60px 20px;
+	padding: 20px 0px;
 }
 
 .hidden {
@@ -1699,8 +1703,15 @@ body.single-product main{
 .site-header {
 	background-color: #fff;
 	box-shadow: 0 0 20px rgba(0,0,0,0.04);
+<<<<<<< HEAD
+	/* padding: 0px 18px; */
+=======
+>>>>>>> 31f436cf1bdb688783c07a791284aa097f318710
 	border-bottom: 1px solid #e9e9e9;
 	padding-bottom: 20px;
+	/* width: 90%; */
+	/* margin-left: auto; */
+	/* margin-right: auto; */
 }
 
 .site-header .flex-container {
@@ -2166,6 +2177,10 @@ p.entry-meta {
 	line-height: 1.5;
 	background: #fff;
 	padding: 0 0 20px 0;
+<<<<<<< HEAD
+	/* margin: 12px; */
+=======
+>>>>>>> 31f436cf1bdb688783c07a791284aa097f318710
 }
 
 .sidebar-title {
@@ -2533,9 +2548,16 @@ ul.product-categories li.cat-item a:hover {
 	--------------------------------------------- */
 	/* .archive-description .wrap,
 	.entry-header .wrap {
+<<<<<<< HEAD
+		max-width: 1440px;
+		margin: 0 auto;
+		padding: 60px 0px;
+	}
+=======
 		display: flex;
 		min-height: 180px;
 	} */
+>>>>>>> 31f436cf1bdb688783c07a791284aa097f318710
 
 	/* Genesis Menu
 	--------------------------------------------- */
@@ -2658,7 +2680,7 @@ ul.product-categories li.cat-item a:hover {
 	--------------------------------------------- */
 	
 	body.single-product main {
-		padding: 0px;
+		padding: 20px 0px;
 	}
 
 	.subcategories {
