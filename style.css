@@ -1691,15 +1691,8 @@ body.single-product main{
 .site-header {
 	background-color: #fff;
 	box-shadow: 0 0 20px rgba(0,0,0,0.04);
-<<<<<<< HEAD
-	/* padding: 0px 18px; */
-=======
->>>>>>> 31f436cf1bdb688783c07a791284aa097f318710
 	border-bottom: 1px solid #e9e9e9;
 	padding-bottom: 20px;
-	/* width: 90%; */
-	/* margin-left: auto; */
-	/* margin-right: auto; */
 }
 
 .site-header .flex-container {
@@ -1726,7 +1719,6 @@ body.single-product main{
 	max-width: 240px;
 	padding-bottom: 12px;
 	padding-top: 12px;
-	/* display: block; */
 	float: left;
 }
 
@@ -2165,10 +2157,6 @@ p.entry-meta {
 	line-height: 1.5;
 	background: #fff;
 	padding: 0 0 20px 0;
-<<<<<<< HEAD
-	/* margin: 12px; */
-=======
->>>>>>> 31f436cf1bdb688783c07a791284aa097f318710
 }
 
 .sidebar-title {
@@ -2536,16 +2524,9 @@ ul.product-categories li.cat-item a:hover {
 	--------------------------------------------- */
 	/* .archive-description .wrap,
 	.entry-header .wrap {
-<<<<<<< HEAD
-		max-width: 1440px;
-		margin: 0 auto;
-		padding: 60px 0px;
-	}
-=======
 		display: flex;
 		min-height: 180px;
 	} */
->>>>>>> 31f436cf1bdb688783c07a791284aa097f318710
 
 	/* Genesis Menu
 	--------------------------------------------- */
