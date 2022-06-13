@@ -553,23 +553,8 @@ input[type="search"]::-webkit-search-results-button {
 	display: none;
 }
 
-/* Addify Request A Quote
+/* DVIN Quote List Table
 --------------------------------------------- */
-form.addify-quote-form {
-	display: flex;
-	flex-direction: row;
-	align-items: flex-start;
-	justify-content: space-between;
-	flex-wrap: wrap;
-}
-
-table.quote-fields tr {
-	border-bottom: 1px solid #bdbdbd;
-}
-
-table.quote-fields td {
-	border-top: none;;
-}
 
 .woocommerce table.shop_table {
 	border: none !important;
@@ -577,30 +562,26 @@ table.quote-fields td {
 	box-shadow: 0px 0px 20px rgb(0 0 0 / 4%);
 	max-width: 100%;
 }
-
+/* 
 .woocommerce table.shop_table a{
 	font-weight: normal;
 	color: #333;
 	text-decoration: none;
-}
+} */
 
 .woocommerce table.shop_table a:hover{
 	color: var(--main-link-color_darker);
-}
-
-.af_quote_fields {
-	background: #fff;
-	padding: 16px;
-	box-shadow: 0px 0px 20px rgb(0 0 0 / 4%);
 }
 
 tr.woocommerce-cart-form__quote-item.cart_item {
 	border-bottom: 1px solid #dbdbdb;
 	padding-bottom: 20px;
 }
-
-tr.addify-option-field {
-	word-break: break-word;
+/* This overrides the small thumbnail on the quotelist table and shows a bigger image */
+#add_payment_method table.cart img, 
+.woocommerce-cart table.cart img, 
+.woocommerce-checkout table.cart img {
+	width: 100% !important;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -616,6 +597,17 @@ tr.addify-option-field {
 	.woocommerce table.shop_table_responsive tr td, 
 	.woocommerce-page table.shop_table_responsive tr td {
 		border-top: none;
+	}
+
+	.woocommerce #content table.cart .product-thumbnail, 
+	.woocommerce table.cart .product-thumbnail, 
+	.woocommerce-page #content table.cart .product-thumbnail, 
+	.woocommerce-page table.cart .product-thumbnail {
+		display: block !important;
+	}
+
+	.woocommerce-cart table.cart .product-thumbnail::before {
+		content: ' ' !important;
 	}
 
 }
@@ -1066,6 +1058,12 @@ h2.subcat_title {
 
 .subcat_item h3.category_title {
 	margin: 0;
+}
+
+h1.product_title {
+	width: 100%;
+	color: #333;
+	align-self: left;
 }
 
 /* Error 404 Page
@@ -2674,6 +2672,9 @@ ul.product-categories li.cat-item a:hover {
 	
 	body.single-product main {
 		padding: 0px;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 90%;
 	}
 
 	.subcategories {
