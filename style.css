@@ -981,18 +981,21 @@ th:first-child {
 .content-sidebar-wrap {
 	width: 90%;
 	max-width: 1440px;
-	margin: 0 auto;
-	position: relative;
+	margin: 40px auto;
+	display: flex;
+	flex-flow: row-reverse;
+	flex-wrap: wrap;
+	gap: 40px;
 }
 
 
 /* WooCommerce Products and Categories
 --------------------------------------------- */
 
-body.tax-product_cat main#genesis-content {
+body.tax-product_cat main#genesis-content, 
+body.search-results main#genesis-content {
 	background: #fff;
 	padding: 20px;
-	margin-bottom: 40px;
 }
 
 .archive-bg-container {
@@ -1007,11 +1010,6 @@ img.archive-bg-image {
 	height: auto;
 	width: 100%;
 	min-height: 180px;
-}
-
-.subcategories {
-	/* padding: 20px; */
-	margin-bottom: 40px;
 }
 
 .subcat_grid {
@@ -2157,6 +2155,7 @@ p.entry-meta {
 	line-height: 1.5;
 	background: #fff;
 	padding: 0 0 20px 0;
+	width: 100%;
 }
 
 .sidebar-title {
@@ -2658,6 +2657,7 @@ ul.product-categories li.cat-item a:hover {
 	.subcategories {
 		padding: 0px;
 		margin-bottom: 20px;
+		width: 100%;
 	}
 	
 	.subcat_grid {
@@ -2668,7 +2668,7 @@ ul.product-categories li.cat-item a:hover {
 	--------------------------------------------- */
 
 	.content {
-		float: left;
+		/* float: left; */
 		width: 75%;
 	}
 
@@ -2679,7 +2679,8 @@ ul.product-categories li.cat-item a:hover {
 	}
 
 	.sidebar-content .content {
-		float: right;
+		/* float: right; */
+		flex: 1 auto;
 	}
 
 	.full-width-content .content {
@@ -2702,7 +2703,8 @@ ul.product-categories li.cat-item a:hover {
 	}
 
 	.sidebar-content .sidebar {
-		float: left;
+		/* float: left; */
+		height: 100%;
 	}
 	
 	.sidebar {
