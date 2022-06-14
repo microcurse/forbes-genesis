@@ -1992,10 +1992,6 @@ body.single-product main{
 /* Entry Content
 --------------------------------------------- */
 
-.entry {
-	margin-bottom: 40px;
-}
-
 .entry-content ol,
 .entry-content ul {
 	margin-bottom: 30px;
@@ -2781,16 +2777,6 @@ ul.product-categories li.cat-item a:hover {
 
 	/* Entry Misc.
 	--------------------------------------------- */
-
-	.after-entry,
-	.archive-description,
-	.author-box,
-	.comment-respond,
-	.entry,
-	.entry-comments,
-	.entry-pings {
-		margin-bottom: 40px;
-	}
 
 	.archive-description .entry-title, .archive-title, .author-box-title, .entry-title {
 		padding-left: 0px;
