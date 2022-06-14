@@ -993,7 +993,7 @@ th:first-child {
 --------------------------------------------- */
 
 body.tax-product_cat main#genesis-content, 
-body.search-results main#genesis-content {
+body.search main#genesis-content {
 	background: #fff;
 	padding: 20px;
 }
