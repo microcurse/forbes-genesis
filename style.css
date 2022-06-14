@@ -2668,7 +2668,6 @@ ul.product-categories li.cat-item a:hover {
 	--------------------------------------------- */
 
 	.content {
-		/* float: left; */
 		width: 75%;
 	}
 
@@ -2679,7 +2678,6 @@ ul.product-categories li.cat-item a:hover {
 	}
 
 	.sidebar-content .content {
-		/* float: right; */
 		flex: 1 auto;
 	}
 
