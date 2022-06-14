@@ -2666,7 +2666,7 @@ ul.product-categories li.cat-item a:hover {
 	body.full-width-content .content {
 		float: left;
 		width: 100%;
-		/* padding: 40px 0; removed this for. There's a margin 40px on main-container */
+		/* padding: 40px 0; removed this for now. There's a margin 40px on main-container. let's see if it breaks */
 	}
 
 	.sidebar-content .content {
