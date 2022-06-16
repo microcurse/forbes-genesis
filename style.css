@@ -982,10 +982,8 @@ th:first-child {
 	width: 90%;
 	max-width: 1440px;
 	margin: 40px auto;
-	display: flex;
-	flex-flow: row-reverse;
-	flex-wrap: wrap;
 	gap: 40px;
+	grid-template-columns: 300px 1fr;
 }
 
 
@@ -996,6 +994,7 @@ body.tax-product_cat main#genesis-content,
 body.search main#genesis-content {
 	background: #fff;
 	padding: 20px;
+	grid-area: main;
 }
 
 .archive-bg-container {
@@ -2634,6 +2633,13 @@ ul.product-categories li.cat-item a:hover {
 		padding: 0px;
 	}
 
+	.content-sidebar-wrap {
+		display: grid;
+		grid-template-areas:
+			"subcategories subcategories"
+			"sidebar main";
+	}
+
 	/* WooCommerce
 	--------------------------------------------- */
 	
@@ -2645,7 +2651,7 @@ ul.product-categories li.cat-item a:hover {
 	}
 
 	.subcategories {
-		width: 100%;
+		grid-area: subcategories;
 	}
 	
 	.subcat_grid {
@@ -2656,7 +2662,6 @@ ul.product-categories li.cat-item a:hover {
 	--------------------------------------------- */
 
 	.content {
-		width: 75%;
 	}
 
 	body.full-width-content .content {
@@ -2666,7 +2671,6 @@ ul.product-categories li.cat-item a:hover {
 	}
 
 	.sidebar-content .content {
-		flex: 1 auto;
 	}
 
 	.full-width-content .content {
@@ -2683,8 +2687,6 @@ ul.product-categories li.cat-item a:hover {
 	--------------------------------------------- */
 
 	.sidebar {
-		float: right;
-		width: 22%;
 		margin: 0;
 	}
 
