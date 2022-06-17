@@ -982,8 +982,6 @@ th:first-child {
 	width: 90%;
 	max-width: 1440px;
 	margin: 40px auto;
-	gap: 40px;
-	grid-template-columns: 300px 1fr;
 }
 
 
@@ -1434,14 +1432,9 @@ img.alignright,
 	display: none;
 }
 
-body.single-product main{
-	padding: 20px 0px;
-}
-
 .hidden {
 	display: none !important;
 }
-
 
 /* TM Extra Product Options
 --------------------------------------------- */
@@ -2646,23 +2639,28 @@ ul.product-categories li.cat-item a:hover {
 		padding: 0px;
 	}
 
-	.content-sidebar-wrap {
+	.content-sidebar-wrap, .content-area  {
 		display: grid;
 		grid-template-areas:
 			"subcategories subcategories"
 			"sidebar main";
 		align-items: start;
+		gap: 40px;
+    grid-template-columns: 300px 1fr;
 	}
+	
+	body.full-width-content .content-sidebar-wrap, 
+	body.full-width-content .content-area,
+	body.single-product .content-area {
+		display: grid;
+		grid-template-areas: none;
+		grid-template-columns: auto;
+		gap: 0px;
+	}
+
 
 	/* WooCommerce
 	--------------------------------------------- */
-	
-	body.single-product main {
-		padding: 0px;
-    max-width: 1440px;
-    margin: 40px auto;
-    width: 90%;
-	}
 
 	.subcategories {
 		grid-area: subcategories;
@@ -2675,22 +2673,8 @@ ul.product-categories li.cat-item a:hover {
 	/* Content
 	--------------------------------------------- */
 
-	.content {
-	}
-
 	body.full-width-content .content {
-		float: left;
-		width: 100%;
-		/* padding: 40px 0; removed this for now. There's a margin 40px on main-container. let's see if it breaks */
-	}
-
-	.sidebar-content .content {
-	}
-
-	.full-width-content .content {
-		float: none;
-		margin-left: auto;
-		margin-right: auto;
+		grid-area: main;
 	}
 
 	body.with-hero.full-width-content .content {
