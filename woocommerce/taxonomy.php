@@ -178,24 +178,6 @@ function fi_genesis_do_archive_copy() {
 
 }
 
-
-/**
- * PEDAC
- * 
- * INPUT
- * PHP call to get Product Category
- * 
- * OUTPUT
- * Subcategories of that product category styled accordingly in HTML
- * 
- * ALGORITHM
- * Get current product category
- * Get sub/child categories for that product
- *  - term_taxonomy_id
- * return/echo to HTML for each sub category 
- * 
- */
-
 function add_subcategories() {
   if ( is_product_category() ) {
 
