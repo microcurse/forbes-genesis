@@ -2157,6 +2157,7 @@ p.entry-meta {
 	line-height: 1.5;
 	background: #fff;
 	padding: 0 0 20px 0;
+	grid-area: sidebar;
 }
 
 .sidebar-title {
