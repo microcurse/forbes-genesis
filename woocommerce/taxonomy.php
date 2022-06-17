@@ -187,7 +187,7 @@ function add_subcategories() {
       // Get subcategories of the current category
       $terms    = get_terms([
           'taxonomy'    => $taxonomy,
-          'hide_empty'  => true,
+          'hide_empty'  => false,
           'parent'      => get_queried_object_id()
       ]);
 
@@ -201,7 +201,7 @@ function add_subcategories() {
 
           $output .= '<div class="subcat_item light-shadow"><a href="'. $term_link .'">' . '<img src="' .$image. '" width="160"/>' . '<h3 class="category_title">' . $term->name . '</h3></a></div>';
       }
-      if ($term) {
+      if ($terms) {
         echo $output . '</div></div>';
       }
   }
