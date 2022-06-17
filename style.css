@@ -553,23 +553,8 @@ input[type="search"]::-webkit-search-results-button {
 	display: none;
 }
 
-/* Addify Request A Quote
+/* DVIN Quote List Table
 --------------------------------------------- */
-form.addify-quote-form {
-	display: flex;
-	flex-direction: row;
-	align-items: flex-start;
-	justify-content: space-between;
-	flex-wrap: wrap;
-}
-
-table.quote-fields tr {
-	border-bottom: 1px solid #bdbdbd;
-}
-
-table.quote-fields td {
-	border-top: none;;
-}
 
 .woocommerce table.shop_table {
 	border: none !important;
@@ -577,30 +562,26 @@ table.quote-fields td {
 	box-shadow: 0px 0px 20px rgb(0 0 0 / 4%);
 	max-width: 100%;
 }
-
+/* 
 .woocommerce table.shop_table a{
 	font-weight: normal;
 	color: #333;
 	text-decoration: none;
-}
+} */
 
 .woocommerce table.shop_table a:hover{
 	color: var(--main-link-color_darker);
-}
-
-.af_quote_fields {
-	background: #fff;
-	padding: 16px;
-	box-shadow: 0px 0px 20px rgb(0 0 0 / 4%);
 }
 
 tr.woocommerce-cart-form__quote-item.cart_item {
 	border-bottom: 1px solid #dbdbdb;
 	padding-bottom: 20px;
 }
-
-tr.addify-option-field {
-	word-break: break-word;
+/* This overrides the small thumbnail on the quotelist table and shows a bigger image */
+#add_payment_method table.cart img, 
+.woocommerce-cart table.cart img, 
+.woocommerce-checkout table.cart img {
+	width: 100% !important;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -616,6 +597,17 @@ tr.addify-option-field {
 	.woocommerce table.shop_table_responsive tr td, 
 	.woocommerce-page table.shop_table_responsive tr td {
 		border-top: none;
+	}
+
+	.woocommerce #content table.cart .product-thumbnail, 
+	.woocommerce table.cart .product-thumbnail, 
+	.woocommerce-page #content table.cart .product-thumbnail, 
+	.woocommerce-page table.cart .product-thumbnail {
+		display: block !important;
+	}
+
+	.woocommerce-cart table.cart .product-thumbnail::before {
+		content: ' ' !important;
 	}
 
 }
@@ -989,18 +981,20 @@ th:first-child {
 .content-sidebar-wrap, .content-area {
 	width: 90%;
 	max-width: 1440px;
-	margin: 0 auto;
-	position: relative;
+	margin: 40px auto;
+	gap: 40px;
+	grid-template-columns: 300px 1fr;
 }
 
 
 /* WooCommerce Products and Categories
 --------------------------------------------- */
 
-body.tax-product_cat main#genesis-content {
+body.tax-product_cat main#genesis-content, 
+body.search main#genesis-content {
 	background: #fff;
 	padding: 20px;
-	margin-bottom: 40px;
+	grid-area: main;
 }
 
 .archive-bg-container {
@@ -1018,11 +1012,7 @@ img.archive-bg-image {
 }
 
 .subcategories {
-<<<<<<< HEAD
-	/* padding: 20px; */
-=======
->>>>>>> 31f436cf1bdb688783c07a791284aa097f318710
-	margin-bottom: 40px;
+	width: 100%;
 }
 
 .subcat_grid {
@@ -1066,6 +1056,12 @@ h2.subcat_title {
 
 .subcat_item h3.category_title {
 	margin: 0;
+}
+
+h1.product_title {
+	width: 100%;
+	color: #333;
+	align-self: left;
 }
 
 /* Error 404 Page
@@ -1703,10 +1699,6 @@ body.single-product main{
 .site-header {
 	background-color: #fff;
 	box-shadow: 0 0 20px rgba(0,0,0,0.04);
-<<<<<<< HEAD
-	/* padding: 0px 18px; */
-=======
->>>>>>> 31f436cf1bdb688783c07a791284aa097f318710
 	border-bottom: 1px solid #e9e9e9;
 	padding-bottom: 20px;
 	/* width: 90%; */
@@ -1738,7 +1730,6 @@ body.single-product main{
 	max-width: 240px;
 	padding-bottom: 12px;
 	padding-top: 12px;
-	/* display: block; */
 	float: left;
 }
 
@@ -2014,10 +2005,6 @@ body.single-product main{
 /* Entry Content
 --------------------------------------------- */
 
-.entry {
-	margin-bottom: 40px;
-}
-
 .entry-content ol,
 .entry-content ul {
 	margin-bottom: 30px;
@@ -2177,10 +2164,6 @@ p.entry-meta {
 	line-height: 1.5;
 	background: #fff;
 	padding: 0 0 20px 0;
-<<<<<<< HEAD
-	/* margin: 12px; */
-=======
->>>>>>> 31f436cf1bdb688783c07a791284aa097f318710
 }
 
 .sidebar-title {
@@ -2548,16 +2531,9 @@ ul.product-categories li.cat-item a:hover {
 	--------------------------------------------- */
 	/* .archive-description .wrap,
 	.entry-header .wrap {
-<<<<<<< HEAD
-		max-width: 1440px;
-		margin: 0 auto;
-		padding: 60px 0px;
-	}
-=======
 		display: flex;
 		min-height: 180px;
 	} */
->>>>>>> 31f436cf1bdb688783c07a791284aa097f318710
 
 	/* Genesis Menu
 	--------------------------------------------- */
@@ -2666,26 +2642,29 @@ ul.product-categories li.cat-item a:hover {
 	--------------------------------------------- */
 
 	.site-inner {
-		/* max-width: 1440px; */
 		margin: 0px;
 		padding: 0px;
 	}
 
-	body.single-product .site-inner, 
-	body.archive .site-inner {
-		/* padding: 60px 0; */
+	.content-sidebar-wrap {
+		display: grid;
+		grid-template-areas:
+			"subcategories subcategories"
+			"sidebar main";
 	}
 
 	/* WooCommerce
 	--------------------------------------------- */
 	
 	body.single-product main {
-		padding: 20px 0px;
+		padding: 0px;
+    max-width: 1440px;
+    margin: 40px auto;
+    width: 90%;
 	}
 
 	.subcategories {
-		padding: 0px;
-		margin-bottom: 20px;
+		grid-area: subcategories;
 	}
 	
 	.subcat_grid {
@@ -2696,18 +2675,15 @@ ul.product-categories li.cat-item a:hover {
 	--------------------------------------------- */
 
 	.content {
-		float: left;
-		width: 75%;
 	}
 
 	body.full-width-content .content {
 		float: left;
 		width: 100%;
-		padding: 40px 0;
+		/* padding: 40px 0; removed this for now. There's a margin 40px on main-container. let's see if it breaks */
 	}
 
 	.sidebar-content .content {
-		float: right;
 	}
 
 	.full-width-content .content {
@@ -2724,13 +2700,11 @@ ul.product-categories li.cat-item a:hover {
 	--------------------------------------------- */
 
 	.sidebar {
-		float: right;
-		width: 22%;
 		margin: 0;
 	}
 
 	.sidebar-content .sidebar {
-		float: left;
+		height: 100%;
 	}
 	
 	.sidebar {
@@ -2818,16 +2792,6 @@ ul.product-categories li.cat-item a:hover {
 
 	/* Entry Misc.
 	--------------------------------------------- */
-
-	.after-entry,
-	.archive-description,
-	.author-box,
-	.comment-respond,
-	.entry,
-	.entry-comments,
-	.entry-pings {
-		margin-bottom: 40px;
-	}
 
 	.archive-description .entry-title, .archive-title, .author-box-title, .entry-title {
 		padding-left: 0px;
