@@ -2651,6 +2651,7 @@ ul.product-categories li.cat-item a:hover {
 		grid-template-areas:
 			"subcategories subcategories"
 			"sidebar main";
+		align-items: start;
 	}
 
 	/* WooCommerce
@@ -2701,16 +2702,9 @@ ul.product-categories li.cat-item a:hover {
 
 	.sidebar {
 		margin: 0;
-	}
-
-	.sidebar-content .sidebar {
-		height: 100%;
-	}
-	
-	.sidebar {
 		padding: 0px;
 	}
-	
+
 	.sidebar ul.product-categories {
 		padding: 0px;
 	}
