@@ -1226,7 +1226,6 @@ img.error-emoji {
   width: 100%;
   border: 1px solid #bcbec4;
   max-height: 40px;
-  max-width: 400px;
   grid-area: search;
   justify-self: end;
   float: right;
@@ -2484,7 +2483,7 @@ ul.product-categories li.cat-item a:hover {
 		justify-content:space-between;
 		max-width: 1440px;
 		margin: 0 auto;
-		/* padding: 0 20px; */
+		width: 100%
 	}
 
 	.site-header .flex-container {
@@ -2648,6 +2647,7 @@ ul.product-categories li.cat-item a:hover {
 		align-items: start;
 		gap: 40px;
     grid-template-columns: 300px 1fr;
+		width: 100%;
 	}
 	
 	body.full-width-content .content-sidebar-wrap, 
@@ -2673,10 +2673,6 @@ ul.product-categories li.cat-item a:hover {
 
 	/* Content
 	--------------------------------------------- */
-
-	body.full-width-content .content {
-		grid-area: main;
-	}
 
 	body.with-hero.full-width-content .content {
 		padding: 0px;
@@ -2774,6 +2770,7 @@ ul.product-categories li.cat-item a:hover {
 
 	.archive-description .entry-title, .archive-title, .author-box-title, .entry-title {
 		padding-left: 0px;
+		width: 100%;
 	}
 
 	/* Footer Widgets
