@@ -2483,7 +2483,6 @@ ul.product-categories li.cat-item a:hover {
 		justify-content:space-between;
 		max-width: 1440px;
 		margin: 0 auto;
-		width: 100%
 	}
 
 	.site-header .flex-container {
@@ -2770,7 +2769,6 @@ ul.product-categories li.cat-item a:hover {
 
 	.archive-description .entry-title, .archive-title, .author-box-title, .entry-title {
 		padding-left: 0px;
-		width: 100%;
 	}
 
 	/* Footer Widgets
