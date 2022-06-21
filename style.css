@@ -320,7 +320,7 @@ h2 {
 
 .entry-content h3,
 .entry-content h4 {
-	font-weight: 600;
+	/* font-weight: 600; */
 }
 
 h3 {
@@ -982,6 +982,11 @@ th:first-child {
 	width: 90%;
 	max-width: 1440px;
 	margin: 40px auto;
+}
+
+
+body.with-hero .content-sidebar-wrap {
+	margin: 0 auto;
 }
 
 
@@ -2000,7 +2005,7 @@ img.alignright,
 .entry-content ol,
 .entry-content ul {
 	margin-bottom: 30px;
-	margin-left: 40px;
+	/* margin-left: 40px; Removed to fix spacing on contact us page */
 }
 
 .entry-content ol > li {
