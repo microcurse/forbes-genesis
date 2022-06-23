@@ -809,6 +809,11 @@ th:first-child {
   text-shadow: 1px 1px hsla(0, 0%, 0%, 0.569);
 }
 
+/* Fix extra space at bottom of page on full width pages */
+body.page-template-hero .wp-block-image .alignright {
+	margin: 0px !important;
+}
+
 /* Spacers
 --------------------------------------------- */
 
