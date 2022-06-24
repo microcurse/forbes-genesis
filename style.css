@@ -2010,7 +2010,12 @@ img.alignright,
 .entry-content ol,
 .entry-content ul {
 	margin-bottom: 30px;
-	/* margin-left: 40px; Removed to fix spacing on contact us page */
+	margin-left: 20px;
+}
+
+.entry-content ol.wp-block-social-links,
+.entry-content ul.wp-block-social-links {
+	margin-left: 0px;
 }
 
 .entry-content ol > li {
