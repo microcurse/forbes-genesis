@@ -1096,6 +1096,11 @@ body.error404 .entry-content .search-box {
 	float: none;
 }
 
+body.error404 .content-sidebar-wrap main{
+	padding: 20px;
+	grid-area: main;
+}
+
 img.error-emoji {
 	padding: 20px;
 }
