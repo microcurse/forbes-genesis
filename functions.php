@@ -131,12 +131,6 @@ remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 // Load scripts from old site
 // add_action( 'wp_enqueue_scripts', 'enqueue_child_scripts', 99 );
 
-// Enqueue custom admin styles
-add_action( 'init', 'add_editor_styles' );
-
-// Editor color pallette
-add_action( 'after_setup_theme', 'mytheme_setup_theme_supported_features' );
-
 add_filter( 'genesis_author_box_gravatar_size', 'genesis_sample_author_box_gravatar' );
 /**
  * Modifies size of the Gravatar in the author box.
@@ -173,10 +167,6 @@ function genesis_sample_comments_gravatar( $args ) {
  * 
  */
 
-function add_editor_styles() {
-	add_editor_style( 'style-editor.css' );
-}
-
 function enqueue_child_scripts() {
 	wp_enqueue_style( 'child_style', get_stylesheet_directory_uri() . '/assets/css/custom.css', array(), 1.1);
 	wp_enqueue_script( 'child_script', get_stylesheet_directory_uri() . '/assets/js/custom.js', array ( 'jquery' ), 1.1, true);
@@ -190,31 +180,6 @@ add_theme_support( 'genesis-structural-wraps', array(
 	'footer',
 	'simple-social-icons',
 ));
-
-function mytheme_setup_theme_supported_features() {
-	add_theme_support( 'editor-color-pallette', array(
-		array(
-			'name' => __( 'forbes-blue', 'themeLangDomain' ),
-			'slug' => 'forbes-blue',
-			'color' =>  '#28317E',
-		),
-		array(
-			'name' => __( 'link-blue', 'themeLangDomain' ),
-			'slug' => 'link-blue',
-			'color' =>  '#2C3CC9',
-		),
-		array(
-            'name' => __( 'very light gray', 'themeLangDomain' ),
-            'slug' => 'very-light-gray',
-            'color' => '#eee',
-        ),
-        array(
-            'name' => __( 'very dark gray', 'themeLangDomain' ),
-            'slug' => 'very-dark-gray',
-            'color' => '#444',
-        ),
-	));
-}
 
 // async scripts
 function add_async_attributes( $tag, $handle ) {

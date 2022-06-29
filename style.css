@@ -937,6 +937,11 @@ body.page-template-hero .wp-block-image .alignright {
 
 .dark-background {
   background: radial-gradient(circle at top left, #3e4660, #13181c);
+	color: #fff;
+}
+
+.dark-background figcaption {
+	color: #fff !important;
 }
 
 /* Reverse Mobile Columns
@@ -1397,7 +1402,7 @@ a.alignright {
 
 img.centered,
 .aligncenter {
-	display: block;
+	display: block !important;
 	margin: 0 auto 30px;
 }
 
@@ -2308,6 +2313,71 @@ ul.product-categories li.cat-item a:hover {
 
 .smile_icon_list.left li .icon_description {
 	line-height: 45px;
+}
+
+/* Mixology Landing Page */
+
+h2.mixology-title {
+  text-transform: uppercase;
+  font-size: 20px;
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: .15rem;
+}
+
+.mixology-acc {
+  color: #fff;
+  margin: auto;
+  padding: 2.5rem;
+}
+
+.acc-panel {
+  border-top: 1px dotted #efefef;
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  cursor: pointer;
+}
+
+.acc-header {
+  font-size: 2.5rem;
+  font-weight: 300;
+  padding-bottom: 1rem;
+}
+
+.acc-body {
+  transition-property: all;
+	transition-duration: .15s;
+	transition-timing-function: ease-out;
+  height: 0;
+  overflow: hidden;
+}
+
+.show {
+  height: 80px;
+}
+
+.link-t2 {
+  font-weight: 700;
+  text-decoration: underline;
+  color: #2c3cc9;
+}
+
+.mixology-acc .gb-accordion-title {
+  background: none !important;
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 300;
+  padding-bottom: 1rem;
+}
+
+.mixology-acc .gb-accordion-title:focus {
+  color: #fff;
+}
+
+.wp-block-genesis-blocks-gb-accordion.gb-block-accordion {
+  border-bottom: 1px dotted #efefef;
 }
 
 /* Slick Carousel

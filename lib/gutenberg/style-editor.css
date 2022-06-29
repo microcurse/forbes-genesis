@@ -50,6 +50,11 @@ th:first-child {
 
 .wp-block {
 	max-width: 732px;
+	margin: 0 auto;
+}
+
+.editor-styles-wrapper .wp-block {
+	max-width: 100%;
 }
 
 /* Width of "wide" blocks
