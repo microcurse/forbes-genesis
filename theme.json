@@ -11,6 +11,16 @@
       "customGradient": false,
       "palette": [
         {
+          "name": "White",
+          "slug": "white",
+          "color": "#ffffff"
+        },
+        {
+          "name": "Black",
+          "slug": "black",
+          "color": "#333333"
+        },
+        {
           "name": "Forbes Blue",
           "slug": "forbes-blue",
           "color": "#2B317B"
@@ -44,6 +54,26 @@
           "name": "Primary Link Color Darker",
           "slug": "primary-link-color-darker",
           "color": "#2532a7"
+        },
+        {
+          "name": "Grayish",
+          "slug": "grayish",
+          "color": "#333540"
+        },
+        {
+          "name": "Action Stations Red",
+          "slug": "action-stations-red",
+          "color": "#ec1f27"
+        },
+        {
+          "name": "Mobile Partitions Gold",
+          "slug": "mobile-partitions-gold",
+          "color": "#A28E2F"
+        },
+        {
+          "name": "Nesting Tables Orange",
+          "slug": "nesting-tables-orange",
+          "color": "#f68e2e"
         }
       ]
     }
