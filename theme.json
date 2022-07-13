@@ -1,6 +1,11 @@
 {
   "version": 1,
   "settings": {
+    "appearanceTools": {
+      "border": {
+        "color": true
+      }
+    },
     "layout": {
       "contentSize": "840px",
       "wideSize": "1440px",
@@ -8,7 +13,7 @@
     },
     "color": {
       "custom": true,
-      "customGradient": false,
+      "customGradient": true,
       "palette": [
         {
           "name": "Forbes Blue",
