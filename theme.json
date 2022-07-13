@@ -3,7 +3,7 @@
   "settings": {
     "layout": {
       "contentSize": "840px",
-      "wideSize": "1100px",
+      "wideSize": "1440px",
       "fullSize": "100%"
     },
     "color": {
@@ -16,24 +16,9 @@
           "color": "#2B317B"
         },
         {
-          "name": "Forbes Lighter Blue",
-          "slug": "forbes-lighter-blue",
-          "color": "#3a42a6"
-        },
-        {
-          "name": "Forbes Darker Blue",
-          "slug": "forbes-darker-blue",
-          "color": "#252a6a"
-        },
-        {
           "name": "Light Blue",
           "slug": "light-blue",
           "color": "#008DD5"
-        },
-        {
-          "name": "Light Blue Darker",
-          "slug": "light-blue-darker",
-          "color": "#007AB8"
         },
         {
           "name": "Primary Link Color",
