@@ -1,11 +1,6 @@
 {
-  "version": 1,
+  "version": 2,
   "settings": {
-    "appearanceTools": {
-      "border": {
-        "color": true
-      }
-    },
     "layout": {
       "contentSize": "840px",
       "wideSize": "1440px",
