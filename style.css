@@ -1381,6 +1381,7 @@ h1.product_title.entry-title {
 	color: #fff;
 	width: 90%;
 	margin: 12px auto;
+	max-width: 1440px;
 }
 
 /* WordPress
