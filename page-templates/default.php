@@ -29,7 +29,7 @@ function genesis_full_width_class( $classes ) {
 remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
 remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
 remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
-remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 );
+remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 16 );
 
 // Add current header
 add_action( 'genesis_after_header', 'genesis_entry_header_markup_open', 5 );
@@ -37,8 +37,9 @@ add_action( 'genesis_after_header', 'fi_entry_header_wrap_open', 6 );
 add_action( 'genesis_after_header', 'genesis_do_post_title' );
 add_action( 'genesis_after_header', 'genesis_post_info' );
 add_action( 'genesis_after_header', 'fi_do_entry_header_bg', 13);
-add_action( 'genesis_after_header', 'fi_entry_header_wrap_close', 14 );
-add_action( 'genesis_after_header', 'genesis_entry_header_markup_close', 15 );
+add_action( 'genesis_after_header', 'fi_entry_header_description', 14);
+add_action( 'genesis_after_header', 'fi_entry_header_wrap_close', 15 );
+add_action( 'genesis_after_header', 'genesis_entry_header_markup_close', 16 );
 
 // ACF Add background image to archive header
 function fi_do_entry_header_bg() {
@@ -80,6 +81,16 @@ function fi_entry_header_wrap_close() {
 					"context"   => 'wrap',
 			]
 	);
+
+}
+
+function fi_entry_header_description() {
+	$term = get_queried_object();
+	$description = get_field('page_description', $term);
+
+	if( $description ):
+		echo '<div class="page-description">' . $description . '</div>';
+	endif;
 
 }
 

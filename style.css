@@ -1321,6 +1321,8 @@ img.error-emoji {
 .entry-header .wrap {
 	display: flex;
 	min-height: 180px;
+	flex-direction: column;
+	justify-content: center;
 }
 
 /* 
@@ -1366,6 +1368,12 @@ img.error-emoji {
 h1.product_title.entry-title {
 	color: #333;
 	margin: 0px;
+}
+
+.page-description {
+	color: #fff;
+	width: 90%;
+	margin: 12px auto;
 }
 
 /* WordPress
