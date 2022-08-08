@@ -1,10 +1,17 @@
 {
   "version": 2,
   "settings": {
+    "appearanceTools": true,
     "layout": {
       "contentSize": "840px",
       "wideSize": "1440px",
       "fullSize": "100%"
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true,
+      "blockGap": true,
+      "units": [ "px", "%", "em", "rem", "vh", "vw" ]
     },
     "color": {
       "custom": true,
@@ -59,6 +66,20 @@
           "name": "Nesting Tables Orange",
           "slug": "nesting-tables-orange",
           "color": "#f68e2e"
+        }
+      ]
+    },
+    "typography": {
+      "fontFamilies:": [
+        {
+          "fontFamily":"Times New Roman, serif",
+          "slug": "times-new-roman",
+          "name": "Times New Roman"
+        },
+        {
+          "fontFamily":"proxima-nova, sans-serif",
+          "slug": "proxima-nova",
+          "name": "Proxima Nova"
         }
       ]
     }
