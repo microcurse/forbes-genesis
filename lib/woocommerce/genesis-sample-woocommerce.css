@@ -802,6 +802,8 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 	display: inline-flex;
 	align-items: center;
 	width: 100%;
+	font-weight: normal;
+	text-decoration: none;
 }
 
 .woocommerce ul.cart_list li img,
@@ -814,7 +816,7 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 .sidebar ul.product_list_widget li {
 	line-height: 1.4;
 	margin-bottom: 15px;
-	padding: 15px 0 0;
+	padding: 0px 12px 0 0;
 }
 
 .sidebar ul.product_list_widget li:last-child {

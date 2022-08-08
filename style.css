@@ -1161,6 +1161,13 @@ img.error-emoji {
 	padding-bottom: 10px;
 }
 
+.breadcrumb a ,
+.woocommerce-breadcrumb a {
+	font-weight: normal;
+	text-decoration: none;
+	color: var(--main-link-color);
+}
+
 .archive-description p:last-child,
 .author-box p:last-child {
 	margin-bottom: 0;
@@ -1461,6 +1468,12 @@ img.alignright,
 
 .hidden {
 	display: none !important;
+}
+
+/* Fix alignment of Add To Quote btn and qty input field */
+.woocommerce div.product form.cart {
+	margin-bottom: 2em;
+	display: flex;
 }
 
 /* TM Extra Product Options
@@ -2188,16 +2201,16 @@ p.entry-meta {
 	font-size: 1.6rem;
 	line-height: 1.5;
 	background: #fff;
-	padding: 0 0 20px 0;
+	padding: 10px 0 20px 0;
 	grid-area: sidebar;
 }
 
 .sidebar-title {
 	font-size: 16px;
-	color: #fff;
-	font-weight: 900;
-	background: var(--gray);
-	padding: 10px 16px;
+	color: #1e1e1e;
+	text-transform: uppercase;
+	font-weight: 600;
+	padding: 16px 16px;
 }
 
 .sidebar ul.product-categories {
@@ -2222,18 +2235,19 @@ ul.product-categories li.cat-item {
 }
 
 ul.product-categories li.cat-item:hover {
-	background-color: rgb(240, 240, 240);
+	/* background-color: rgb(240, 240, 240); */
 }
 
 ul.product-categories li.cat-item a {
 	text-decoration: none;
 	color: #333;
-	padding: 8px 20px;
+	padding: 4px 20px;
 	display: block;
+	font-weight: normal;
 }
 
 ul.product-categories li.cat-item a:hover {
-	color: var(--main-link-color_darker);
+	color: var(--main-link-color);
 }
 
 
@@ -2432,8 +2446,8 @@ h2.mixology-title {
 }
 
 .footer-widgets a:hover {
-	fill: var(--main-link-color_darker);
-	color: var(--main-link-color_darker);
+	fill: var(--main-link-color);
+	color: var(--main-link-color);
 }
 
 .footer-widgets .wrap {
@@ -2669,7 +2683,7 @@ h2.mixology-title {
 
 	.genesis-nav-menu > .menu-highlight > a:hover,
 	.genesis-nav-menu > .menu-highlight > a:focus {
-		background-color: var(--main-link-color_darker);
+		background-color: var(--main-link-color);
 	}
 
 	.genesis-responsive-menu .genesis-nav-menu .sub-menu,
@@ -2780,7 +2794,7 @@ h2.mixology-title {
 
 	.sidebar {
 		margin: 0;
-		padding: 0px;
+		/* padding: 0px; */
 	}
 
 	.sidebar ul.product-categories {
