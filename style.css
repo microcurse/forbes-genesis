@@ -1106,6 +1106,14 @@ body.error404 .content-sidebar-wrap main{
 	grid-area: main;
 }
 
+body.error404 .content-sidebar-wrap {
+	display: block !important;
+}
+
+body.error404 aside.sidebar {
+	display:none;
+}
+
 img.error-emoji {
 	padding: 20px;
 }
