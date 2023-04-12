@@ -17,7 +17,7 @@
                 "id": ""
             },
             "choices": {
-                "yes": "yes"
+                "yes: Yes": "yes: Yes"
             },
             "default_value": [],
             "return_format": "value",
@@ -137,5 +137,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681325091
+    "modified": 1681326720
 }
