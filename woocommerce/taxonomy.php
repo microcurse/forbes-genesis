@@ -14,13 +14,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 remove_action( 'genesis_loop', 'genesis_do_loop' );
 remove_action( 'woocommerce_archive_description', 'woocommerce_taxonomy_archive_description' );
-remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
+// remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 // remove archive.php default genesis archive heading open
 remove_action( 'genesis_archive_title_descriptions', 'genesis_do_archive_headings_open', 5);
 // remove archive.php default genesis archive heading close
 remove_action( 'genesis_archive_title_descriptions', 'genesis_do_archive_headings_close', 15);
+
+// Move Category Title Description
+remove_action( 'genesis_before_loop', 'genesis_do_taxonomy_title_description', 15 );
+add_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_taxonomy_title_description', 15 );
+remove_action( 'genesis_archive_title_descriptions', 'author-archive-description', 15 );
+// add_action( 'genesis_after_entry', 'genesis_archive_title_descriptions', $intro_text, 'author-archive-description', 16 );
 
 add_action( 'genesis_loop', 'genesiswooc_product_taxonomy_loop' );
 add_action( 'genesis_archive_title_descriptions', 'fi_genesis_do_archive_headings_open', 6, 3 );
@@ -112,7 +118,7 @@ function fi_genesis_do_archive_headings_open( $heading = '', $intro_text = '', $
   }
 }
 
-function fi_genesis_do_archive_headings_wrap_open( $heading = '', $intro_text = '', $context = '' ) {
+function fi_genesis_do_archive_headings_wrap_open( $heading = '', $intro_text = '' ) {
   
   if ( $heading || $intro_text ) {
     
@@ -135,7 +141,7 @@ function fi_genesis_do_archive_headings_wrap_open( $heading = '', $intro_text = 
  * @param string $intro_text Optional. Archive intro text, default is empty string.
  * @param string $context    Optional. Archive context, default is empty string.
  */
-function fi_genesis_do_archive_headings_wrap_close( $heading = '', $intro_text = '', $context = '' ) {
+function fi_genesis_do_archive_headings_wrap_close( $heading = '', $intro_text = '' ) {
 
 	if ( $heading || $intro_text ) {
 
@@ -174,12 +180,8 @@ function fi_genesis_do_archive_background() {
     <?php endif;
 }
 
-function fi_genesis_do_archive_copy() {
-
-}
-
 function add_subcategories() {
-  if ( is_product_category() ) {
+  if ( is_product_category() || is_tax() ) {
 
       $term_id  = get_queried_object_id();
       $taxonomy = 'product_cat';
@@ -199,11 +201,20 @@ function add_subcategories() {
           $image = wp_get_attachment_url( $thumbnail_id ); 
           $term_link = get_term_link( $term, $taxonomy );
 
-          $output .= '<div class="subcat_item light-shadow"><a href="'. $term_link .'">' . '<img src="' .$image. '" width="160"/>' . '<h3 class="category_title">' . $term->name . '</h3></a></div>';
+          $output .= '<div class="subcat_item"><a href="'. $term_link .'">' . '<img src="' .$image. '" width="160"/>' . '<h3 class="category_title">' . $term->name . '</h3></a></div>';
       }
       if ($terms) {
         echo $output . '</div></div>';
       }
+  }
+}
+
+// Clone archive description to the bottom of the products grid
+add_action('woocommerce_archive_description', 'move_woocommerce_category_description_below_products', 2);
+function move_woocommerce_category_description_below_products(){ 
+  if (is_product_category()){
+    remove_action('woocommerce_archive_description', 'woocommerce_taxonomy_archive_description', 15 );
+    add_action('woocommerce_after_main_content', 'woocommerce_taxonomy_archive_description', 5 );
   }
 }
 

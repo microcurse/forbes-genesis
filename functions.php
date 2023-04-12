@@ -114,6 +114,8 @@ function genesis_sample_post_type_support() {
 // Adds image sizes.
 add_image_size( 'sidebar-featured', 75, 75, true );
 add_image_size( 'genesis-singular-images', 702, 526, true );
+add_image_size( 'wide-variation-swatch', 150, 90, true );
+add_image_size( 'tall-variation-swatch', 76, 126, true );
 
 // Removes header right widget area.
 unregister_sidebar( 'header-right' );
@@ -129,7 +131,7 @@ add_action( 'genesis_header', 'genesis_do_nav', 8 );
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 
 // Load scripts from old site
-// add_action( 'wp_enqueue_scripts', 'enqueue_child_scripts', 99 );
+add_action( 'wp_enqueue_scripts', 'enqueue_child_scripts', 99 );
 
 add_filter( 'genesis_author_box_gravatar_size', 'genesis_sample_author_box_gravatar' );
 /**
@@ -243,10 +245,6 @@ function fi_load_inline_svg( $filename ) {
 	return 'Nope';
 }
 
-// Move Category Title Description
-remove_action( 'genesis_before_loop', 'genesis_do_taxonomy_title_description', 15 );
-add_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_taxonomy_title_description', 15 );
-
 // Slick Carousel
 function fi_slick_carousel() {
 	wp_enqueue_style( 'slick', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css');
@@ -255,6 +253,7 @@ function fi_slick_carousel() {
 	wp_enqueue_script( 'slick-variables' , get_stylesheet_directory_uri() . '/js/slick-variables.js' );
 }
 
+fi_slick_carousel();
 
 /**
  * Font Awesome CDN Setup Webfont
@@ -301,8 +300,8 @@ if (! function_exists('fa_custom_setup_cdn_webfont') ) {
 }
 
 fa_custom_setup_cdn_webfont(
-  'https://use.fontawesome.com/releases/v5.15.4/css/all.css',
-  'sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm'
+  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css',
+  'sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w'
 );
 
 
@@ -344,4 +343,85 @@ function cleantags_func( ) {
 	$cleaned3 = str_replace("Product   ;" ,"", $cleaned2);
 	$cleaned4 = str_replace(";",";\r\n",$cleaned3);
 	return $cleaned4;	
+}
+
+// Add widget for Visit A Showroom page
+genesis_register_sidebar( array(
+	'id' => 'visit-showroom',
+	'name' => __( 'Visit a Showroom', 'genesis' ),
+	'description' => __( 'Widget area for Visit a Showroom', 'childtheme' ),
+	) );
+
+add_action( 'genesis_after_entry', 'add_genesis_widget_area' );
+function add_genesis_widget_area() {
+		genesis_widget_area( 'custom-widget', array(
+			'before' => '<div class="custom-widget widget-area">',
+			'after'  => '</div>',
+    ) );
+
+}
+
+// Add Length x Width x Height labels on product dimensions
+//add_filter('woocommerce_format_dimensions', 'custom_formated_product_dimensions', 10, 2);
+function custom_formated_product_dimensions( $dimension_string, $dimensions) {
+	if ( empty( $dimension_string ) ) 
+		return __( 'N/A', 'woocommerce' ); 
+
+	$dimensions = array_filter( array_map( 'wc_format_localized_decimal', $dimensions ) );
+	$label_with_dimensions = []; // Initializing
+
+	// Loop through dimensions array
+	foreach( $dimensions as $key => $dimension )
+		$label_with_dimensions[$key] = ucfirst($key) . ': ' . $dimension . '"';
+
+	return implode( ', ', $label_with_dimensions);
+}
+
+// Set MOQ for Banquet Chairs product category
+// On single product pages
+add_filter( 'woocommerce_quantity_input_args', 'min_qty_filter_callback', 20, 2 );
+function min_qty_filter_callback( $args, $product ) {
+    $categories = array('Banquet Chairs'); // The targeted product category(ies)
+    $min_qty    = 320; // The minimum product quantity
+
+    $product_id = $product->is_type('variation') ? $product->get_parent_id() : $product->get_id();
+
+    if( has_term( $categories, 'product_cat', $product_id ) ){
+        $args['min_value'] = $min_qty;
+    }
+    return $args;
+}
+
+add_action( 'woocommerce_check_cart_items', 'wc_min_item_required_qty' );
+function wc_min_item_required_qty() {
+    $categories    = array('Banquet Chairs'); // The targeted product category
+    $min_item_qty  = 320; // Minimum Qty required (for each item)
+    $display_error = false; // Initializing
+
+    // Loop through cart items
+    foreach(WC()->cart->get_cart() as $cart_item ) {
+        $item_quantity = $cart_item['quantity']; // Cart item quantity
+        $product_id    = $cart_item['product_id']; // The product ID
+
+        // For cart items remaining to "Noten" producct category
+        if( has_term( $categories, 'product_cat', $product_id ) && $item_quantity < $min_item_qty ) {
+            wc_clear_notices(); // Clear all other notices
+
+            // Add an error notice (and avoid checkout).
+            wc_add_notice( sprintf( 'Banquet chairs have a minimum order quantity of %s. Please update your quantity.', $min_item_qty , $item_quantity ), 'error' );
+            break; // Stop the loop
+        }
+    }
+}
+
+/**	Add Google Tag Manager */
+function add_gtm_head() { ?>
+	<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PWFMLKK');</script>
+<!-- End Google Tag Manager -->
+	<?php 
 }
