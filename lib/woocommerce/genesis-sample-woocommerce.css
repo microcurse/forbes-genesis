@@ -135,7 +135,7 @@ mark {
 }
 
 .woocommerce ul.products li.product a:hover {
-	color: var(--main-link-color_darker);
+	color: var(--main-link-color);
 }
 
 .woocommerce nav.woocommerce-pagination {
@@ -204,8 +204,17 @@ ul.columns-4 .woocommerce ul.products li.product {
 	table-layout: fixed;
 }
 
+/* Removed to fix positioning of add to quote button when button is enabled/disabled */
 .woocommerce .woocommerce-variation-price {
-	margin-bottom: 20px;
+	/* margin-bottom: 20px; */
+}
+
+/* Fix positioning of quote button */
+.woocommerce div.product form.cart {
+	margin-bottom: 2em;
+	-ms-flex-wrap: wrap !important;
+	flex-wrap: wrap !important;
+	max-width: 100%;
 }
 
 .woocommerce div.product div.summary {
@@ -218,16 +227,26 @@ ul.columns-4 .woocommerce ul.products li.product {
 
 section.related.products {
 	background: #fff;
-	padding: 20px;
+	padding: 30px 20px 20px 20px;
 }
 
-.woocommerce-variation-add-to-cart.variations_button.woocommerce-variation-add-to-cart-enabled {
+.woocommerce-variation-add-to-cart.variations_button.woocommerce-variation-add-to-cart-enabled, .woocommerce-variation-add-to-cart-disabled {
 	display: inline-flex;
 }
 
 .addquotelistlink {
 	padding-top: 0px;
 }
+
+h2.woocommerce-loop-product__title, a h3.category_title {
+	font-weight: 400;
+}
+
+/* Adjust spacing of related products section on product details page */
+.single-product .woocommerce ul.products li.product {
+	margin: 0 3.8% 0 0;
+}
+
 
 /* WooCommerce Product Tabs
 ---------------------------------------------------------------------------- */
@@ -294,7 +313,7 @@ section.related.products {
 }
 
 ul.tabs.wc-tabs {
-	background: #f3f3f5;
+	background: #eaecf2;
 }
 
 /* WooCommerce Checkout
@@ -348,6 +367,7 @@ ul.tabs.wc-tabs {
 
 .woocommerce-cart table.cart .product-thumbnail {
 	min-width: 56px;
+	max-width: 150px;
 }
 
 .woocommerce-cart table.cart th.product-name {
@@ -377,6 +397,25 @@ ul.tabs.wc-tabs {
 .woocommerce-checkout table.cart img,
 #add_payment_method table.cart img {
 	vertical-align: middle;
+}
+
+.woocommerce table.shop_attributes th {
+	width: 160px;
+	font-weight: 700;
+	padding: 8px;
+	border-top: 0;
+	border-bottom: 1px dotted rgba(0,0,0,.1);
+	margin: 0;
+	line-height: 1.5;
+}
+
+.woocommerce table.shop_attributes td {
+	font-style: normal;
+}
+
+/* Hide duplicate showing table dimensions */
+tr.woocommerce-product-attributes-item.woocommerce-product-attributes-item--attribute_pa_table-dimensions {
+	display: none;
 }
 
 /* Product Block
@@ -677,9 +716,12 @@ ul.wc-block-grid__products li{
 /* WooCommerce Breadcrumb
 ---------------------------------------------------------------------------- */
 
-.woocommerce .woocommerce-breadcrumb {
+/* Changed to only include extra padding and bg color on breadcrumbs in product category pages */
+body.tax-product_cat .woocommerce-breadcrumb {
 	font-size: 16px;
 	margin-bottom: 40px;
+	background: #eef0f5;
+	padding: 16px;
 }
 
 .woocommerce .woocommerce-breadcrumb,
@@ -688,12 +730,19 @@ ul.wc-block-grid__products li{
 }
 
 .woocommerce .woocommerce-breadcrumb a {
-	text-decoration: none;
+	/* text-decoration: underline; */
+	font-weight: bold;
 }
 
 .woocommerce .woocommerce-breadcrumb a:focus,
 .woocommerce .woocommerce-breadcrumb a:hover {
 	color: #0073e5;
+}
+
+/* Fix styling for breadcrumbs on single product page view */
+body.single-product .woocommerce-breadcrumb {
+	margin-bottom: 16px;
+	padding: 0px;
 }
 
 
@@ -955,7 +1004,7 @@ div.woocommerce-info.wc-memberships-restriction-message.wc-memberships-restricte
 	}
 
 	.woocommerce div.product .woocommerce-tabs ul.tabs li {
-		background-color: #f5f5f5;
+		background-color: #eaecf2;
 		display: inline-block;
 		margin: 0 -5px;
 	}

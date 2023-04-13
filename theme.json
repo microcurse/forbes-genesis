@@ -1,7 +1,6 @@
 {
   "version": 2,
   "settings": {
-    "appearanceTools": true,
     "layout": {
       "contentSize": "840px",
       "wideSize": "1440px",
@@ -12,6 +11,12 @@
       "padding": true,
       "blockGap": true,
       "units": [ "px", "%", "em", "rem", "vh", "vw" ]
+    },
+    "border": {
+      "radius": true,
+      "color": true,
+      "style": true,
+      "width": true
     },
     "color": {
       "custom": true,
@@ -36,6 +41,11 @@
           "name": "Light Blue",
           "slug": "light-blue",
           "color": "#008DD5"
+        },
+        {
+          "name": "Lighter Blue",
+          "slug": "lighter-blue",
+          "color": "#7da7fd"
         },
         {
           "name": "Primary Link Color",
@@ -67,19 +77,17 @@
           "slug": "nesting-tables-orange",
           "color": "#f68e2e"
         }
-      ]
-    },
-    "typography": {
-      "fontFamilies:": [
+      ],
+      "gradients": [
         {
-          "fontFamily":"Times New Roman, serif",
-          "slug": "times-new-roman",
-          "name": "Times New Roman"
+          "slug": "snow-again",
+          "gradient": "linear-gradient(to bottom right,rgba(230, 233, 240) 0%, rgb(238, 241, 245) 100%)",
+          "name": "Diagonal Snow Again"
         },
         {
-          "fontFamily":"proxima-nova, sans-serif",
-          "slug": "proxima-nova",
-          "name": "Proxima Nova"
+          "slug": "mixology-dark-bg",
+          "gradient": "radial-gradient(circle at top left,#3e4660,#13181c)",
+          "name": "Mixology Dark BG"
         }
       ]
     }

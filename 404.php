@@ -47,7 +47,7 @@ function genesis_404() {
 
 	genesis_markup(
 		[
-			'open'    => '<img class="error-emoji" src="https://forbesindustries.local/wp-content/uploads/2022/02/thinking-face.png"/>',
+			'open'    => '<img class="error-emoji" src="' . get_home_url() . '/wp-content/uploads/2022/09/thinking-face.png"/>',
 			'context' => 'entry-404-img',
 		]
 	);
